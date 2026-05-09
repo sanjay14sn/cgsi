@@ -48,7 +48,7 @@ const BecomeMember = () => {
                             Become a <span className="text-primary">CGSI Member</span>
                         </h1>
 
-                        <p className="text-lg text-muted-foreground">
+                        <p className="text-lg text-black font-semibold">
                             Join the Cosmetic Gynecology Society of India (CGSI) and become part of a
                             national academic Society committed to advancing excellence,
                             innovation, and education in cosmetic gynecology.
@@ -87,7 +87,7 @@ const BecomeMember = () => {
                                             <CheckCircle2 className="w-5 h-5 text-primary" />
                                         </div>
 
-                                        <p className="text-foreground font-medium">
+                                        <p className="text-black font-semibold">
                                             {benefit}
                                         </p>
                                     </div>
@@ -113,7 +113,7 @@ const BecomeMember = () => {
                                 Ready to Register?
                             </h3>
 
-                            <p className="text-muted-foreground mb-8">
+                            <p className="text-black font-semibold mb-8">
                                 CGSI membership is open to qualified medical professionals
                                 interested in cosmetic gynecology. Click below to access the
                                 membership application form and fee details.

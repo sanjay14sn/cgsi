@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
+import { motion } from "framer-motion";
 
 const PresidentMessage = () => {
   return (
@@ -13,29 +13,42 @@ const PresidentMessage = () => {
 
           {/* ================= CONTENT SIDE ================= */}
           <div className="space-y-8 order-2 lg:order-1">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary">
-              <Shield className="w-4 h-4" />
-              <span className="text-xs font-bold uppercase tracking-widest">Leadership</span>
-            </div>
 
-            <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight text-primary">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-serif font-bold leading-tight text-primary"
+            >
               President's <span className="text-accent">Message</span>
-            </h2>
+            </motion.h2>
 
-            <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative"
+            >
               {/* Large Quote Mark */}
               <Quote className="absolute -top-6 -left-6 w-16 h-16 opacity-20 text-secondary" />
-              <blockquote className="text-lg leading-relaxed pl-8 border-l-4 italic text-muted-foreground border-primary">
+              <blockquote className="text-lg leading-relaxed pl-8 border-l-2 border-primary/20 italic text-black font-semibold">
                 "The Cosmetic Gynecology Society of India (CGSI) has been formed with a shared vision to develop this evolving subspecialty in a structured, ethical, and evidence-based manner."
                 <br />
                 <br />
                 "The primary goal of the society is to promote scientific education, formulate clinical guidelines, encourage research, and create a strong academic and professional platform for clinicians who are practicing or aspiring to practice cosmetic gynecology in India, while prioritizing patient safety and ethical practice."
               </blockquote>
-            </div>
+            </motion.div>
 
-            {/* Signature Area */}
-            <div className="flex items-center gap-5 pt-4">
-              <div className="w-20 h-20 rounded-full overflow-hidden border-4 shadow-md border-secondary flex-shrink-0">
+            {/* Signature Area - Increased size to be "little bit big" */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex items-center gap-6 pt-6"
+            >
+              <div className="w-24 h-24 rounded-full overflow-hidden border-4 shadow-lg border-secondary flex-shrink-0">
                 <img
                   src="/deepa.png"
                   alt="Dr. Deepa Ganesh"
@@ -45,32 +58,30 @@ const PresidentMessage = () => {
                   }}
                 />
               </div>
-              <div>
-                <div className="font-serif font-bold text-xl text-primary">
+              <div className="space-y-1">
+                <div className="font-serif font-bold text-3xl md:text-4xl text-primary">
                   Dr. Deepa Ganesh
                 </div>
-                <div className="text-sm font-bold uppercase tracking-wide opacity-70 text-muted-foreground">
-                  President, CGSI 2025-2026
+                <div className="text-lg md:text-xl font-bold uppercase tracking-widest text-muted-foreground opacity-80">
+                  President
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <Link
-              to="/about"
-              className="group inline-flex items-center gap-3 px-10 py-4 rounded-full text-white font-bold transition-all hover:brightness-110 shadow-lg bg-primary"
-            >
-              Full Address
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </Link>
           </div>
 
           {/* ================= IMAGE SIDE ================= */}
-          <div className="relative order-1 lg:order-2">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative order-1 lg:order-2"
+          >
             <div className="relative z-10">
-              {/* Added aspect-square or specific height with better object fit */}
               <div className="rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white bg-white">
                 <img
-                  src="https://res.cloudinary.com/ddibq0tya/image/upload/v1771400393/DOT01099_2_gtshvq.jpg"
+                  src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778059451/deepa_wpn93d.png"
                   alt="Presidential Portrait"
                   className="w-full h-[500px] lg:h-[600px] object-cover object-top"
                   onError={(e) => {
@@ -82,17 +93,7 @@ const PresidentMessage = () => {
 
             {/* Background Decorative Frame */}
             <div className="absolute inset-0 rounded-[3rem] opacity-30 transform rotate-3 scale-105 -z-10 bg-secondary" />
-
-            {/* Floating Theme Element */}
-            <div className="absolute -bottom-6 -left-6 md:-left-8 rounded-3xl p-6 md:p-8 shadow-2xl bg-accent z-20">
-              <div className="text-3xl md:text-4xl font-serif font-bold text-white">
-                2025-26
-              </div>
-              <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/90 mt-1">
-                The Theme Year
-              </div>
-            </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

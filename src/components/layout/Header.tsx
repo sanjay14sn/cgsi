@@ -52,6 +52,8 @@ const navItems: NavItem[] = [
   },
 ];
 
+const logo = "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778057479/6b3a6033-b4e8-44a9-aa71-98bea42dc8b2_zjpno8.jpg";
+
 const Header: React.FC = () => {
   const location = useLocation();
 
@@ -119,17 +121,20 @@ const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-background/80 backdrop-blur-xl shadow-lg border-b"
-          : "bg-transparent"
+          : "bg-white border-b" // Added solid background and border to match "scrolled" size
         }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+        {/* Height is now consistent: h-24 on mobile, h-32 on desktop ALWAYS */}
+        <div className="flex items-center justify-between h-24 lg:h-32">
 
-          {/* TEXT LOGO INSTEAD OF IMAGE */}
-          <Link to="/" className="flex items-center group">
-            <span className="text-2xl lg:text-3xl font-black tracking-tighter text-primary group-hover:opacity-80 transition-opacity">
-              CGSI
-            </span>
+          {/* LOGO */}
+          <Link to="/" className="flex items-center group py-2">
+            <img
+              src={logo}
+              alt="CGSI Logo"
+              className="h-16 lg:h-24 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </Link>
 
           {/* DESKTOP NAVIGATION */}
@@ -149,8 +154,8 @@ const Header: React.FC = () => {
                         onMouseEnter={() => openNow(item.name)}
                         onMouseLeave={closeLater}
                         className={`flex items-center gap-1 cursor-pointer text-[13px] font-bold uppercase tracking-widest py-2 transition-colors ${active
-                            ? "text-primary border-b-2 border-primary"
-                            : "text-foreground/80 hover:text-primary"
+                          ? "text-primary border-b-2 border-primary"
+                          : "text-foreground/80 hover:text-primary"
                           }`}
                       >
                         {item.name}
@@ -175,8 +180,8 @@ const Header: React.FC = () => {
                   key={item.name}
                   to={item.path || "#"}
                   className={`text-[13px] font-bold uppercase tracking-widest py-2 transition-colors ${active
-                      ? "text-primary border-b-2 border-primary"
-                      : "text-foreground/80 hover:text-primary"
+                    ? "text-primary border-b-2 border-primary"
+                    : "text-foreground/80 hover:text-primary"
                     }`}
                 >
                   {item.name}

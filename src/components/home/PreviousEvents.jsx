@@ -38,16 +38,6 @@ export default function PreviousEvents() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
-        {/* HEADER */}
-        <div className="mb-16 text-left border-l-4 border-blue-600 pl-6">
-          <p className="text-blue-600 text-xs font-black uppercase tracking-widest mb-2">
-            Institutional Archive
-          </p>
-          <h2 className="text-4xl md:text-5xl font-serif text-slate-900">
-            History in <span className="italic text-slate-500">Motion.</span>
-          </h2>
-        </div>
-
         {/* GALLERY GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
           {EVENTS.map((e) => (

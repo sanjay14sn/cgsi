@@ -1,14 +1,10 @@
 import React from "react";
 import Layout from "@/components/layout/Layout";
-import { Mail, BookOpen, Download, FileText } from "lucide-react";
+import { Mail, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Newsletter = () => {
-    const newsletters = [
-        { title: "January 2025 Edition", date: "Jan 1, 2025", type: "Monthly Digest" },
-        { title: "December 2024 Edition", date: "Dec 1, 2024", type: "Year-End Special" },
-        { title: "November 2024 Edition", date: "Nov 1, 2024", type: "Monthly Digest" },
-    ];
+    // Newsletters will be loaded here in the future
 
     return (
         <Layout>
@@ -23,32 +19,25 @@ const Newsletter = () => {
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6">
                             CGSI <span className="text-primary">Newsletter</span>
                         </h1>
-                        <p className="text-lg text-muted-foreground">
+                        <p className="text-lg text-black font-semibold">
                             Download our latest newsletters and keep yourself informed about society activities and medical updates.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {newsletters.map((news, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="bg-card p-6 rounded-3xl border border-border shadow-sm hover:border-primary/50 transition-all flex flex-col"
-                            >
-                                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary">
-                                    <FileText className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-xl font-bold text-foreground mb-2">{news.title}</h3>
-                                <p className="text-sm text-muted-foreground mb-6">{news.type} - {news.date}</p>
-                                <button className="mt-auto flex items-center justify-center gap-2 py-3 bg-secondary/20 hover:bg-primary/10 text-primary font-bold rounded-xl transition-colors group">
-                                    <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
-                                    Download PDF
-                                </button>
-                            </motion.div>
-                        ))}
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="max-w-2xl mx-auto bg-card p-10 md:p-16 rounded-[2.5rem] border border-border/50 shadow-xl text-center mt-12 bg-white"
+                    >
+                        <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                            <BookOpen className="w-12 h-12 text-primary" />
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">Coming Soon</h2>
+                        <p className="text-black text-lg mb-10 leading-relaxed font-semibold">
+                            We are currently curating the best content for our inaugural edition. Stay tuned for expert insights, clinical guidelines, and the latest CGSI updates directly to your inbox.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
         </Layout>

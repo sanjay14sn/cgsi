@@ -13,12 +13,12 @@ const HeroSection = () => {
       {/* BACKGROUND */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://res.cloudinary.com/ddibq0tya/image/upload/v1771408370/DSC08861_duszf9.jpg"
+          src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778056042/WhatsApp_Image_2026-05-06_at_1.56.06_PM_dt01eu.jpg"
           alt="CGSI Professional Background"
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-70"
         />
 
-        <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white" />
 
         <div className="hidden md:block absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[100px]" />
@@ -38,7 +38,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               src={logo}
               alt="CGSI Logo"
-              className="w-72 sm:w-80 md:w-96 lg:w-[450px] max-w-[95vw] h-auto drop-shadow-2xl"
+              className="w-72 sm:w-80 md:w-96 lg:w-[450px] max-w-[95vw] h-auto drop-shadow-2xl -mt-10"
             />
 
             <motion.h1
@@ -48,7 +48,7 @@ const HeroSection = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.05]"
             >
               Cosmetic Gynecology <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-500">
+              <span className="hidden sm:block">
                 Society of India
               </span>
             </motion.h1>
@@ -62,42 +62,17 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-slate-700 px-2"
+              className="text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed text-slate-900 font-bold px-2"
             >
-              The Cosmetic Gynecology Society of India (CGSI) is a national professional
-              organization dedicated to advancing cosmetic and functional gynecology
-              through <span className="font-semibold text-slate-900">
-                education, ethical practice, clinical training, and evidence-based standards
-              </span> to improve women’s intimate health care across India.
+              The Cosmetic Gynecology Society of India (CGSI) is a professional organization dedicated to advancing cosmetic and functional gynecology through education, clinical training, and evidence-based practice.
+              <br />
+              <br />
+              We promote collaboration, uphold ethical standards, and strive to enhance the quality and safety of women’s intimate healthcare across India.
             </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-sm sm:text-base md:text-lg text-slate-600 max-w-2xl mx-auto px-4"
-            >
-              Established to support clinicians, promote responsible innovation,
-              and ensure safe, high-quality cosmetic and functional gynecological care.
-            </motion.p>
+
 
           </div>
-
-          {/* BUTTON */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="pt-4 flex justify-center"
-          >
-            <Link
-              to="/about"
-              className="group w-full sm:w-auto px-8 py-4 rounded-full flex items-center justify-center gap-3 bg-slate-900 text-white font-bold transition-all active:scale-95 sm:hover:scale-105 sm:hover:bg-slate-800 sm:hover:shadow-xl"
-            >
-              Learn About CGSI
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
-            </Link>
-          </motion.div>
 
         </div>
       </div>

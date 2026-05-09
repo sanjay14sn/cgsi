@@ -58,7 +58,7 @@ const MembershipSection = () => {
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">
             CGSI Membership <span className="text-accent">Benefits</span>
           </h2>
-          <p className="text-lg text-muted-foreground opacity-80">
+          <p className="text-lg text-black font-semibold">
             Join a Society of experts.
           </p>
         </div>
@@ -79,7 +79,7 @@ const MembershipSection = () => {
                   {benefit.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed text-muted-foreground group-hover:text-slate-700 transition-colors">
+                <p className="text-sm leading-relaxed text-black font-semibold">
                   {benefit.desc}
                 </p>
               </div>
@@ -97,7 +97,7 @@ const MembershipSection = () => {
                 <ArrowRight className="w-6 h-6" />
               </Link>
             </div>
-            <p className="mt-6 text-sm font-medium text-muted-foreground italic">
+            <p className="mt-6 text-sm font-semibold text-black italic">
               *Membership is subject to verification of credentials.
             </p>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Eye, Heart, Activity } from "lucide-react";
+import { ArrowRight, Target, Eye, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 const AboutSection = () => {
@@ -30,21 +30,6 @@ const AboutSection = () => {
                 />
               </div>
 
-              {/* Stats Card */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="absolute -bottom-8 -right-4 bg-background/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-primary/20"
-              >
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                    CGSI
-                  </div>
-                  <div className="text-xs uppercase tracking-widest font-bold opacity-60 mt-1 text-foreground">
-                    Established Platform
-                  </div>
-                </div>
-              </motion.div>
-
               {/* Decorative Pulse */}
               <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full flex items-center justify-center shadow-lg bg-background/50 backdrop-blur-sm border border-primary/20">
                 <div className="relative flex items-center justify-center">
@@ -61,48 +46,34 @@ const AboutSection = () => {
 
           {/* ================= CONTENT SIDE ================= */}
           <div className="space-y-8">
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary"
-            >
-              <Activity className="w-4 h-4 animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-widest">
-                About CGSI
-              </span>
-            </motion.div>
-
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-bold leading-tight text-foreground"
+              className="text-4xl md:text-5xl font-bold leading-tight text-black"
             >
-              Cosmetic Gynecology Society of{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                India
-              </span>
+              Cosmetic Gynecology  <br />
+              Society of India
             </motion.h2>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-lg leading-relaxed opacity-80 text-muted-foreground border-l-2 border-primary/20 pl-6"
+              className="text-lg leading-relaxed text-black border-l-2 border-primary/20 pl-6 font-semibold space-y-4"
             >
-              The Cosmetic Gynecology Society of India (CGSI) has been formed
-              with a shared vision to develop this evolving subspecialty in a
-              structured, ethical, and evidence-based manner. The society aims to
-              promote scientific education, formulate clinical guidelines,
-              encourage research, and create a strong academic and professional
-              platform for clinicians practicing or aspiring to practice cosmetic
-              gynecology in India, while always prioritizing patient safety and
-              ethical medical practice.
-            </motion.p>
+              <p>
+                The Cosmetic Gynecology Society of India (CGSI) has been formed with a shared vision to develop this evolving subspecialty in a structured, ethical, and evidence-based manner.
+              </p>
+              <p>
+                The primary goal of the society is to promote scientific education, formulate clinical guidelines, encourage research, and create a strong academic and professional platform for clinicians who are practicing or aspiring to practice cosmetic gynecology in India, while prioritizing patient safety and ethical practice.
+              </p>
+              <p>
+                Unveiled at CGCON 2025 — the 2nd Cosmetic Gynecology World Congress, marking a milestone for ethical, evidence-based cosmetic and functional gynecology in India.
+              </p>
+            </motion.div>
 
             {/* Vision & Mission */}
             <div className="grid sm:grid-cols-2 gap-6 pt-4">
@@ -127,15 +98,16 @@ const AboutSection = () => {
                   whileHover={{ y: -5 }}
                   className="p-6 rounded-[2rem] border transition-all duration-300 hover:shadow-lg bg-card/40 backdrop-blur-sm border-border hover:border-primary/30 group"
                 >
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 shadow-sm bg-gradient-to-br from-primary to-accent group-hover:scale-110 transition-transform">
-                    <item.icon className="w-6 h-6 text-white" />
+                  {/* Icon container matches the Button background and shadow */}
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 shadow-xl shadow-primary/20 bg-primary group-hover:scale-110 transition-transform">
+                    <item.icon className="w-6 h-6 text-primary-foreground" />
                   </div>
 
                   <h3 className="font-bold text-xl mb-2 text-foreground group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm leading-relaxed text-muted-foreground opacity-90">
+                  <p className="text-sm leading-relaxed text-black font-semibold">
                     {item.desc}
                   </p>
                 </motion.div>
@@ -153,7 +125,7 @@ const AboutSection = () => {
                 to="/about"
                 className="group inline-flex items-center gap-3 px-10 py-4 rounded-full text-primary-foreground font-bold transition-all hover:scale-105 shadow-xl shadow-primary/20 bg-primary hover:bg-primary/90"
               >
-                Discover More
+                Learn About CGSI
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>

@@ -50,29 +50,12 @@ const EventsSection = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary mx-auto"
           >
             <Award className="w-4 h-4" />
-            <span className="text-xs font-bold uppercase tracking-widest">Scientific Calendar 2026</span>
+            <span className="text-xs font-bold uppercase tracking-widest">Academic Calendar </span>
           </motion.div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold tracking-tight"
-          >
-            Society <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Engagements</span>
-          </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-muted-foreground opacity-80"
-          >
-            Advance your clinical expertise through our Chennai-based workshops,
-            certified CMEs, and national congresses.
-          </motion.p>
+
+
         </div>
 
         {/* ================= EVENTS GRID ================= */}
@@ -118,7 +101,7 @@ const EventsSection = () => {
                   {event.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                <p className="text-sm leading-relaxed text-black line-clamp-3 font-semibold">
                   {event.description}
                 </p>
 

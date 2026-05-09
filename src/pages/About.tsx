@@ -27,14 +27,7 @@ const About = () => {
           <div className="container mx-auto px-6 relative z-10">
             <StaggerContainer className="text-center max-w-4xl mx-auto">
 
-              <StaggerItem>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/30 text-white mb-6 shadow-sm">
-                  <Shield className="w-4 h-4" />
-                  <span className="text-sm font-bold uppercase tracking-widest">
-                    National Professional Society
-                  </span>
-                </div>
-              </StaggerItem>
+
 
               <StaggerItem>
                 <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-8 leading-tight">
@@ -87,7 +80,7 @@ const About = () => {
                   </span>
                 </h2>
 
-                <p className="text-lg leading-relaxed text-muted-foreground">
+                <p className="text-lg leading-relaxed text-black font-semibold">
                   The Cosmetic Gynecology Society of India (CGSI) was established
                   to bring together clinicians, educators, and researchers
                   committed to advancing cosmetic and functional gynecology in
@@ -97,7 +90,7 @@ const About = () => {
                   procedures.
                 </p>
 
-                <p className="text-lg leading-relaxed text-muted-foreground">
+                <p className="text-lg leading-relaxed text-black font-semibold">
                   Under the leadership of pioneers like **Dr. Deepa Ganesh**, CGSI
                   emphasizes evidence-based practice and ethical conduct. Our goal is
                   to ensure safe access to intimate healthcare for women nationwide
@@ -150,8 +143,8 @@ const About = () => {
                     Our Vision
                   </h3>
 
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    To be the leading professional organization in women’s
+                  <p className="text-lg text-black font-semibold leading-relaxed">
+                    To be the leading professional organization in women's
                     healthcare and medical education, setting the gold standard
                     for cosmetic and functional gynecology practices in India.
                     We envision a future where every woman has access to dignified,

@@ -113,21 +113,21 @@ const Index = () => {
             <FadeIn delay={0.3}>
               <PresidentMessage />
             </FadeIn>
-            <FadeIn delay={0.2}>
-              <PreviousEvents />
-            </FadeIn>
-
             <FadeIn delay={0.3}>
               <TeamSection />
             </FadeIn>
+            <FadeIn delay={0.75}>
+              <VideoSection />
+            </FadeIn>
+
+
+
+
             <FadeIn delay={0.3}>
               <EventsSection />
             </FadeIn>
 
             {/* 2. Insert Video Section here */}
-            <FadeIn delay={0.75}>
-              <VideoSection />
-            </FadeIn>
 
             <FadeIn delay={0.8}>
               <ProgramsSection />

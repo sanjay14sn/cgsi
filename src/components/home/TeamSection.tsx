@@ -37,13 +37,9 @@ const TeamSection = () => {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-20 space-y-4"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary mx-auto">
-            <Shield className="w-4 h-4" />
-            <span className="text-xs font-bold uppercase tracking-widest">Leadership 2025-26</span>
-          </div>
 
           <h2 className="text-4xl md:text-6xl font-serif font-bold text-primary">
-            The <span className="text-accent">Leadership</span> Council
+            CGSI  <span className="text-accent">TEAM</span>
           </h2>
 
           <div className="h-[1px] w-40 mx-auto bg-gradient-to-r from-transparent via-secondary to-transparent" />
@@ -76,19 +72,16 @@ const TeamSection = () => {
                   <h3 className="text-xl font-serif font-bold text-white mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-xs uppercase tracking-widest font-bold text-accent">
-                    {member.role}
-                  </p>
                   <div className="w-full h-[1px] bg-white/20 mt-4" />
                 </div>
               </div>
 
               {/* Static Labels (Visible by default, fades on hover) */}
               <div className="mt-6 text-center group-hover:opacity-0 transition-opacity duration-300">
-                <h3 className="text-lg font-serif font-bold leading-tight text-primary">
+                <h3 className="text-xl font-serif font-bold leading-tight text-primary">
                   {member.name}
                 </h3>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] mt-2 opacity-60 text-muted-foreground">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] mt-2 text-black">
                   {member.role}
                 </p>
               </div>
@@ -97,15 +90,7 @@ const TeamSection = () => {
         </div>
 
         {/* ================= ELEGANT CTA ================= */}
-        <div className="text-center mt-20">
-          <Link
-            to="/team"
-            className="group relative inline-flex items-center gap-4 px-12 py-5 rounded-full text-white font-bold transition-all hover:scale-105 shadow-xl shadow-pink-100 bg-accent"
-          >
-            Explore Full Council
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-          </Link>
-        </div>
+
       </div>
     </section>
   );
