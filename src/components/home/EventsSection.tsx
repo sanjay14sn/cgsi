@@ -11,7 +11,8 @@ const events = [
     date: "January 07, 2026",
     location: "Online / Virtual",
     image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778324119/ChatGPT_Image_May_9_2026_04_24_38_PM_ja0nyk.png",
-    category: "Webinar"
+    category: "Webinar",
+    isUpcoming: false,
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const events = [
     date: "14th February, 2026",
     location: "Hotel Savera, Chennai",
     image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778325186/ChatGPT_Image_May_9_2026_04_42_37_PM_bwq4h3.png",
-    category: "Seminar"
+    category: "Seminar",
+    isUpcoming: false,
   },
   {
     id: 3,
@@ -29,7 +31,28 @@ const events = [
     date: "28th March, 2026",
     location: "Online / Virtual",
     image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778325586/ChatGPT_Image_May_9_2026_04_48_52_PM_vljkpu.png",
-    category: "Webinar"
+    category: "Webinar",
+    isUpcoming: false,
+  },
+  {
+    id: 4,
+    title: "Modern Aesthetic Gynecology",
+    description: "Monthly CME focused on the latest modalities in menopause care and aesthetic gynecology.",
+    date: "18th April, 2026",
+    location: "Marriott, Chennai",
+    image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778479920/WhatsApp_Image_2026-05-11_at_10.43.29_AM_smmqh4.jpg",
+    category: "Seminar",
+    isUpcoming: false,
+  },
+  {
+    id: 5,
+    title: "Upcoming Event",
+    description: "Stay tuned for details on our next exclusive CGSI event.",
+    date: "Coming Soon",
+    location: "To Be Announced",
+    image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778484394/Screenshot_2026-05-11_at_12.56.22_PM_xcec1v.png",
+    category: "Upcoming",
+    isUpcoming: true,
   },
 ];
 
@@ -39,36 +62,24 @@ const EventsSection = () => {
       <div className="container mx-auto px-6">
 
         {/* Upcoming Conference Banner Section */}
-        <div className="flex flex-col items-center mb-20">
+        <div className="mb-24">
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-bold text-slate-900 tracking-tight flex items-center justify-center gap-3">
+              <Sparkles className="text-blue-600 w-8 h-8" />
+              Upcoming Conference
+            </h2>
+          </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-full max-w-4xl bg-white p-4 rounded-[2rem] shadow-xl border border-blue-100 relative overflow-hidden"
+            className="rounded-[3rem] overflow-hidden border border-slate-200 shadow-2xl bg-white"
           >
-            {/* Decorative Background Element */}
-            <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-50 rounded-full blur-3xl" />
-
-            <div className="relative z-10 flex flex-col items-center">
-              <div className="flex items-center gap-2 mb-6">
-                <Sparkles className="w-5 h-5 text-amber-500" />
-                <h2 className="text-2xl md:text-3xl font-black text-slate-800 tracking-tight uppercase">
-                  Upcoming <span className="text-blue-600">Conference</span>
-                </h2>
-                <Sparkles className="w-5 h-5 text-amber-500" />
-              </div>
-
-              <div className="relative group max-w-2xl w-full">
-                {/* Image Border/Glow effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-
-                <img
-                  src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778474503/WhatsApp_Image_2026-05-11_at_10.08.46_AM_wbghqg.jpg"
-                  alt="Main Conference Banner"
-                  className="relative rounded-xl shadow-2xl w-full h-auto object-cover border-4 border-white transition-transform duration-500 hover:scale-[1.01]"
-                />
-              </div>
-            </div>
+            <img
+              src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778476123/ChatGPT_Image_May_11_2026_10_38_06_AM_xejj7j.png"
+              alt="Upcoming Conference"
+              className="w-full h-auto object-cover"
+            />
           </motion.div>
         </div>
 
@@ -96,7 +107,10 @@ const EventsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group flex flex-col h-[600px] rounded-[2.5rem] overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500"
+              className={`group flex flex-col h-[600px] rounded-[2.5rem] overflow-hidden bg-white border shadow-sm hover:shadow-xl transition-all duration-500 ${event.isUpcoming
+                  ? "border-primary ring-2 ring-primary/30 ring-offset-2"
+                  : "border-slate-200"
+                }`}
             >
               {/* Image Container */}
               <div className="relative w-full h-[65%] bg-slate-100 flex items-center justify-center overflow-hidden">
@@ -112,7 +126,12 @@ const EventsSection = () => {
                     <Calendar className="w-3 h-3 text-blue-600" />
                     {event.date}
                   </span>
-                  <span className="bg-blue-600 text-white text-[10px] px-3 py-1.5 rounded-full font-bold shadow-md uppercase tracking-wider">
+                  <span
+                    className={`text-[10px] px-3 py-1.5 rounded-full font-bold shadow-md uppercase tracking-wider ${event.isUpcoming
+                        ? "bg-primary text-white animate-pulse"
+                        : "bg-primary text-white"
+                      }`}
+                  >
                     {event.category}
                   </span>
                 </div>
@@ -138,7 +157,7 @@ const EventsSection = () => {
                 <div className="flex items-center justify-end">
                   <Link
                     to={`/events/${event.id}`}
-                    className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-900 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-inner"
+                    className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-inner"
                   >
                     <ArrowUpRight className="w-6 h-6" />
                   </Link>

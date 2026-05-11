@@ -20,10 +20,30 @@ const About = () => {
       <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-white">
 
         {/* --- HERO SECTION --- */}
-        {/* Adjusted padding-top from pt-32 to pt-20 and padding-bottom from pb-16 to pb-10 to push the image up and reduce space below */}
-        <section className="relative pt-20 pb-10 overflow-hidden bg-white"> <div className="w-full relative z-10"> <StaggerContainer className="text-center w-full mx-auto"> <StaggerItem> <div className="relative w-full flex justify-center items-center overflow-hidden h-[300px] md:h-[450px] -mt-4"> {/* Full width image with slight fade (opacity) */} <img src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778326290/WhatsApp_Image_2026-05-09_at_5.00.46_PM_ttmsjg.jpg" alt="CGSI Banner" className="absolute inset-0 w-full h-full object-cover opacity-60" /> {/* Overlaying "About Us" Text */} <div className="relative z-20"> <h1 className="text-5xl md:text-7xl font-serif font-bold text-primary tracking-tight"> About Us </h1> </div> </div> </StaggerItem> </StaggerContainer> </div> </section>
+        <section className="relative pt-20 pb-10 overflow-hidden bg-white">
+          <div className="w-full relative z-10">
+            <StaggerContainer className="text-center w-full mx-auto">
+              <StaggerItem>
+                <div className="relative w-full flex justify-center items-center overflow-hidden h-[300px] md:h-[450px] -mt-4">
+                  {/* Full width image with slight fade (opacity) */}
+                  <img
+                    src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778326290/WhatsApp_Image_2026-05-09_at_5.00.46_PM_ttmsjg.jpg"
+                    alt="CGSI Banner"
+                    className="absolute inset-0 w-full h-full object-cover opacity-60"
+                  />
+                  {/* Overlaying "About Us" Text - Updated to text-black */}
+                  <div className="relative z-20">
+                    <h1 className="text-5xl md:text-7xl font-serif font-bold text-black tracking-tight">
+                      About Us
+                    </h1>
+                  </div>
+                </div>
+              </StaggerItem>
+            </StaggerContainer>
+          </div>
+        </section>
+
         {/* --- HISTORY & FOUNDATION SECTION --- */}
-        {/* Changed padding-top from py-1 to pt-0 and pb-1 to reduce space between sections */}
         <section className="pt-0 pb-1">
           <div className="container mx-auto px-6">
             <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -40,7 +60,6 @@ const About = () => {
               <FadeIn delay={0.2} className="lg:w-1/2 space-y-8">
 
                 <h2 className="text-4xl font-serif font-bold text-primary">
-
                   <br />
                   <span className="text-accent">
                     Building India's Future in Cosmetic Gynecology
@@ -49,7 +68,6 @@ const About = () => {
 
                 <p className="text-lg leading-relaxed text-black font-semibold">
                   The Cosmetic Gynecology Society of India (CGSI) was established to bring together clinicians, educators, and researchers committed to advancing cosmetic, functional, regenerative, and sexual gynecology in India.
-
                 </p>
 
                 <p className="text-lg leading-relaxed text-black font-semibold">
@@ -57,13 +75,12 @@ const About = () => {
                 </p>
                 <p className="text-lg leading-relaxed text-black font-semibold">
                   Under the leadership of pioneers such as Dr. Deepa Ganesh, CGSI emphasizes scientific excellence, multidisciplinary collaboration, ethical conduct, and patient-centered care.
-
-                </p>   <p className="text-lg leading-relaxed text-black font-semibold">
+                </p>
+                <p className="text-lg leading-relaxed text-black font-semibold">
                   Our goal is to enhance the quality, safety, and accessibility of women’s intimate healthcare and sexual wellbeing across India by empowering healthcare professionals through education, clinical training, research, and academic exchange.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-
                 </div>
               </FadeIn>
 
@@ -146,11 +163,9 @@ const About = () => {
             </h2>
 
             <div className="flex flex-wrap justify-center gap-4">
-
               <button className="bg-primary text-primary-foreground px-10 py-4 rounded-full font-bold hover:shadow-xl transition-all hover:bg-primary/90">
                 Register as Member
               </button>
-
             </div>
 
           </div>

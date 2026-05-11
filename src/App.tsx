@@ -19,6 +19,8 @@ import GalleryVideos from "./pages/GalleryVideos";
 import GalleryMedia from "./pages/GalleryMedia";
 import Conference2025 from "./pages/Conference2025";
 import Conference2024 from "./pages/Conference2024";
+import EventDetail from "./pages/EventDetail";
+import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
@@ -46,6 +49,7 @@ const App = () => (
             <Route path="/gallery-media" element={<GalleryMedia />} />
             <Route path="/conference-2025" element={<Conference2025 />} />
             <Route path="/conference-2024" element={<Conference2024 />} />
+            <Route path="/events/:id" element={<EventDetail />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
