@@ -8,19 +8,19 @@ const videosData = [
         id: 1,
         title: "CGCON 2024",
         url: "https://res.cloudinary.com/ddibq0tya/video/upload/v1771399981/WhatsApp_Video_2026-02-13_at_9.23.31_AM_mplpkn.mp4",
-        category: "2024"
+
     },
     {
         id: 2,
         title: "CGCON 2025",
         url: "https://res.cloudinary.com/ddibq0tya/video/upload/v1771408768/WhatsApp_Video_2026-02-13_at_9.22.03_AM_pdyxnq.mp4",
-        category: "2025"
+
     },
     {
         id: 3,
         title: "2025",
         url: "https://res.cloudinary.com/ddibq0tya/video/upload/v1771408856/2025v_znrc3o.mp4",
-        category: "2025"
+
     },
 ];
 
@@ -56,14 +56,11 @@ const GalleryVideos = () => {
 
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 text-primary mb-8">
-                            <PlayCircle className="w-4 h-4" />
-                            <span className="text-xs font-bold uppercase tracking-widest">Video Archive</span>
-                        </div>
-                        <h1 className="text-5xl font-serif font-bold text-foreground mb-6">
+
+                        <h1 className="text-5xl font-serif font-bold text-black mb-6">
                             Our <span className="text-primary italic">Video Gallery</span>
                         </h1>
-                        <p className="text-lg text-muted-foreground">
+                        <p className="text-lg text-black font-semibold">
                             Videos autoplay silently. Click the speaker icon to enable audio for a specific video.
                         </p>
                     </div>
@@ -104,10 +101,8 @@ const GalleryVideos = () => {
                                 </div>
 
                                 <div className="p-8">
-                                    <span className="px-3 py-1 rounded-full bg-secondary text-[10px] font-black uppercase tracking-tighter text-accent-foreground mb-4 inline-block">
-                                        {video.category}
-                                    </span>
-                                    <h3 className="text-xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
+
+                                    <h3 className="text-xl font-serif font-bold text-black group-hover:text-primary transition-colors">
                                         {video.title}
                                     </h3>
                                 </div>

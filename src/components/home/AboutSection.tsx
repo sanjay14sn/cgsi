@@ -65,54 +65,21 @@ const AboutSection = () => {
               className="text-lg leading-relaxed text-black border-l-2 border-primary/20 pl-6 font-semibold space-y-4"
             >
               <p>
-                The Cosmetic Gynecology Society of India (CGSI) has been formed with a shared vision to develop this evolving subspecialty in a structured, ethical, and evidence-based manner.
+                The Cosmetic Gynecology Society of India (CGSI) is a professional academic society committed to advancing cosmetic, functional, and regenerative gynecology in India.
               </p>
               <p>
-                The primary goal of the society is to promote scientific education, formulate clinical guidelines, encourage research, and create a strong academic and professional platform for clinicians who are practicing or aspiring to practice cosmetic gynecology in India, while prioritizing patient safety and ethical practice.
+                CGSI brings together gynecologists and multidisciplinary healthcare professionals dedicated to education, clinical excellence, ethical practice, scientific research, and innovation in women’s intimate healthcare.
               </p>
               <p>
-                Unveiled at CGCON 2025 — the 2nd Cosmetic Gynecology World Congress, marking a milestone for ethical, evidence-based cosmetic and functional gynecology in India.
+                Through conferences, CMEs, workshops, hands-on training programs, and academic collaboration, the society aims to promote evidence-based practice, professional development, patient safety, and high standards of care across the field of intimate health and wellbeing.
+              </p>
+              <p>
+                CGSI was officially unveiled at CGCON 2025 — the 2nd Cosmetic Gynecology World Congress, chennai  — marking an important milestone in advancing ethical, evidence-based cosmetic, functional, regenerative, and sexual gynecology in India.
               </p>
             </motion.div>
 
             {/* Vision & Mission */}
-            <div className="grid sm:grid-cols-2 gap-6 pt-4">
-              {[
-                {
-                  icon: Eye,
-                  title: "Our Vision",
-                  desc: "To advance cosmetic gynecology in India through structured education, ethical practice, and evidence-based clinical excellence."
-                },
-                {
-                  icon: Target,
-                  title: "Our Mission",
-                  desc: "To promote research, develop clinical guidelines, support practitioner training, and ensure patient safety while building a strong academic Society."
-                }
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + i * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="p-6 rounded-[2rem] border transition-all duration-300 hover:shadow-lg bg-card/40 backdrop-blur-sm border-border hover:border-primary/30 group"
-                >
-                  {/* Icon container matches the Button background and shadow */}
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 shadow-xl shadow-primary/20 bg-primary group-hover:scale-110 transition-transform">
-                    <item.icon className="w-6 h-6 text-primary-foreground" />
-                  </div>
 
-                  <h3 className="font-bold text-xl mb-2 text-foreground group-hover:text-primary transition-colors">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-sm leading-relaxed text-black font-semibold">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
 
             {/* Button */}
             <motion.div

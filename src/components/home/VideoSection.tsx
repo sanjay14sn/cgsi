@@ -41,10 +41,12 @@ const VideoSection = () => {
                     {[
                         "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778129593/7ed26161-1717-4eca-9ca7-58b369d031cb_qiu13p.jpg",
                         "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778129628/453abc5d-02e8-46d0-b798-471e88a64524_hpq0s5.jpg",
-                        "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778129712/b0c0cc2b-683e-4fca-908b-0f675d75a4ba_zt2rha.jpg",
+
+                        "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778321895/Screenshot_2026-05-09_at_3.47.46_PM_rubowq.png",
+                        "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778129758/e96c4585-512f-476d-b3bd-f2928076b960_iggwr3.jpg",
                         "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778129719/4780be76-9a45-4f12-b82d-ec030b377cd4_yxsgad.jpg",
                         "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778129752/b297b996-6a09-4bc4-a7a4-ee8b9001bcf6_icknql.jpg",
-                        "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778129758/e96c4585-512f-476d-b3bd-f2928076b960_iggwr3.jpg"
+
                     ].map((imgUrl, idx) => (
                         <motion.div
                             key={idx}

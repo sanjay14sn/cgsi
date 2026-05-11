@@ -44,10 +44,10 @@ const Conference2024 = () => {
                             <Calendar className="w-4 h-4" />
                             <span className="text-xs font-bold uppercase tracking-widest">Historic First Edition</span>
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-6">
+                        <h1 className="text-5xl md:text-7xl font-serif font-bold text-black mb-6">
                             CGCON <span className="text-accent italic">2024</span>
                         </h1>
-                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 italic">
+                        <p className="text-xl text-black max-w-2xl mx-auto mb-8 italic">
                             “South India’s First Dedicated Cosmetic Gynecology Congress”
                         </p>
                         <div className="flex justify-center gap-8 font-bold text-primary">
@@ -65,8 +65,8 @@ const Conference2024 = () => {
                     {/* Block 1: Intro + 2 Images */}
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
-                            <h2 className="text-4xl font-serif font-bold">A Landmark Beginning</h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed text-justify">
+                            <h2 className="text-4xl font-serif font-bold text-black">A Landmark Beginning</h2>
+                            <p className="text-lg text-black leading-relaxed text-justify">
                                 CGCON 2024 marked South India’s first dedicated Cosmetic Gynecology Congress —
                                 a truly historic academic milestone that signaled the rapid emergence of this
                                 specialized field in modern women’s healthcare. Originally planned for 60 participants,
@@ -87,7 +87,7 @@ const Conference2024 = () => {
                         </div>
                         <div className="space-y-6 order-1 lg:order-2">
                             <h2 className="text-4xl font-serif font-bold text-accent italic">Eminent Leadership</h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed text-justify">
+                            <p className="text-lg text-black leading-relaxed text-justify">
                                 The inauguration ceremony brought immense prestige with the presence of Prof. Dr. Narayanasamy,
                                 Vice Chancellor of Tamil Nadu Medical University, and Dr. Vijaya S, President of OGSSI.
                                 Their inspiring words highlighted the importance of structured education and ethical practice
@@ -103,8 +103,8 @@ const Conference2024 = () => {
                                 <div className="flex items-center gap-2 text-primary font-bold">
                                     <Zap className="animate-pulse" /> LIVE HIGHLIGHTS
                                 </div>
-                                <h2 className="text-3xl font-serif font-bold">Relive the Experience</h2>
-                                <p className="text-muted-foreground">
+                                <h2 className="text-3xl font-serif font-bold text-black">Relive the Experience</h2>
+                                <p className="text-black">
                                     Watch the key moments from our scientific sessions and the vibrant interaction
                                     between experts and delegates.
                                 </p>
@@ -129,8 +129,8 @@ const Conference2024 = () => {
                     {/* Block 4: Text + Info Box */}
                     <div className="grid lg:grid-cols-3 gap-12">
                         <div className="lg:col-span-2 space-y-6">
-                            <h2 className="text-4xl font-serif font-bold">Beyond the Lecture Halls</h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
+                            <h2 className="text-4xl font-serif font-bold text-black">Beyond the Lecture Halls</h2>
+                            <p className="text-lg text-black leading-relaxed">
                                 CGCON 2024 fostered strong professional networking and mentorship opportunities.
                                 Participants connected with pioneers in cosmetic gynecology, explored training pathways,
                                 and discussed future research directions that will help shape the discipline
@@ -162,8 +162,8 @@ const Conference2024 = () => {
             <section className="py-24 bg-card">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-                        <h2 className="text-4xl font-serif font-bold">Event <span className="text-accent italic">Gallery</span></h2>
-                        <p className="text-muted-foreground max-w-xs text-right">Capturing the smiles and scientific milestones of CGCON 2024.</p>
+                        <h2 className="text-4xl font-serif font-bold text-black">Event <span className="text-accent italic">Gallery</span></h2>
+                        <p className="text-black max-w-xs text-right">Capturing the smiles and scientific milestones of CGCON 2024.</p>
                     </div>
 
                     <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
@@ -184,8 +184,8 @@ const Conference2024 = () => {
             <section className="py-20 text-center">
                 <div className="container mx-auto px-6">
                     <Heart className="w-12 h-12 text-primary mx-auto mb-6" />
-                    <h2 className="text-3xl font-serif font-bold mb-4">Ready for the Next Chapter?</h2>
-                    <p className="text-muted-foreground mb-8">The legacy of CGCON 2024 continues to inspire our upcoming editions.</p>
+                    <h2 className="text-3xl font-serif font-bold text-black mb-4">Ready for the Next Chapter?</h2>
+                    <p className="text-black mb-8">The legacy of CGCON 2024 continues to inspire our upcoming editions.</p>
                 </div>
             </section>
         </Layout>

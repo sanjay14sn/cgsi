@@ -18,9 +18,9 @@ const PresidentMessage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-serif font-bold leading-tight text-primary"
+              className="text-4xl md:text-5xl font-serif font-bold leading-tight text-black"
             >
-              President's <span className="text-accent">Message</span>
+              President's <span className="text-primary">Message</span>
             </motion.h2>
 
             <motion.div
@@ -32,14 +32,23 @@ const PresidentMessage = () => {
             >
               {/* Large Quote Mark */}
               <Quote className="absolute -top-6 -left-6 w-16 h-16 opacity-20 text-secondary" />
+
               <blockquote className="text-lg leading-relaxed pl-8 border-l-2 border-primary/20 italic text-black font-semibold">
-                "The Cosmetic Gynecology Society of India (CGSI) has been formed with a shared vision to develop this evolving subspecialty in a structured, ethical, and evidence-based manner."
-                <br />
-                <br />
-                "The primary goal of the society is to promote scientific education, formulate clinical guidelines, encourage research, and create a strong academic and professional platform for clinicians who are practicing or aspiring to practice cosmetic gynecology in India, while prioritizing patient safety and ethical practice."
+                <span className="block text-2xl mb-4 not-italic font-bold">
+                  Welcome to the Cosmetic Gynecology Society of India (CGSI).
+                </span>
+
+                "It gives me immense pleasure to welcome you to CGSI, a professional platform dedicated to advancing cosmetic, functional, and regenerative gynecology in India through education, innovation, ethical practice, and scientific excellence."
+                <br /><br />
+                "Women’s intimate healthcare is an evolving multidisciplinary field that deserves greater awareness, structured training, evidence-based practice, and compassionate patient-centered care. CGSI aims to create a strong academic and professional community committed to advancing safe, ethical, and scientific practice in this specialty."
+                <br /><br />
+                "Through CMEs, workshops, conferences, hands-on training, research initiatives, and academic collaboration, we strive to empower healthcare professionals with advanced knowledge and clinical skills while fostering innovation and professional exchange."
+                <br /><br />
+                "Our vision is to enhance women’s confidence, sexual wellbeing, quality of life, and overall intimate healthcare outcomes with dignity, compassion, and responsibility."
+                <br /><br />
+                "I warmly invite gynecologists, multidisciplinary healthcare professionals, educators, and researchers to join us in shaping the future of intimate healthcare in India."
               </blockquote>
             </motion.div>
-
             {/* Signature Area - Increased size to be "little bit big" */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -59,10 +68,10 @@ const PresidentMessage = () => {
                 />
               </div>
               <div className="space-y-1">
-                <div className="font-serif font-bold text-3xl md:text-4xl text-primary">
+                <div className="font-serif font-bold text-3xl md:text-4xl text-black">
                   Dr. Deepa Ganesh
                 </div>
-                <div className="text-lg md:text-xl font-bold uppercase tracking-widest text-muted-foreground opacity-80">
+                <div className="text-lg md:text-xl font-bold uppercase tracking-widest text-black opacity-80">
                   President
                 </div>
               </div>

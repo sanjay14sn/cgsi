@@ -1,136 +1,151 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, MapPin, Shield, Zap, Award } from "lucide-react";
+import { ArrowUpRight, Calendar, MapPin, Award, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 const events = [
   {
     id: 1,
-    title: "CGSI South Zone Conclave 2026",
-    description: "The premier regional gathering of the Cosmetic Gynaecology Society of India. Focusing on 'Innovation in Intimate Wellness', featuring masterclasses on regenerative medicine and surgical art.",
-    date: "April 24–26, 2026",
-    location: "ITC Grand Chola, Chennai",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
-    category: "Regional Congress"
+    title: "Inspire Series: Aesthetic & Functional Gynaecology",
+    description: "In association with ISAR and CGSI.",
+    date: "January 07, 2026",
+    location: "Online / Virtual",
+    image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778324119/ChatGPT_Image_May_9_2026_04_24_38_PM_ja0nyk.png",
+    category: "Webinar"
   },
   {
     id: 2,
     title: "Hands-on Laser & EBD Workshop",
-    description: "A certified intensive workshop focusing on Energy-Based Devices (EBD) and CO2 Laser applications in functional gynaecology. Includes live patient demonstrations and safety protocols.",
-    date: "June 12, 2026",
-    location: "Apollo Hospitals, Chennai",
-    image: "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=800&q=80",
-    category: "Skill Workshop"
+    description: "Redefining Menopause Care: The Role of Cosmetic & Functional Gynecology",
+    date: "14th February, 2026",
+    location: "Hotel Savera, Chennai",
+    image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778325186/ChatGPT_Image_May_9_2026_04_42_37_PM_bwq4h3.png",
+    category: "Seminar"
   },
   {
     id: 3,
     title: "Mastering Aesthetic Gynaecology (MAG)",
-    description: "An advanced CME programme designed for senior practitioners, covering surgical labiaplasty, fat grafting, and the business of aesthetic practice within the Indian regulatory framework.",
-    date: "September 19–20, 2026",
-    location: "Le Royal Méridien, Chennai",
-    image: "https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?auto=format&fit=crop&w=800&q=80",
-    category: "CME"
+    description: "Functional & Aesthetic Management of Vulvar Conditions",
+    date: "28th March, 2026",
+    location: "Online / Virtual",
+    image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778325586/ChatGPT_Image_May_9_2026_04_48_52_PM_vljkpu.png",
+    category: "Webinar"
   },
 ];
 
 const EventsSection = () => {
   return (
-    <section data-section="events" className="py-24 relative overflow-hidden bg-background">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
+    <section className="py-24 bg-slate-50/50">
+      <div className="container mx-auto px-6">
 
-      <div className="container mx-auto px-6 relative z-10">
-
-        {/* ================= SECTION HEADER ================= */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
+        {/* Upcoming Conference Banner Section */}
+        <div className="flex flex-col items-center mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary mx-auto"
+            className="w-full max-w-4xl bg-white p-4 rounded-[2rem] shadow-xl border border-blue-100 relative overflow-hidden"
           >
-            <Award className="w-4 h-4" />
-            <span className="text-xs font-bold uppercase tracking-widest">Academic Calendar </span>
+            {/* Decorative Background Element */}
+            <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-50 rounded-full blur-3xl" />
+
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="flex items-center gap-2 mb-6">
+                <Sparkles className="w-5 h-5 text-amber-500" />
+                <h2 className="text-2xl md:text-3xl font-black text-slate-800 tracking-tight uppercase">
+                  Upcoming <span className="text-blue-600">Conference</span>
+                </h2>
+                <Sparkles className="w-5 h-5 text-amber-500" />
+              </div>
+
+              <div className="relative group max-w-2xl w-full">
+                {/* Image Border/Glow effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+
+                <img
+                  src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778474503/WhatsApp_Image_2026-05-11_at_10.08.46_AM_wbghqg.jpg"
+                  alt="Main Conference Banner"
+                  className="relative rounded-xl shadow-2xl w-full h-auto object-cover border-4 border-white transition-transform duration-500 hover:scale-[1.01]"
+                />
+              </div>
+            </div>
           </motion.div>
-
-
-
-
         </div>
 
-        {/* ================= EVENTS GRID ================= */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Section Header for Calendar */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 mb-4"
+          >
+            <Award className="w-4 h-4" />
+            <span className="text-xs font-bold uppercase tracking-tighter">Academic Calendar 2026</span>
+          </motion.div>
+          <h2 className="text-4xl font-bold text-slate-900 tracking-tight">CGSI Specialized Events</h2>
+          <p className="mt-4 text-slate-500">Join our curated sessions led by industry experts</p>
+        </div>
+
+        {/* Events Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.map((event, index) => (
             <motion.div
               key={event.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group relative rounded-[2rem] overflow-hidden bg-card border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl"
+              className="group flex flex-col h-[600px] rounded-[2.5rem] overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500"
             >
-              {/* Image Header */}
-              <div className="relative h-60 overflow-hidden">
+              {/* Image Container */}
+              <div className="relative w-full h-[65%] bg-slate-100 flex items-center justify-center overflow-hidden">
                 <img
                   src={event.image}
                   alt={event.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-                <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white border-t border-white/20 pt-4">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-primary" />
-                    <span className="text-sm font-medium">{event.date}</span>
-                  </div>
-                  <span className="px-3 py-1 rounded-full bg-primary/20 text-[10px] font-bold uppercase border border-primary/30 backdrop-blur-md">
+                <div className="absolute top-4 left-4 right-4 flex justify-between items-start pointer-events-none">
+                  <span className="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] px-3 py-1.5 rounded-full font-bold shadow-sm flex items-center gap-1.5">
+                    <Calendar className="w-3 h-3 text-blue-600" />
+                    {event.date}
+                  </span>
+                  <span className="bg-blue-600 text-white text-[10px] px-3 py-1.5 rounded-full font-bold shadow-md uppercase tracking-wider">
                     {event.category}
                   </span>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-8 space-y-4">
-                <div className="flex items-center gap-2 font-bold text-xs uppercase tracking-wider text-primary">
-                  <MapPin className="w-4 h-4" />
-                  <span>{event.location}</span>
+              {/* Content Body */}
+              <div className="p-8 flex flex-col h-[35%] justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-blue-600 mb-3">
+                    <MapPin className="w-3.5 h-3.5" />
+                    <span className="text-[11px] font-bold uppercase tracking-widest">{event.location}</span>
+                  </div>
+
+                  <h3 className="text-xl font-extrabold mb-3 text-slate-900 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
+                    {event.title}
+                  </h3>
+
+                  <p className="text-slate-500 text-sm line-clamp-2 leading-relaxed">
+                    {event.description}
+                  </p>
                 </div>
 
-                <h3 className="text-2xl font-bold leading-tight text-foreground group-hover:text-primary transition-colors">
-                  {event.title}
-                </h3>
-
-                <p className="text-sm leading-relaxed text-black line-clamp-3 font-semibold">
-                  {event.description}
-                </p>
-
-                <div className="pt-4 flex items-center justify-between">
+                <div className="flex items-center justify-end">
                   <Link
                     to={`/events/${event.id}`}
-                    className="inline-flex items-center gap-2 font-bold text-sm text-foreground hover:text-primary transition-colors"
+                    className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-900 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-inner"
                   >
-                    Register Now
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowUpRight className="w-6 h-6" />
                   </Link>
-                  <div className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center group-hover:bg-primary transition-all">
-                    <ArrowRight className="w-5 h-5 group-hover:text-white -rotate-45 group-hover:rotate-0 transition-transform" />
-                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* ================= VIEW ALL BUTTON ================= */}
-        <div className="text-center mt-16">
-          <Link
-            to="/events"
-            className="inline-flex items-center gap-3 px-10 py-4 rounded-full text-primary-foreground font-bold bg-primary hover:bg-primary/90 transition-all hover:shadow-lg shadow-primary/25"
-          >
-            View Full Calendar
-            <ArrowRight className="w-5 h-5" />
-          </Link>
         </div>
       </div>
     </section>

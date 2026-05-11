@@ -11,6 +11,7 @@ import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Gallery from "./pages/Gallery";
+import GalleryAlbum from "./pages/GalleryAlbum";
 import BecomeMember from "./pages/BecomeMember";
 import Conference from "./pages/Conference";
 import Newsletter from "./pages/Newsletter";
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/programs" element={<Programs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/gallery/:albumId" element={<GalleryAlbum />} />
             <Route path="/become-member" element={<BecomeMember />} />
             <Route path="/conference" element={<Conference />} />
             <Route path="/newsletter" element={<Newsletter />} />

@@ -64,10 +64,11 @@ const HeroSection = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed text-slate-900 font-bold px-2"
             >
-              The Cosmetic Gynecology Society of India (CGSI) is a professional organization dedicated to advancing cosmetic and functional gynecology through education, clinical training, and evidence-based practice.
+              The Cosmetic Gynecology Society of India (CGSI) is a professional organization dedicated to advancing cosmetic, functional, and regenerative gynecology through education, clinical training, scientific research, and evidence-based practice.
+
               <br />
               <br />
-              We promote collaboration, uphold ethical standards, and strive to enhance the quality and safety of women’s intimate healthcare across India.
+              We promote multidisciplinary collaboration, uphold ethical standards, and strive to enhance the quality, safety, and advancement of women’s intimate healthcare across India.
             </motion.p>
 
 

@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
 
           {/* Grid Content */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Brand */}
             <div className="space-y-5">
               <Link to="/" className="flex items-center gap-3 group">
@@ -77,30 +77,8 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Programs */}
-            <div>
-              <h4 className="text-lg font-serif font-bold mb-4">Our Programs</h4>
-              <ul className="space-y-2">
-                {[
-                  "CME Meetings",
-                  "Clinical Workshops",
-                  "Health Camps",
-                  "Awareness Programs",
-                  "Training Sessions",
-                ].map((item) => (
-                  <li key={item}>
-                    <Link
-                      to="/programs"
-                      className="text-primary-foreground/70 hover:text-primary transition-colors duration-300"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact */}
+            {/* Spacer / Empty Column OR adjustment of grid-cols */}
+            {/* We'll adjust grid-cols in the main wrapper, or leave it as an empty div/shift */}
             <div>
               <h4 className="text-lg font-serif font-bold mb-4">Contact Us</h4>
               <ul className="space-y-3">
@@ -117,7 +95,7 @@ const Footer = () => {
                     href="mailto:cgsi@yahoo.com"
                     className="text-primary-foreground/70 hover:text-primary transition-colors"
                   >
-                    cgsi@yahoo.com
+                    info.thecgsi@gmail.com
                   </a>
                 </li>
 

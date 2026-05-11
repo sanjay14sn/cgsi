@@ -59,10 +59,10 @@ const Conference2025 = () => {
                             <Sparkles className="w-4 h-4" />
                             <span className="text-xs font-bold uppercase tracking-widest italic">Organizing Chairperson Message</span>
                         </div>
-                        <h1 className="text-6xl md:text-8xl font-serif font-bold text-foreground leading-tight mb-8">
+                        <h1 className="text-6xl md:text-8xl font-serif font-bold text-black leading-tight mb-8">
                             CGCON <span className="text-primary italic">2025</span>
                         </h1>
-                        <div className="flex flex-wrap gap-8 text-lg font-medium text-muted-foreground">
+                        <div className="flex flex-wrap gap-8 text-lg font-medium text-black">
                             <span className="flex items-center gap-3"><Calendar className="text-primary" /> 2025 </span>
                             <span className="flex items-center gap-3"><MapPin className="text-primary" /> Tamil Nadu</span>
                         </div>
@@ -77,8 +77,8 @@ const Conference2025 = () => {
                     {/* Block 1: Intro + 2 Images */}
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
-                            <h2 className="text-4xl font-serif font-bold">Leading the Way</h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed text-justify italic border-l-4 border-primary pl-6">
+                            <h2 className="text-4xl font-serif font-bold text-black">Leading the Way</h2>
+                            <p className="text-lg text-black leading-relaxed text-justify italic border-l-4 border-primary pl-6">
                                 "Honored to serve as Organizing Chairperson of CGCON 2025 and be part of a landmark gathering advancing cosmetic and functional gynecology in India. The congress brought together leading national and international experts for three days of rich academic exchange, innovation, and collaborative learning."
                             </p>
                         </div>
@@ -96,8 +96,8 @@ const Conference2025 = () => {
                         </div>
                         <div className="space-y-6 order-1 lg:order-2">
                             <div className="inline-flex items-center gap-2 text-primary font-bold"><Shield className="w-5 h-5" /> SOCIETY LAUNCH</div>
-                            <h2 className="text-4xl font-serif font-bold">A Proud Milestone</h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed text-justify">
+                            <h2 className="text-4xl font-serif font-bold text-black">A Proud Milestone</h2>
+                            <p className="text-lg text-black leading-relaxed text-justify">
                                 A significant step forward was the launch of the **Cosmetic Gynecology Society of India (CGSI)** —
                                 a step forward in strengthening ethical practice, evidence-based training, and safe,
                                 accessible intimate healthcare for women across the nation.
@@ -108,7 +108,7 @@ const Conference2025 = () => {
                     {/* VIDEO SECTION - Feature both videos with Autoplay */}
                     {/* VIDEO SECTION - Feature both videos with Autoplay Fix */}
                     <div className="bg-secondary/10 rounded-[3rem] p-8 md:p-12">
-                        <h2 className="text-3xl font-serif font-bold mb-8 text-center">
+                        <h2 className="text-3xl font-serif font-bold text-black mb-8 text-center">
                             Congress Highlights & <span className="text-primary italic">Reflections</span>
                         </h2>
                         <div className="grid lg:grid-cols-2 gap-8">
@@ -139,8 +139,8 @@ const Conference2025 = () => {
                     {/* Block 3: Scientific Sessions + Side Grid */}
                     <div className="grid lg:grid-cols-3 gap-12">
                         <div className="lg:col-span-2 space-y-6">
-                            <h2 className="text-4xl font-serif font-bold">Scientific Sessions</h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
+                            <h2 className="text-4xl font-serif font-bold text-black">Scientific Sessions</h2>
+                            <p className="text-lg text-black leading-relaxed">
                                 From sessions on pelvic wellness, regenerative therapies, and emerging technologies to meaningful
                                 discussions that help normalize conversations around vulvar health, CGCON 2025 reflected our
                                 shared commitment to elevating women’s healthcare standards.
@@ -166,7 +166,7 @@ const Conference2025 = () => {
             <section className="py-24 bg-card">
                 <div className="container mx-auto px-6">
                     <div className="flex items-center gap-4 mb-16">
-                        <h2 className="text-4xl font-serif font-bold">Photo <span className="text-primary italic">Gallery</span></h2>
+                        <h2 className="text-4xl font-serif font-bold text-black">Photo <span className="text-primary italic">Gallery</span></h2>
                         <div className="h-px flex-1 bg-border" />
                     </div>
 
@@ -196,7 +196,7 @@ const Conference2025 = () => {
                         ].map((stat, i) => (
                             <div key={i}>
                                 <p className="text-3xl font-bold text-primary">{stat.value}</p>
-                                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mt-1">{stat.label}</p>
+                                <p className="text-xs font-bold uppercase tracking-widest text-black mt-1">{stat.label}</p>
                             </div>
                         ))}
                     </div>
