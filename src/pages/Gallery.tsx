@@ -12,17 +12,18 @@ const albums = [
     cover: "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408323/79ec1af2-98c1-4f41-97c1-1a9a0f5f54db_3_l2gld2.jpg"
   },
   {
+    id: "2024",
+    title: "CGCON 2024",
+    count: images2024.length,
+    cover: "https://res.cloudinary.com/ddibq0tya/image/upload/v1771407195/IMG_2914_agmgkd.jpg"
+  },
+  {
     id: "2025",
     title: "CGCON 2025",
     count: images2025.length,
     cover: "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408327/DOT01099_vy0py7.jpg"
   },
-  {
-    id: "2024",
-    title: "CGCON 2024",
-    count: images2024.length,
-    cover: "https://res.cloudinary.com/ddibq0tya/image/upload/v1771407195/IMG_2914_agmgkd.jpg"
-  }
+
 ];
 
 const GalleryPage = () => {
@@ -30,7 +31,7 @@ const GalleryPage = () => {
     <Layout>
       <div className="bg-[#f8f8f8] min-h-screen">
         <section className="pt-32 pb-20 px-4 md:px-8 container mx-auto">
-          
+
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-black mb-4">Photo Albums</h1>
             <p className="text-lg text-muted-foreground">Relive the moments from our historic events</p>
@@ -38,20 +39,20 @@ const GalleryPage = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
             {albums.map((album) => (
-              <Link 
-                to={`/gallery/${album.id}`} 
+              <Link
+                to={`/gallery/${album.id}`}
                 key={album.id}
                 className="group block relative"
               >
                 {/* Folder background tab effect */}
                 <div className="absolute -top-3 left-4 w-1/3 h-6 bg-primary/20 rounded-t-xl transition-colors duration-300 group-hover:bg-primary/40"></div>
-                
+
                 <div className="relative bg-white rounded-2xl rounded-tl-none shadow-md overflow-hidden border border-border group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
-                  
+
                   {/* Cover image area */}
                   <div className="relative h-56 md:h-64 overflow-hidden bg-slate-100">
-                    <img 
-                      src={album.cover.replace('/upload/', '/upload/q_auto,f_auto,w_800/')} 
+                    <img
+                      src={album.cover.replace('/upload/', '/upload/q_auto,f_auto,w_800/')}
                       alt={album.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
