@@ -18,6 +18,17 @@ const eventDetails: Record<
         poster?: string;
     }
 > = {
+    "1": {
+        title: "Inspire Series: Aesthetic & Functional Gynaecology",
+        subtitle: "In association with ISAR and CGSI.",
+        date: "January 07, 2026",
+        location: "Online / Virtual",
+        category: "Webinar",
+        images: [
+            "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778777841/WhatsApp_Image_2026-05-09_at_5.02.22_PM_t5bz7w.jpg",
+            "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778777833/3cdf0ee6-dd91-4f90-9150-41cd881ee39d_qb2ewq.jpg"
+        ],
+    },
     "2": {
         title: "Hands-on Laser & EBD Workshop",
         subtitle: "Redefining Menopause Care: The Role of Cosmetic & Functional Gynecology",
@@ -57,7 +68,7 @@ const eventDetails: Record<
         title: "Upcoming Event",
         subtitle: "Stay tuned for details on our next exclusive CGSI event.",
         date: "Coming Soon",
-        location: "To Be Announced",
+        location: "Saturday 23 May 2026  ",
         category: "Upcoming",
         isUpcoming: true,
         poster: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778484394/Screenshot_2026-05-11_at_12.56.22_PM_xcec1v.png",

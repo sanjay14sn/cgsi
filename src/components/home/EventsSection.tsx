@@ -48,8 +48,8 @@ const events = [
     id: 5,
     title: "Upcoming Event",
     description: "Stay tuned for details on our next exclusive CGSI event.",
-    date: "Coming Soon",
-    location: "To Be Announced",
+    date: "Saturday 23 May 2026",
+    location: " Online / Virtual ",
     image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778484394/Screenshot_2026-05-11_at_12.56.22_PM_xcec1v.png",
     category: "Upcoming",
     isUpcoming: true,
@@ -108,8 +108,8 @@ const EventsSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className={`group flex flex-col h-[600px] rounded-[2.5rem] overflow-hidden bg-white border shadow-sm hover:shadow-xl transition-all duration-500 ${event.isUpcoming
-                  ? "border-primary ring-2 ring-primary/30 ring-offset-2"
-                  : "border-slate-200"
+                ? "border-primary ring-2 ring-primary/30 ring-offset-2"
+                : "border-slate-200"
                 }`}
             >
               {/* Image Container */}
@@ -128,8 +128,8 @@ const EventsSection = () => {
                   </span>
                   <span
                     className={`text-[10px] px-3 py-1.5 rounded-full font-bold shadow-md uppercase tracking-wider ${event.isUpcoming
-                        ? "bg-primary text-white animate-pulse"
-                        : "bg-primary text-white"
+                      ? "bg-primary text-white animate-pulse"
+                      : "bg-primary text-white"
                       }`}
                   >
                     {event.category}

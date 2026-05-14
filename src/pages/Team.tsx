@@ -790,11 +790,11 @@ const Team = () => {
             <div className="h-px w-24 bg-primary/40 mx-auto mt-6" />
           </div>
 
-          <div className="w-full max-w-[95%] mx-auto bg-white rounded-3xl shadow-xl border border-border/50 overflow-hidden">
-            <div className="overflow-x-auto w-full">
-              <table className="w-full text-left border-collapse">
-                <thead className="bg-[#1a365d] text-white sticky top-0 z-10 shadow-md">
-                  <tr>
+          <div className="w-full max-w-[95%] lg:max-w-[100%] mx-auto bg-slate-50 md:bg-white rounded-3xl md:shadow-xl md:border border-border/50 overflow-hidden">
+            <div className="w-full">
+              <table className="w-full text-left border-collapse block md:table">
+                <thead className="bg-[#1a365d] text-white shadow-md hidden md:table-header-group">
+                  <tr className="md:table-row">
                     <th className="py-5 px-6 font-bold text-sm uppercase tracking-wider whitespace-nowrap">S.No</th>
                     <th className="py-5 px-6 font-bold text-sm uppercase tracking-wider whitespace-nowrap">Doctor Name</th>
                     <th className="py-5 px-6 font-bold text-sm uppercase tracking-wider whitespace-nowrap">Membership No.</th>
@@ -802,14 +802,29 @@ const Team = () => {
                     <th className="py-5 px-6 font-bold text-sm uppercase tracking-wider whitespace-nowrap">State</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-border">
+                <tbody className="divide-y md:divide-y-0 divide-transparent block md:table-row-group">
                   {members.map((m, idx) => (
-                    <tr key={idx} className="hover:bg-muted/30 transition-colors">
-                      <td className="py-4 px-6 text-sm font-semibold text-black">{m.sno}</td>
-                      <td className="py-4 px-6 text-sm font-bold text-black whitespace-nowrap">{m.name}</td>
-                      <td className="py-4 px-6 text-sm font-bold text-primary">CGSI-{String(m.memNo).padStart(3, '0')}</td>
-                      <td className="py-4 px-6 text-sm font-semibold text-black">{m.city || "-"}</td>
-                      <td className="py-4 px-6 text-sm font-semibold text-black">{m.state || "-"}</td>
+                    <tr key={idx} className="block md:table-row bg-white rounded-2xl shadow-sm md:shadow-none border border-slate-200 md:border-b md:border-border mb-4 md:mb-0 p-4 md:p-0 hover:bg-muted/30 transition-colors">
+                      <td className="flex justify-between items-center md:table-cell py-2 md:py-4 px-2 md:px-6 text-sm border-b md:border-none border-slate-100">
+                        <span className="md:hidden font-bold text-slate-400 uppercase text-[10px] tracking-wider">S.No</span>
+                        <span className="font-semibold text-black">{m.sno}</span>
+                      </td>
+                      <td className="flex justify-between items-center md:table-cell py-2 md:py-4 px-2 md:px-6 text-sm border-b md:border-none border-slate-100">
+                        <span className="md:hidden font-bold text-slate-400 uppercase text-[10px] tracking-wider">Doctor Name</span>
+                        <strong className="font-bold text-black md:whitespace-nowrap max-w-[65%] md:max-w-none text-right md:text-left">{m.name}</strong>
+                      </td>
+                      <td className="flex justify-between items-center md:table-cell py-2 md:py-4 px-2 md:px-6 text-sm border-b md:border-none border-slate-100">
+                        <span className="md:hidden font-bold text-slate-400 uppercase text-[10px] tracking-wider">Membership No.</span>
+                        <span className="font-bold text-primary">CGSI-{String(m.memNo).padStart(3, '0')}</span>
+                      </td>
+                      <td className="flex justify-between items-center md:table-cell py-2 md:py-4 px-2 md:px-6 text-sm border-b md:border-none border-slate-100">
+                        <span className="md:hidden font-bold text-slate-400 uppercase text-[10px] tracking-wider">City</span>
+                        <span className="font-semibold text-slate-700">{m.city || "-"}</span>
+                      </td>
+                      <td className="flex justify-between items-center md:table-cell py-2 md:py-4 px-2 md:px-6 text-sm">
+                        <span className="md:hidden font-bold text-slate-400 uppercase text-[10px] tracking-wider">State</span>
+                        <span className="font-semibold text-slate-700">{m.state || "-"}</span>
+                      </td>
                     </tr>
                   ))}
                 </tbody>

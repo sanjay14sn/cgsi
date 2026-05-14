@@ -12,10 +12,18 @@ const HeroSection = () => {
 
       {/* BACKGROUND */}
       <div className="absolute inset-0 z-0">
+        {/* Desktop Background Image */}
         <img
           src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778056042/WhatsApp_Image_2026-05-06_at_1.56.06_PM_dt01eu.jpg"
           alt="CGSI Professional Background"
-          className="w-full h-full object-cover opacity-70"
+          className="hidden md:block w-full h-full object-cover opacity-70"
+        />
+
+        {/* Mobile Background Image */}
+        <img
+          src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778777455/d01f81ca-7897-4dbf-bb2e-c790729287fa_f4et1n.png"
+          alt="CGSI Professional Background Mobile"
+          className="block md:hidden w-full h-full object-cover opacity-70"
         />
 
         <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
@@ -70,11 +78,7 @@ const HeroSection = () => {
               <br />
               We promote multidisciplinary collaboration, uphold ethical standards, and strive to enhance the quality, safety, and advancement of women’s intimate healthcare across India.
             </motion.p>
-
-
-
           </div>
-
         </div>
       </div>
     </section>
