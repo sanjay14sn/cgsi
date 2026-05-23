@@ -55,10 +55,8 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.05]"
             >
-              Cosmetic Gynecology <br className="hidden sm:block" />
-              <span className="hidden sm:block">
-                Society of India
-              </span>
+              Cosmetic Gynecology <br />
+              Society of India
             </motion.h1>
 
           </div>
