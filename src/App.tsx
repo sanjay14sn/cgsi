@@ -17,6 +17,7 @@ import Conference from "./pages/Conference";
 import Newsletter from "./pages/Newsletter";
 import GalleryVideos from "./pages/GalleryVideos";
 import GalleryMedia from "./pages/GalleryMedia";
+import Conference2026 from "./pages/Conference2026";
 import Conference2025 from "./pages/Conference2025";
 import Conference2024 from "./pages/Conference2024";
 import EventDetail from "./pages/EventDetail";
@@ -47,6 +48,7 @@ const App = () => (
             <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/gallery-videos" element={<GalleryVideos />} />
             <Route path="/gallery-media" element={<GalleryMedia />} />
+            <Route path="/conference-2026" element={<Conference2026 />} />
             <Route path="/conference-2025" element={<Conference2025 />} />
             <Route path="/conference-2024" element={<Conference2024 />} />
             <Route path="/events/:id" element={<EventDetail />} />

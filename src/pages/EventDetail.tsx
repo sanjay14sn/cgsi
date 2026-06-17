@@ -64,6 +64,20 @@ const eventDetails: Record<
             "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778483599/WhatsApp_Image_2026-05-11_at_12.32.57_PM_lueace.jpg",
         ],
     },
+    "4": {
+        title: "Modern Aesthetic Gynecology",
+        subtitle: "Monthly CME focused on the latest modalities in menopause care and aesthetic gynecology.",
+        date: "18th April, 2026",
+        location: "Marriott, Chennai",
+        category: "Seminar",
+        images: [
+            "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676699/71787968-1405-4b80-ac38-1ffa0d1e81ec_zktrd1.jpg",
+            "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676681/9770fe90-8912-4fa3-a770-3d506cee046f_yrugga.jpg",
+            "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676666/de2a622e-630a-4534-ae38-03715e2dea7b_ikwgd0.jpg",
+            "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676651/728c8d21-edc2-4606-b35b-1d00f4d53cf1_mvd4bm.jpg",
+            "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676638/30b0545e-8f2a-4175-ad85-057fa1ed6c3f_fgm3mc.jpg",
+        ],
+    },
     "5": {
         title: "Upcoming Event",
         subtitle: "Stay tuned for details on our next exclusive CGSI event.",

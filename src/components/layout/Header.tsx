@@ -34,6 +34,7 @@ const navItems: NavItem[] = [
       {
         name: "CGCON",
         dropdown: [
+          { name: "2026", path: "/conference-2026" },
           { name: "2025", path: "/conference-2025" },
           { name: "2024", path: "/conference-2024" },
         ],

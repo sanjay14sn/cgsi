@@ -48,7 +48,15 @@ export const images2025 = [
   "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408400/DSC09904_lu7xvu.jpg"
 ];
 
-export const allPhotos = [...images2025, ...images2024];
+export const imagesModernAestheticGynecology = [
+    "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676699/71787968-1405-4b80-ac38-1ffa0d1e81ec_zktrd1.jpg",
+    "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676681/9770fe90-8912-4fa3-a770-3d506cee046f_yrugga.jpg",
+    "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676666/de2a622e-630a-4534-ae38-03715e2dea7b_ikwgd0.jpg",
+    "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676651/728c8d21-edc2-4606-b35b-1d00f4d53cf1_mvd4bm.jpg",
+    "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676638/30b0545e-8f2a-4175-ad85-057fa1ed6c3f_fgm3mc.jpg",
+];
+
+export const allPhotos = [...images2025, ...images2024, ...imagesModernAestheticGynecology];
 
 const GalleryAlbum = () => {
   const { albumId } = useParams();
@@ -62,6 +70,9 @@ const GalleryAlbum = () => {
   } else if (albumId === "2024") {
     imagesToDisplay = images2024;
     title = "CGCON 2024";
+  } else if (albumId === "modern-aesthetic-gynecology") {
+    imagesToDisplay = imagesModernAestheticGynecology;
+    title = "Modern Aesthetic Gynecology";
   } else if (albumId === "all") {
     imagesToDisplay = allPhotos;
     title = "All Photos";
@@ -85,7 +96,14 @@ const GalleryAlbum = () => {
               <FolderOpen className="text-secondary w-8 h-8" />
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-black">{title}</h1>
             </div>
-            <p className="text-muted-foreground mt-4 font-medium">{imagesToDisplay.length} Photos Overview</p>
+            <p className="text-muted-foreground mt-4 font-medium">
+              {imagesToDisplay.length} Photos Overview
+              {albumId === "modern-aesthetic-gynecology" && (
+                <span className="block text-sm mt-1">
+                  Marriott, Chennai · Monthly CME on menopause care &amp; aesthetic gynecology
+                </span>
+              )}
+            </p>
           </div>
 
           {/* CSS Columns Masonry */}

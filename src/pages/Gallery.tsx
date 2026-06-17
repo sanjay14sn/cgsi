@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Folder, Image as ImageIcon } from "lucide-react";
-import { images2024, images2025, allPhotos } from "./GalleryAlbum";
+import { images2024, images2025, imagesModernAestheticGynecology, allPhotos } from "./GalleryAlbum";
 
 const albums = [
   {
@@ -10,6 +10,12 @@ const albums = [
     title: "All Photos",
     count: allPhotos.length,
     cover: "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408323/79ec1af2-98c1-4f41-97c1-1a9a0f5f54db_3_l2gld2.jpg"
+  },
+  {
+    id: "modern-aesthetic-gynecology",
+    title: "Modern Aesthetic Gynecology",
+    count: imagesModernAestheticGynecology.length,
+    cover: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676699/71787968-1405-4b80-ac38-1ffa0d1e81ec_zktrd1.jpg",
   },
   {
     id: "2024",
