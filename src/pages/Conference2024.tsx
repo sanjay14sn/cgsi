@@ -27,7 +27,13 @@ const Conference2024 = () => {
     return (
         <Layout>
             {/* Banner */}
-            
+            <div className="w-full pt-4 lg:pt-12 bg-white">
+                <img
+                    src={`${ASSETS}/Website Banner (1920 x 400 px) (1).png`}
+                    className="w-full h-auto object-contain"
+                    alt="CGCON 2024 — 1st Cosmetic Gynecology Congress"
+                />
+            </div>
 
             {/* Welcome Message */}
             <section className="relative py-16 lg:py-20 overflow-hidden bg-gradient-to-br from-[#fdf8f6] via-white to-[#f0f8f8]">

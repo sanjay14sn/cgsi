@@ -74,9 +74,9 @@ const Conference2025 = () => {
                 <div className="container mx-auto px-6 relative z-10">
                     <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                         <img
-                            src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778057479/6b3a6033-b4e8-44a9-aa71-98bea42dc8b2_zjpno8.jpg"
+                            src="https://lvrii.in/conferences/wp-content/uploads/2025/08/lvrii-logo.png"
                             alt="LVRII Logo"
-                            className="mx-auto mb-16 h-40 object-contain"
+                            className="mx-auto mb-16 h-28 sm:h-32 md:h-40 w-auto max-w-[min(90vw,320px)] object-contain"
                         />
 
                         <h1 className="text-4xl md:text-6xl font-serif font-bold text-black mb-4">
