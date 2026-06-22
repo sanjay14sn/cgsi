@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 const PresidentMessage = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-background">
+    <section className="py-14 sm:py-20 md:py-24 relative overflow-hidden bg-background">
       {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none bg-secondary" />
+      <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none bg-secondary hidden sm:block" />
 
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
 
           {/* ================= CONTENT SIDE ================= */}
           <div className="space-y-8 order-2 lg:order-1">
@@ -18,7 +18,7 @@ const PresidentMessage = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-serif font-bold leading-tight text-black"
+              className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold leading-tight text-black"
             >
               President's <span className="text-primary">Message</span>
             </motion.h2>
@@ -31,10 +31,10 @@ const PresidentMessage = () => {
               className="relative"
             >
               {/* Large Quote Mark */}
-              <Quote className="absolute -top-6 -left-6 w-16 h-16 opacity-20 text-secondary" />
+              <Quote className="hidden sm:block absolute -top-6 -left-6 w-16 h-16 opacity-20 text-secondary" />
 
-              <blockquote className="text-lg leading-relaxed pl-8 border-l-2 border-primary/20 italic text-black font-semibold">
-                <span className="block text-2xl mb-4 not-italic font-bold">
+              <blockquote className="text-base sm:text-lg leading-relaxed pl-4 sm:pl-8 border-l-2 border-primary/20 italic text-black font-semibold">
+                <span className="block text-xl sm:text-2xl mb-4 not-italic font-bold">
                   Welcome to the Cosmetic Gynecology Society of India (CGSI).
                 </span>
 
@@ -55,7 +55,7 @@ const PresidentMessage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="flex items-center gap-6 pt-6"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-6"
             >
               <div className="w-24 h-24 rounded-full overflow-hidden border-4 shadow-lg border-secondary flex-shrink-0">
                 <img
@@ -68,10 +68,10 @@ const PresidentMessage = () => {
                 />
               </div>
               <div className="space-y-1">
-                <div className="font-serif font-bold text-3xl md:text-4xl text-black">
+                <div className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-black">
                   Dr. Deepa Ganesh
                 </div>
-                <div className="text-lg md:text-xl font-bold uppercase tracking-widest text-black opacity-80">
+                <div className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest text-black opacity-80">
                   President
                 </div>
               </div>
@@ -88,11 +88,11 @@ const PresidentMessage = () => {
             className="relative order-1 lg:order-2"
           >
             <div className="relative z-10">
-              <div className="rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white bg-white">
+              <div className="rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white bg-white">
                 <img
                   src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778059451/deepa_wpn93d.png"
                   alt="Presidential Portrait"
-                  className="w-full h-[500px] lg:h-[600px] object-cover object-top"
+                  className="w-full h-[320px] sm:h-[420px] md:h-[500px] lg:h-[600px] object-cover object-top"
                   onError={(e) => {
                     e.currentTarget.src = "https://placehold.co/600x800?text=President+Message";
                   }}

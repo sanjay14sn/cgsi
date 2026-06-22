@@ -4,7 +4,7 @@ import { Calendar, MapPin } from "lucide-react";
 
 const ASSETS = "https://lvrii.in/wp-content/themes/lvrii/assets/congress";
 
-const SponsorSection = ({
+function SponsorSection({
     title,
     children,
     className = "",
@@ -12,14 +12,16 @@ const SponsorSection = ({
     title: string;
     children: React.ReactNode;
     className?: string;
-}) => (
-    <div className={`mt-8 ${className}`}>
-        <h3 className="text-center bg-[#80c0be] text-white mx-auto py-1.5 w-full max-w-[349px] text-[23px]">
-            {title}
-        </h3>
-        <div className="mt-6">{children}</div>
-    </div>
-);
+}) {
+    return (
+        <div className={`mt-8 ${className}`}>
+            <h3 className="text-center bg-[#80c0be] text-white mx-auto py-1.5 w-full max-w-[349px] text-[23px]">
+                {title}
+            </h3>
+            <div className="mt-6">{children}</div>
+        </div>
+    );
+}
 
 const Conference2024 = () => {
     return (

@@ -96,7 +96,7 @@ const Header: React.FC = () => {
       if (item.dropdown) {
         return (
           <DropdownMenuSub key={item.name}>
-            <DropdownMenuSubTrigger className="px-3 py-2 text-sm font-semibold rounded-lg hover:bg-primary/10">
+            <DropdownMenuSubTrigger className="px-3 py-2 text-sm font-semibold rounded-lg hover:bg-primary hover:text-white data-[state=open]:bg-primary data-[state=open]:text-white focus:bg-primary focus:text-white">
               {item.name}
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent className="p-2">
@@ -125,7 +125,7 @@ const Header: React.FC = () => {
           : "bg-white border-b" // Added solid background and border to match "scrolled" size
         }`}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Height is now consistent: h-24 on mobile, h-32 on desktop ALWAYS */}
         <div className="flex items-center justify-between h-24 lg:h-32">
 
@@ -134,7 +134,7 @@ const Header: React.FC = () => {
             <img
               src={logo}
               alt="CGSI Logo"
-              className="h-16 lg:h-24 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-12 sm:h-16 lg:h-24 w-auto max-w-[140px] sm:max-w-none object-contain transition-transform group-hover:scale-105"
             />
           </Link>
 

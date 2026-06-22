@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const upcomingEvents = [
   {
     id: 1,
-    title: "Inspire Series: Aesthetic & Functional Gynaecology",
+    title: "Aesthetic & Functional Gynaecology",
     description: "In association with ISAR and CGSI.",
     date: "January 07, 2026",
     location: "Online / Virtual",
@@ -17,19 +17,19 @@ const upcomingEvents = [
   },
   {
     id: 2,
-    title: "Hands-on Laser & EBD Workshop",
-    description: "Redefining Menopause Care: The Role of Cosmetic & Functional Gynecology",
+    title: "Cosmetic Gynecology Society of India (CGSI)",
+    description: "In collaboration with Chennai Menopause Society (CMS)\nRedefining Menopause Care:\nThe Role of Cosmetic & Functional Gynecology",
     date: "14th February, 2026",
     location: "Hotel Savera, Chennai",
     image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778325186/ChatGPT_Image_May_9_2026_04_42_37_PM_bwq4h3.png",
-    type: "Seminar",
+    type: "CME",
     isUpcoming: false,
     hasGallery: true,
   },
   {
     id: 3,
-    title: "Mastering Aesthetic Gynaecology (MAG)",
-    description: "Functional & Aesthetic Management of Vulvar Conditions",
+    title: "Functional & Aesthetic Management of Vulvar Conditions",
+    description: "Society of Vaginal Surgeons of India - TN Chapter\nin collaboration with\nCosmetic Gynecology Society of India (CGSI)",
     date: "28th March, 2026",
     location: "Online / Virtual",
     image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778325586/ChatGPT_Image_May_9_2026_04_48_52_PM_vljkpu.png",
@@ -42,20 +42,31 @@ const upcomingEvents = [
     title: "Modern Aesthetic Gynecology",
     description: "Monthly CME focused on the latest modalities in menopause care and aesthetic gynecology.",
     date: "18th April, 2026",
-    location: "Marriott, Chennai",
+    location: "Marriott, Madurai",
     image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676699/71787968-1405-4b80-ac38-1ffa0d1e81ec_zktrd1.jpg",
-    type: "Seminar",
+    type: "CME",
     isUpcoming: false,
     hasGallery: true,
   },
   {
     id: 5,
-    title: "Upcoming Event",
-    description: "Stay tuned for details on our next exclusive CGSI event.",
-    date: "Saturday 23 May 2026 ",
-    location: " Online / Virtual ",
+    title: "CGSI Monthly CME – May Edition",
+    description: "Vaginismus & Vulvodynia:\nIntegrating Psychosexual Care into Gynecologic Practice",
+    date: "Saturday 23 May 2026",
+    location: "Online / Virtual",
     image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778484394/Screenshot_2026-05-11_at_12.56.22_PM_xcec1v.png",
-    type: "Upcoming",
+    type: "Webinar",
+    isUpcoming: true,
+    hasGallery: false,
+  },
+  {
+    id: 6,
+    title: "Pre Conference Workshop on\nCosmetic Gynaecology",
+    description: "Kancheepuram Obstetric & Gynecological Society\nin collaboration with\nCosmetic Gynecology Society of India (CGSI)",
+    date: "Saturday 27th June 2026 | 2.00 PM – 4.30 PM",
+    location: "IMA Tambaram",
+    image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782107178/WhatsApp_Image_2026-06-17_at_4.38.30_PM_bqzzgv.jpg",
+    type: "Workshop",
     isUpcoming: true,
     hasGallery: false,
   },
@@ -114,10 +125,10 @@ const Events = () => {
                       {event.type}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 whitespace-pre-line">
                     {event.title}
                   </h3>
-                  <p className="text-slate-600 text-sm mb-6 flex-grow">
+                  <p className="text-slate-600 text-sm mb-6 flex-grow whitespace-pre-line">
                     {event.description}
                   </p>
                   <div className="space-y-2 mb-6">
@@ -150,16 +161,6 @@ const Events = () => {
         </div>
       </section>
 
-
-      {/* --- CTA --- */}
-      <section className="py-12 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-white mb-6">Want to host a CME or Workshop?</h2>
-          <button className="px-8 py-3 bg-white text-primary font-bold rounded-full hover:bg-slate-100 transition-colors shadow-lg">
-            Get in Touch
-          </button>
-        </div>
-      </section>
     </Layout>
   );
 };

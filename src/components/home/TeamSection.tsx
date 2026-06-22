@@ -27,18 +27,18 @@ const teamMembers = [
 
 const TeamSection = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section className="py-14 sm:py-20 md:py-24 bg-background overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
 
         {/* ================= HEADER ================= */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-20 space-y-4"
+          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20 space-y-4"
         >
 
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-primary">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-primary">
             CGSI  <span className="text-accent">TEAM</span>
           </h2>
 
@@ -47,17 +47,17 @@ const TeamSection = () => {
 
         {/* ================= TEAM GRID ================= */}
         {/* Changed lg:grid-cols-4 to lg:grid-cols-3 for 3-member symmetry */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-          {teamMembers.map((member) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 max-w-6xl mx-auto">
+          {teamMembers.map((member, index) => (
             <motion.div
               key={member.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="group relative"
+              className={`group relative ${index === 2 ? "sm:col-span-2 sm:max-w-sm sm:mx-auto lg:col-span-1 lg:max-w-none" : ""}`}
             >
               {/* Image Container */}
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border-4 border-white shadow-xl group-hover:shadow-2xl transition-all duration-500">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl sm:rounded-[2rem] border-4 border-white shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <img
                   src={member.image}
                   alt={member.name}

@@ -19,7 +19,7 @@ const eventDetails: Record<
     }
 > = {
     "1": {
-        title: "Inspire Series: Aesthetic & Functional Gynaecology",
+        title: "Aesthetic & Functional Gynaecology",
         subtitle: "In association with ISAR and CGSI.",
         date: "January 07, 2026",
         location: "Online / Virtual",
@@ -30,11 +30,11 @@ const eventDetails: Record<
         ],
     },
     "2": {
-        title: "Hands-on Laser & EBD Workshop",
-        subtitle: "Redefining Menopause Care: The Role of Cosmetic & Functional Gynecology",
+        title: "Cosmetic Gynecology Society of India (CGSI)",
+        subtitle: "In collaboration with Chennai Menopause Society (CMS)\nRedefining Menopause Care:\nThe Role of Cosmetic & Functional Gynecology",
         date: "14th February, 2026",
         location: "Hotel Savera, Chennai",
-        category: "Seminar",
+        category: "CME",
         images: [
             "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778483261/WhatsApp_Image_2026-05-11_at_11.51.01_AM_cohdrq.jpg",
             "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778483260/WhatsApp_Image_2026-05-11_at_11.50.53_AM_z6ufai.jpg",
@@ -48,8 +48,8 @@ const eventDetails: Record<
         ],
     },
     "3": {
-        title: "Mastering Aesthetic Gynaecology (MAG)",
-        subtitle: "Functional & Aesthetic Management of Vulvar Conditions",
+        title: "Functional & Aesthetic Management of Vulvar Conditions",
+        subtitle: "Society of Vaginal Surgeons of India - TN Chapter\nin collaboration with\nCosmetic Gynecology Society of India (CGSI)",
         date: "28th March, 2026",
         location: "Online / Virtual",
         category: "Webinar",
@@ -68,9 +68,10 @@ const eventDetails: Record<
         title: "Modern Aesthetic Gynecology",
         subtitle: "Monthly CME focused on the latest modalities in menopause care and aesthetic gynecology.",
         date: "18th April, 2026",
-        location: "Marriott, Chennai",
-        category: "Seminar",
+        location: "Marriott, Madurai",
+        category: "CME",
         images: [
+            "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781694504/WhatsApp_Image_2026-06-17_at_4.36.08_PM_nyabqr.jpg",
             "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676699/71787968-1405-4b80-ac38-1ffa0d1e81ec_zktrd1.jpg",
             "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676681/9770fe90-8912-4fa3-a770-3d506cee046f_yrugga.jpg",
             "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676666/de2a622e-630a-4534-ae38-03715e2dea7b_ikwgd0.jpg",
@@ -79,13 +80,23 @@ const eventDetails: Record<
         ],
     },
     "5": {
-        title: "Upcoming Event",
-        subtitle: "Stay tuned for details on our next exclusive CGSI event.",
-        date: "Coming Soon",
-        location: "Saturday 23 May 2026  ",
-        category: "Upcoming",
+        title: "CGSI Monthly CME – May Edition",
+        subtitle: "Vaginismus & Vulvodynia:\nIntegrating Psychosexual Care into Gynecologic Practice",
+        date: "Saturday 23 May 2026",
+        location: "Online / Virtual",
+        category: "Webinar",
         isUpcoming: true,
         poster: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778484394/Screenshot_2026-05-11_at_12.56.22_PM_xcec1v.png",
+        images: [],
+    },
+    "6": {
+        title: "Pre Conference Workshop on\nCosmetic Gynaecology",
+        subtitle: "Kancheepuram Obstetric & Gynecological Society\nin collaboration with\nCosmetic Gynecology Society of India (CGSI)",
+        date: "Saturday 27th June 2026 | 2.00 PM – 4.30 PM",
+        location: "IMA Tambaram",
+        category: "Workshop",
+        isUpcoming: true,
+        poster: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782107178/WhatsApp_Image_2026-06-17_at_4.38.30_PM_bqzzgv.jpg",
         images: [],
     },
 };
@@ -134,10 +145,10 @@ const EventDetail = () => {
                         <span className="inline-block px-4 py-1 rounded-full bg-primary text-white text-xs font-bold uppercase tracking-widest mb-4">
                             {event.category}
                         </span>
-                        <h1 className="text-3xl md:text-5xl font-serif font-bold text-black mb-4 leading-tight">
+                        <h1 className="text-3xl md:text-5xl font-serif font-bold text-black mb-4 leading-tight whitespace-pre-line">
                             {event.title}
                         </h1>
-                        <p className="text-gray-600 text-lg mb-6 max-w-2xl">{event.subtitle}</p>
+                        <p className="text-gray-600 text-lg mb-6 max-w-2xl whitespace-pre-line">{event.subtitle}</p>
                         <div className="flex flex-wrap gap-6 text-gray-600 text-sm font-medium">
                             <div className="flex items-center gap-2">
                                 <Calendar className="w-4 h-4 text-primary" />

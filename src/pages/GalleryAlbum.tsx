@@ -49,6 +49,7 @@ export const images2025 = [
 ];
 
 export const imagesModernAestheticGynecology = [
+    "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781694504/WhatsApp_Image_2026-06-17_at_4.36.08_PM_nyabqr.jpg",
     "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676699/71787968-1405-4b80-ac38-1ffa0d1e81ec_zktrd1.jpg",
     "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676681/9770fe90-8912-4fa3-a770-3d506cee046f_yrugga.jpg",
     "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676666/de2a622e-630a-4534-ae38-03715e2dea7b_ikwgd0.jpg",
@@ -100,7 +101,7 @@ const GalleryAlbum = () => {
               {imagesToDisplay.length} Photos Overview
               {albumId === "modern-aesthetic-gynecology" && (
                 <span className="block text-sm mt-1">
-                  Marriott, Chennai · Monthly CME on menopause care &amp; aesthetic gynecology
+                  Marriott, Madurai · Monthly CME on menopause care &amp; aesthetic gynecology
                 </span>
               )}
             </p>

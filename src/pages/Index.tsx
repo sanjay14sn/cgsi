@@ -26,7 +26,7 @@ const SplashScreen = () => (
       filter: "blur(10px)",
       transition: { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] },
     }}
-    className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-background overflow-hidden"
+    className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-background overflow-hidden px-4"
   >
     {/* Subtle Animated Background Glow */}
     <motion.div
@@ -44,7 +44,7 @@ const SplashScreen = () => (
         initial={{ opacity: 0, y: 20, scale: 0.8 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="w-96 h-96 mb-8 drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+        className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mb-6 sm:mb-8 drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
       >
         <motion.img
           animate={{ y: [0, -15, 0] }}
@@ -63,11 +63,11 @@ const SplashScreen = () => (
         transition={{ delay: 0.5, duration: 1 }}
         className="text-center"
       >
-        <h2 className="text-4xl font-serif font-light tracking-tight text-primary">
+        <h2 className="text-3xl sm:text-4xl font-serif font-light tracking-tight text-primary">
           CGSI
         </h2>
         <div className="h-[1px] w-12 bg-accent/40 mx-auto my-3" />
-        <h3 className="text-sm font-medium text-accent tracking-[0.15em] uppercase">
+        <h3 className="text-xs sm:text-sm font-medium text-accent tracking-[0.12em] sm:tracking-[0.15em] uppercase text-center max-w-xs sm:max-w-none">
           Cosmetic Gynecology Society of India
         </h3>
 
@@ -86,7 +86,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-background min-h-screen overflow-x-hidden">
       <AnimatePresence mode="wait">
         {loading && <SplashScreen key="loader" />}
       </AnimatePresence>

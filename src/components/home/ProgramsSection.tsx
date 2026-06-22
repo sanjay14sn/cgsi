@@ -45,31 +45,31 @@ const membershipBenefits = [
 
 const MembershipSection = () => {
   return (
-    <section className="py-24 bg-background overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-14 sm:py-20 md:py-24 bg-background overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
 
         {/* ================= SECTION HEADER ================= */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-4 px-2">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary mx-auto">
             <Trophy className="w-4 h-4 text-accent" />
             <span className="text-xs font-bold uppercase tracking-widest text-primary">Join CGSI Today</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary leading-tight">
             CGSI Membership <span className="text-accent">Benefits</span>
           </h2>
-          <p className="text-lg text-black font-semibold">
+          <p className="text-base sm:text-lg text-black font-semibold">
             Join a Society of experts.
           </p>
         </div>
 
         {/* ================= BENEFITS GRID ================= */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {membershipBenefits.map((benefit, i) => (
               <div
                 key={i}
-                className="group p-8 rounded-[2.5rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-accent/20 transition-all duration-300 hover:-translate-y-2"
+                className="group p-6 sm:p-8 rounded-2xl sm:rounded-[2.5rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-accent/20 transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center mb-6 group-hover:bg-accent/10 transition-colors">
                   <benefit.icon className="w-7 h-7 text-primary group-hover:text-accent transition-colors" />
@@ -87,11 +87,11 @@ const MembershipSection = () => {
           </div>
 
           {/* ================= FINAL CTA ================= */}
-          <div className="mt-16 text-center">
-            <div className="inline-block p-1 rounded-[3rem] bg-slate-100">
+          <div className="mt-10 sm:mt-16 text-center px-2">
+            <div className="inline-block p-1 rounded-[2rem] sm:rounded-[3rem] bg-slate-100 max-w-full">
               <Link
                 to="/become-member"
-                className="inline-flex items-center gap-4 px-12 py-5 rounded-[2.8rem] bg-primary text-white font-bold text-lg hover:bg-accent hover:shadow-2xl transition-all hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-3 sm:gap-4 px-6 sm:px-12 py-4 sm:py-5 rounded-[1.8rem] sm:rounded-[2.8rem] bg-primary text-white font-bold text-base sm:text-lg hover:bg-accent hover:shadow-2xl transition-all hover:scale-[1.02] w-full sm:w-auto"
               >
                 Register for Membership
                 <ArrowRight className="w-6 h-6" />

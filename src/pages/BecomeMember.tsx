@@ -3,6 +3,9 @@ import Layout from "@/components/layout/Layout";
 import { UserPlus, CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
+const membershipFormPath = "/CGSI membership form.pdf (1).pdf";
+const membershipFormDownloadName = "CGSI-membership-form.pdf";
+
 const BecomeMember = () => {
 
     const benefits = [
@@ -119,10 +122,14 @@ const BecomeMember = () => {
                                 membership application form and fee details.
                             </p>
 
-                            <button className="w-full py-4 rounded-2xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-3 group shadow-lg shadow-primary/30">
+                            <a
+                                href={membershipFormPath}
+                                download={membershipFormDownloadName}
+                                className="w-full py-4 rounded-2xl bg-primary text-white font-bold text-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-3 group shadow-lg shadow-primary/30"
+                            >
                                 Access Registration Form
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            </a>
 
 
 

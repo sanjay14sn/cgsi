@@ -1,84 +1,71 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const logo =
   "https://res.cloudinary.com/ddibq0tya/image/upload/v1771404636/ChatGPT_Image_Feb_18_2026_02_20_16_PM_dtmwyu.png";
 
+const desktopBg =
+  "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782105893/Untitled_design_iug9qk.png";
+
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-start overflow-hidden bg-[#fcfcfd] pt-20 md:pt-28 pb-12">
-
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 z-0">
-        {/* Desktop Background Image */}
-        <img
-          src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778056042/WhatsApp_Image_2026-05-06_at_1.56.06_PM_dt01eu.jpg"
-          alt="CGSI Professional Background"
-          className="hidden md:block w-full h-full object-cover opacity-70"
-        />
-
-        {/* Mobile Background Image */}
-        <img
-          src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778777455/d01f81ca-7897-4dbf-bb2e-c790729287fa_f4et1n.png"
-          alt="CGSI Professional Background Mobile"
-          className="block md:hidden w-full h-full object-cover opacity-70"
-        />
-
-        <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white" />
-
-        <div className="hidden md:block absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-[100px]" />
-        <div className="hidden md:block absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-purple-100/30 rounded-full blur-[100px]" />
-      </div>
-
-      {/* CONTENT */}
-      <div className="container mx-auto px-4 sm:px-6 relative z-10 -mt-6 md:-mt-10">
-        <div className="max-w-5xl mx-auto text-center space-y-6">
-
-          {/* LOGO + TITLE */}
-          <div className="flex flex-col items-center gap-4">
-
+    <section className="relative overflow-hidden flex flex-col">
+      {/* Logo + title + description */}
+      <div className="bg-[#E1C7C4] w-full">
+        <div className="pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-10 md:pb-12">
+          <div className="flex justify-center">
             <motion.img
-              initial={{ opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
               src={logo}
               alt="CGSI Logo"
-              className="w-72 sm:w-80 md:w-96 lg:w-[450px] max-w-[95vw] h-auto drop-shadow-2xl -mt-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="w-48 sm:w-52 md:w-56 lg:w-64 xl:w-72 max-w-[min(90vw,18rem)] sm:max-w-none h-auto drop-shadow-2xl select-none"
             />
-
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.05]"
-            >
-              Cosmetic Gynecology <br />
-              Society of India
-            </motion.h1>
-
           </div>
 
-          {/* DESCRIPTION */}
-          <div className="space-y-4 md:space-y-5">
+          <div className="container mx-auto px-5 sm:px-6 md:px-8 pt-4 md:pt-6">
+            <div className="max-w-5xl mx-auto text-center">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight text-slate-900"
+              >
+                Cosmetic Gynecology
+                <br />
+                Society of India
+              </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed text-slate-900 font-bold px-2"
-            >
-              The Cosmetic Gynecology Society of India (CGSI) is a professional organization dedicated to advancing cosmetic, functional, and regenerative gynecology through education, clinical training, scientific research, and evidence-based practice.
-
-              <br />
-              <br />
-              We promote multidisciplinary collaboration, uphold ethical standards, and strive to enhance the quality, safety, and advancement of women’s intimate healthcare across India.
-            </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                className="mt-5 text-sm sm:text-base md:text-lg lg:text-xl max-w-4xl mx-auto leading-relaxed text-slate-800 font-semibold px-2"
+              >
+                The Cosmetic Gynecology Society of India (CGSI) is a professional organization dedicated to advancing cosmetic, functional, and regenerative gynecology through education, clinical training, scientific research, and evidence-based practice.
+                <br />
+                <br />
+                We promote multidisciplinary collaboration, uphold ethical standards, and strive to enhance the quality, safety, and advancement of women's intimate healthcare across India.
+              </motion.p>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Group photo */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        className="w-full"
+      >
+        <img
+          src={desktopBg}
+          alt="CGSI Members"
+          className="w-full h-[240px] sm:h-[300px] md:h-[420px] lg:h-[500px] xl:h-[580px] object-cover object-center select-none"
+        />
+      </motion.div>
     </section>
   );
 };

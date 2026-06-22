@@ -15,7 +15,7 @@ const albums = [
     id: "modern-aesthetic-gynecology",
     title: "Modern Aesthetic Gynecology",
     count: imagesModernAestheticGynecology.length,
-    cover: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676699/71787968-1405-4b80-ac38-1ffa0d1e81ec_zktrd1.jpg",
+    cover: imagesModernAestheticGynecology[0],
   },
   {
     id: "2024",

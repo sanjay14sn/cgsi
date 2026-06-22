@@ -468,10 +468,10 @@ const Conference2025 = () => {
                                 <p className="text-base text-gray-600">Organizing Chairperson</p>
                                 <p className="text-base text-gray-600">Founder, President LVRII</p>
                             </div>
-                            <div className="flex items-center gap-2 text-primary font-semibold">
+                            <a href="tel:+919940117779" className="flex items-center gap-2 text-primary font-semibold hover:underline">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01l-2.2 2.19z" /></svg>
                                 +91 99401 17779
-                            </div>
+                            </a>
                             <a href="mailto:info.lvrii@gmail.com" className="flex items-center gap-2 text-primary font-semibold hover:underline">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
                                 info.lvrii@gmail.com
