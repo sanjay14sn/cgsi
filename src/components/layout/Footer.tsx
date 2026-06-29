@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
 
           {/* Grid Content */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
             {/* Brand */}
             <div className="space-y-5">
               <Link to="/" className="flex items-center gap-3 group">
@@ -54,31 +54,7 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick Links */}
-            <div>
-              <h4 className="text-lg font-serif font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                {["Home", "About Us", "Events", "Team", "Programs", "Contact"].map(
-                  (item) => (
-                    <li key={item}>
-                      <Link
-                        to={
-                          item === "Home"
-                            ? "/"
-                            : `/${item.toLowerCase().replace(" ", "-")}`
-                        }
-                        className="text-primary-foreground/70 hover:text-primary transition-colors duration-300"
-                      >
-                        {item}
-                      </Link>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            {/* Spacer / Empty Column OR adjustment of grid-cols */}
-            {/* We'll adjust grid-cols in the main wrapper, or leave it as an empty div/shift */}
+            {/* Contact Us */}
             <div>
               <h4 className="text-lg font-serif font-bold mb-4">Contact Us</h4>
               <ul className="space-y-3">

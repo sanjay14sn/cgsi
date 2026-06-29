@@ -20,7 +20,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="w-48 sm:w-52 md:w-56 lg:w-64 xl:w-72 max-w-[min(90vw,18rem)] sm:max-w-none h-auto drop-shadow-2xl select-none"
+              className="w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 max-w-[85vw] h-auto drop-shadow-2xl select-none"
             />
           </div>
 

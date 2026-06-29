@@ -8,19 +8,19 @@ const videosData = [
         id: 1,
         title: "CGCON 2024",
         url: "https://res.cloudinary.com/ddibq0tya/video/upload/v1771399981/WhatsApp_Video_2026-02-13_at_9.23.31_AM_mplpkn.mp4",
-        Description: "1st Cosmetic Gynecology Congress"
+        Description: "1st Cosmetic Gynecology World Congress"
     },
     {
         id: 2,
         title: "CGCON 2025",
         url: "https://res.cloudinary.com/ddibq0tya/video/upload/v1771408768/WhatsApp_Video_2026-02-13_at_9.22.03_AM_pdyxnq.mp4",
-        Description: "2nd Cosmetic Gynecology World Congress Pre Congress Workshop"
+        Description: "Pre Congress Workshop"
     },
     {
         id: 3,
-        title: "2025",
+        title: "CGCON 2025",
         url: "https://res.cloudinary.com/ddibq0tya/video/upload/v1771408856/2025v_znrc3o.mp4",
-        Description: "2nd Cosmetic Gynecology Congress",
+        Description: "2nd Cosmetic Gynecology World Congress",
     },
 ];
 

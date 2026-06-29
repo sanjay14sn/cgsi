@@ -72,70 +72,137 @@ const termsAndConditions = [
     { title: "6. Intellectual Property", body: "All content, including presentations, videos, and materials, are the intellectual property of the conference organizers or presenters. Attendees are granted a limited, non-exclusive license to view the content for personal, educational use only." },
     { title: "7. Limitation of Liability", body: "The organizers are not responsible for any injury, loss, or damage arising from participation in the event or use of the website." },
     { title: "8. Changes to Terms", body: "We reserve the right to update or modify these Terms at any time. Attendees will be notified of significant changes." },
-    { title: "9. Contact Information", body: "For questions about these Terms, please contact us at info.lvrii@gmail.com" },
+    { title: "9. Contact Information", body: "For questions about these Terms, please contact us at info.thecgsi@gmail.com" },
 ];
 
-const privacyPolicy = [
-    { title: "1. Information We Collect", body: "Personal information you provide during registration (name, email, professional details). Usage data from your interaction with the event website (IP address, browser type, session times)." },
-    { title: "2. Use of Information", body: "To process registration and payments. To provide access to conference sessions and materials. To communicate important updates about the event. To improve our services and user experience." },
-    { title: "3. Data Sharing", body: "We do not sell or rent your personal information. Your information may be shared with presenters or sponsors only as necessary for event purposes. We may disclose information if required by law or to protect rights." },
-    { title: "4. Data Security", body: "We implement reasonable security measures to protect your personal information." },
-    { title: "5. Cookies and Tracking", body: "Our website uses cookies to enhance user experience and analyze traffic. You can adjust your browser settings to manage cookies." },
-    { title: "6. Your Rights", body: "You can access, update, or request deletion of your personal data by contacting us. You may opt-out of marketing communications at any time." },
-    { title: "7. Retention", body: "We retain your data only as long as necessary for event purposes or as required by law." },
-    { title: "8. Children's Privacy", body: "The event is not intended for children under 18 years old." },
-    { title: "9. Contact Us", body: "For privacy-related inquiries, please contact info.lvrii@gmail.com" },
-];
+
 
 const Conference2026 = () => {
     const countdown = useCountdown(TARGET_DATE);
 
     return (
         <Layout>
-            {/* Hero */}
-            <section className="relative pt-8 pb-14 sm:pb-16 md:pb-20 overflow-hidden bg-gradient-to-br from-primary/5 via-white to-accent/5">
-                <div
-                    className="absolute inset-0 opacity-[0.07] bg-no-repeat bg-right-bottom bg-contain pointer-events-none"
-                    style={{
-                        backgroundImage:
-                            "url('https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png')",
-                    }}
-                />
-                <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-5xl text-center">
+            {/* Banner Section - Coded Flyer Design */}
+            <section className="relative w-full py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#fef7f7] via-[#fffcfc] to-[#fbf1f1] overflow-hidden border-b border-rose-100/50">
+                {/* Thin Rose Gold Inner Border */}
+                <div className="absolute inset-4 sm:inset-6 md:inset-8 border border-[#e8c3b9]/40 rounded-[2rem] pointer-events-none z-10" />
+
+                {/* Corner Floral Elements */}
+                <div className="absolute top-0 left-0 w-36 sm:w-56 md:w-72 aspect-square pointer-events-none z-0 opacity-40">
+                    <img
+                        src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
+                        className="w-full h-full object-contain -translate-x-6 -translate-y-6 rotate-90 scale-x-[-1]"
+                        alt=""
+                    />
+                </div>
+                <div className="absolute bottom-0 right-0 w-40 sm:w-60 md:w-80 aspect-square pointer-events-none z-0 opacity-40">
+                    <img
+                        src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
+                        className="w-full h-full object-contain translate-x-8 translate-y-8"
+                        alt=""
+                    />
+                </div>
+                <div className="absolute bottom-0 left-0 w-32 sm:w-48 md:w-64 aspect-square pointer-events-none z-0 opacity-30">
+                    <img
+                        src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
+                        className="w-full h-full object-contain -translate-x-6 translate-y-6 -rotate-90"
+                        alt=""
+                    />
+                </div>
+                <div className="absolute top-0 right-0 w-32 sm:w-48 md:w-64 aspect-square pointer-events-none z-0 opacity-30">
+                    <img
+                        src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
+                        className="w-full h-full object-contain translate-x-6 -translate-y-6 rotate-180"
+                        alt=""
+                    />
+                </div>
+
+                {/* Right Side Center Floral Element (Large) */}
+                <div className="hidden lg:block absolute right-16 top-1/2 -translate-y-1/2 w-72 aspect-square opacity-70 pointer-events-none z-0">
+                    <img
+                        src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
+                        className="w-full h-full object-contain rotate-[35deg]"
+                        alt=""
+                    />
+                </div>
+
+                {/* Main Content Container */}
+                <div className="container mx-auto px-8 sm:px-12 relative z-20 max-w-5xl text-center">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.8 }}
+                        className="space-y-6"
                     >
-                        <img
-                            src={LOGO}
-                            alt="CGSI Logo"
-                            className="mx-auto mb-6 sm:mb-8 h-24 sm:h-32 md:h-40 w-auto object-contain"
-                        />
+                        {/* CGSI Logo */}
+                        <div className="flex justify-center mb-6">
+                            <img
+                                src={LOGO}
+                                alt="CGSI Logo"
+                                className="h-20 sm:h-24 md:h-28 w-auto object-contain mix-blend-multiply"
+                            />
+                        </div>
 
-                        <p className="text-sm sm:text-base font-bold uppercase tracking-[0.2em] text-accent mb-2">
-                            CGCON 2026
-                        </p>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 leading-tight mb-6">
-                            3rd Cosmetic Gynecology
-                            <br />
-                            World Congress
-                        </h1>
+                        {/* Congress Main Title */}
+                        <div className="space-y-2">
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-extrabold text-[#3a2f2c] tracking-wide uppercase">
+                                CGCON 2026
+                            </h1>
 
-                        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-4">
-                            <span className="inline-flex items-start sm:items-center gap-2 rounded-full bg-primary/10 px-4 py-2.5 text-sm font-semibold text-primary text-left sm:text-center">
-                                <Calendar className="w-4 h-4 shrink-0 mt-0.5 sm:mt-0" />
-                                <span>
-                                    20<sup>th</sup> – 22<sup>nd</sup> November 2026
-                                    <span className="block text-xs font-medium opacity-80 mt-0.5">
-                                        Pre-Congress Workshop: 20 Nov · Main Conference: 21 &amp; 22 Nov
-                                    </span>
+                            {/* 3rd Cosmetic Gynecology World Congress */}
+                            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-center mt-4 leading-tight">
+                                <span className="text-4xl sm:text-5xl md:text-6xl font-serif font-extrabold text-[#d87a76] mr-1 sm:mr-2 inline-block align-middle">
+                                    3<sup className="text-xl sm:text-2xl md:text-3xl lowercase">rd</sup>
                                 </span>
-                            </span>
-                            <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2.5 text-sm font-semibold text-accent">
-                                <MapPin className="w-4 h-4 shrink-0" />
-                                Grand Chennai by GRT Hotels, Chennai
-                            </span>
+                                <span className="text-[#d87a76] align-middle inline-block">Cosmetic Gynecology </span>{" "}
+                                <span className="text-[#3a2f2c] align-middle inline-block">World Congress</span>
+                            </h2>
+                        </div>
+
+                        {/* Tagline / Theme */}
+                        <div className="pt-4 max-w-md sm:max-w-xl mx-auto">
+                            <p className="text-[#a46864] font-serif text-lg sm:text-xl italic font-medium leading-relaxed">
+                                Redefining Intimate Wellness
+                                <span className="block text-2xl sm:text-3xl font-serif mt-2 font-bold text-[#8a4e4a] not-italic tracking-wide">
+                                    Beyond Beauty
+                                </span>
+                            </p>
+                        </div>
+
+                        {/* Bottom Grid: Dates, City, Save the Dates, Venue */}
+                        <div className="grid md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto mt-12 pt-8 border-t border-[#e8c3b9]/30">
+                            {/* Dates & Location */}
+                            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6">
+                                <div className="flex items-center gap-3 bg-white/70 backdrop-blur-sm px-5 py-3.5 rounded-2xl border border-[#e8c3b9]/25 shadow-sm">
+                                    <Calendar className="w-5 h-5 text-[#d87a76] shrink-0" />
+                                    <span className="text-[#3a2f2c] text-sm sm:text-base font-semibold">
+                                        20<sup>th</sup> – 22<sup>nd</sup> Nov 2026
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-3 bg-white/70 backdrop-blur-sm px-5 py-3.5 rounded-2xl border border-[#e8c3b9]/25 shadow-sm">
+                                    <MapPin className="w-5 h-5 text-[#d87a76] shrink-0" />
+                                    <span className="text-[#3a2f2c] text-sm sm:text-base font-extrabold tracking-wider">
+                                        CHENNAI
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Save the Dates & Venue Info */}
+                            <div className="flex flex-col items-center md:items-end gap-3">
+                                <div className="inline-block bg-[#d87a76] text-white px-8 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest shadow-md border border-[#d87a76]/10">
+                                    Save the Dates
+                                </div>
+
+                                <div className="flex items-center gap-2 text-slate-400 text-xs">
+                                    <div className="h-px w-6 bg-[#e8c3b9]/50" />
+                                    <span className="font-serif italic text-[#a46864]">Venue</span>
+                                    <div className="h-px w-6 bg-[#e8c3b9]/50" />
+                                </div>
+
+                                <p className="text-[#3a2f2c] font-bold text-base sm:text-lg tracking-wide">
+                                    Hotel GRT Grand
+                                </p>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
@@ -399,7 +466,95 @@ const Conference2026 = () => {
                 </div>
             </section>
 
+
+            {/* Registration Fee & Cancellation Policy */}
+            <section className="py-14 sm:py-16 md:py-20 bg-white border-t border-slate-100">
+                <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+                    <div className="text-center mb-10 sm:mb-14">
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900">
+                            Registration Information
+                        </h2>
+                        <div className="mt-4 mx-auto h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
+                    </div>
+
+                    <div className="flex flex-col gap-8">
+                        {/* Registration Fee Includes */}
+                        <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 via-white to-primary/5 p-6 sm:p-8 shadow-md">
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
+                                    <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl font-bold text-primary uppercase tracking-wide">
+                                    Registration Fee Includes
+                                </h3>
+                            </div>
+                            <p className="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-4">Delegate</p>
+                            <ul className="space-y-3">
+                                {[
+                                    "Admission to Scientific Sessions and Exhibition",
+                                    "Refreshments During Breaks",
+                                    "Lunches",
+                                    "Registration Materials and Kit",
+                                ].map((item) => (
+                                    <li key={item} className="flex items-start gap-3 text-slate-700 text-sm sm:text-base">
+                                        <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-primary" />
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Cancellation & Refund Policy */}
+                        <div className="rounded-2xl border border-rose-200 bg-gradient-to-br from-rose-50 via-white to-rose-50/30 p-6 sm:p-8 shadow-md">
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-rose-100">
+                                    <svg className="w-5 h-5 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                    </svg>
+                                </div>
+                                <h3 className="text-xl font-bold text-rose-700 uppercase tracking-wide">
+                                    Cancellation & Refund Policy
+                                </h3>
+                            </div>
+                            <ul className="space-y-3 text-sm sm:text-base text-slate-700 leading-relaxed">
+                                <li className="flex items-start gap-3">
+                                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-rose-400" />
+                                    <span><strong className="text-slate-900">No Refund</strong> will be given for cancellation requests received after <strong>25/11/2025</strong>.</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-rose-400" />
+                                    <span>All cancellation requests must be sent to the conference secretariat <strong>in writing by email only</strong>.</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-rose-400" />
+                                    <span>Cancellation requests for any paid registration <strong>MUST BE received by the Conference Secretariat through email</strong> to be entitled to a refund.</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500" />
+                                    <span><strong className="text-emerald-700">REFUND</strong> for cancellation if request is received on or before <strong>20/10/2026</strong> — after deducting administrative charges and cost towards refund, if any.</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-red-500" />
+                                    <span><strong className="text-red-700">NO REFUND</strong> for cancellation requests received through email after <strong>20/10/2026</strong>.</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-rose-400" />
+                                    <span>Refund, if any, will be credited post-conference to the original payment method within <strong>20 business days</strong>.</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-rose-400" />
+                                    <span>A similar mode of transfer will be adopted for refund as the fund was received. <strong>NO CASH refund policy.</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Terms & Conditions */}
+
             <section className="py-14 sm:py-16 md:py-20 bg-white border-t border-slate-100">
                 <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
                     <div className="text-center mb-10 sm:mb-12">
@@ -422,28 +577,6 @@ const Conference2026 = () => {
                 </div>
             </section>
 
-            {/* Privacy Policy */}
-            <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-br from-primary/5 via-white to-accent/5">
-                <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-                    <div className="text-center mb-10 sm:mb-12">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900">
-                            Privacy Policy
-                        </h2>
-                        <div className="mt-4 mx-auto h-0.5 w-24 bg-gradient-to-r from-transparent via-accent to-transparent" />
-                    </div>
-                    <div className="space-y-4 sm:space-y-5 text-slate-700 text-base leading-relaxed">
-                        {privacyPolicy.map((item) => (
-                            <div
-                                key={item.title}
-                                className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 shadow-sm"
-                            >
-                                <p className="font-bold text-slate-900 mb-1">{item.title}</p>
-                                <p>{item.body}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* Contact Us */}
             <section className="py-14 sm:py-16 md:py-20 bg-white border-t border-slate-100">
@@ -474,11 +607,11 @@ const Conference2026 = () => {
                                 +91 99401 17779
                             </a>
                             <a
-                                href="mailto:info.lvrii@gmail.com"
+                                href="mailto:info.thecgsi@gmail.com"
                                 className="flex items-center gap-2 text-primary font-semibold hover:underline"
                             >
                                 <Mail className="w-4 h-4 shrink-0" />
-                                info.lvrii@gmail.com
+                                info.thecgsi@gmail.com
                             </a>
                         </div>
                         <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-md space-y-3">

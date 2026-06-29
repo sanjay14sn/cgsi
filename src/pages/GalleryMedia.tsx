@@ -248,7 +248,7 @@ const GalleryMedia = () => {
                 <div className="relative z-10 container mx-auto px-4 sm:px-6 max-w-7xl mb-24">
                     <div className="border-l-4 border-slate-400 pl-4 sm:pl-6 mb-8">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-2">
-                            CGCON 2024 (1st World Congress)
+                            CGCON 2024 (1st Cosmetic Gynecology World Congress)
                         </h2>
                         <p className="text-base sm:text-lg text-muted-foreground">
                             Press features, news clippings, and television coverage from the 1st Cosmetic Gynecology Congress.
@@ -351,7 +351,7 @@ const GalleryMedia = () => {
                 <div className="relative z-10 container mx-auto px-4 sm:px-6 max-w-7xl mb-24">
                     <div className="border-l-4 border-primary pl-4 sm:pl-6 mb-8">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground mb-2">
-                            CGCON 2025 (2nd World Congress)
+                            CGCON 2025 (2nd Cosmetic Gynecology World Congress)
                         </h2>
                         <p className="text-base sm:text-lg text-muted-foreground">
                             Press features, news clippings, and television coverage from the 2nd Cosmetic Gynecology World Congress.

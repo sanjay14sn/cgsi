@@ -86,7 +86,7 @@ const EventsSection = () => {
             className="rounded-2xl sm:rounded-[3rem] overflow-hidden border border-slate-200 shadow-2xl bg-white"
           >
             <img
-              src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778476123/ChatGPT_Image_May_11_2026_10_38_06_AM_xejj7j.png"
+              src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782729399/ChatGPT_Image_Jun_29_2026_03_13_35_PM_1_wvemju.png"
               alt="Upcoming Conference"
               className="w-full h-auto object-cover"
             />
@@ -105,7 +105,7 @@ const EventsSection = () => {
             <span className="text-xs font-bold uppercase tracking-tighter">Academic Calendar 2026</span>
           </motion.div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">CGSI Specialized Events</h2>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-slate-500">Join our curated sessions led by industry experts</p>
+
         </div>
 
         {/* Events Grid */}
