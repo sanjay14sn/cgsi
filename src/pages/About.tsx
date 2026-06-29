@@ -21,7 +21,7 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7 }}
-            className="relative w-full h-[60vh] min-h-[180px]"
+            className="relative w-full aspect-[16/9] md:aspect-auto md:h-[60vh] min-h-[180px]"
           >
             <img
               src={ABOUT_HERO_IMAGE}
