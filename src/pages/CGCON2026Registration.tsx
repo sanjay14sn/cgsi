@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { submitToGoogleSheets } from "@/lib/submitToGoogleSheets";
 
 const LOGO =
     "https://res.cloudinary.com/ddibq0tya/image/upload/v1771404636/ChatGPT_Image_Feb_18_2026_02_20_16_PM_dtmwyu.png";
@@ -139,6 +140,37 @@ const CGCON2026Registration = () => {
                 ...registrationData,
                 timestamp: serverTimestamp(),
             });
+
+            // 3. Save to Google Sheets (when VITE_GOOGLE_SHEETS_URL is configured)
+            const pkgLabel = PACKAGES.find((pkg) => pkg.id === selectedPkg)?.label || selectedPkg;
+            console.log("[CGCON2026Registration] calling submitToGoogleSheets for", form.name, form.email);
+            try {
+                await submitToGoogleSheets({
+                    timestamp: new Date().toISOString(),
+                    category: form.category,
+                    title: form.title,
+                    name: form.name,
+                    mobile: form.mobile,
+                    email: form.email,
+                    institution: form.institution,
+                    designation: form.designation,
+                    city: form.city,
+                    state: form.state,
+                    mciNumber: form.mciNumber,
+                    specialty: form.specialty,
+                    stateMedicalCouncil: form.stateMedicalCouncil,
+                    cgsiMember: form.cgsiMember,
+                    cgsiMemberNo: form.cgsiMemberNo,
+                    conferencePackage: pkgLabel,
+                    totalAmount: form.totalAmount,
+                    utr: form.utr,
+                    message: form.message,
+                    paymentScreenshotUrl: imageUrl,
+                });
+            } catch (sheetsError) {
+                console.error("Google Sheets sync failed:", sheetsError);
+            }
+
             setSubmitted(true);
         } catch (error) {
             console.error("Error adding document: ", error);

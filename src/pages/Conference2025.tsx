@@ -62,6 +62,18 @@ const topicHighlights = [
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/13.png", label: "Debates" },
 ];
 
+const FLOWERS = {
+    topLeft:
+        "https://lvrii.in/conferences/wp-content/uploads/elementor/thumbs/flower-11-r9r05glq2zd7qc9taf7u6e4myx7bl4zl4uj759ksp0.png",
+    topRight:
+        "https://lvrii.in/conferences/wp-content/uploads/elementor/thumbs/flower-2-1-r9r03ri7qr1kroqk76t36bjocvkgot918g4mya3dxg.png",
+    bottomLeft:
+        "https://lvrii.in/conferences/wp-content/uploads/elementor/thumbs/flower-44-r9r291shocubdgh4wlgs6tg2pemxkw2iiz5vhbi24q.png",
+    bottomRight:
+        "https://lvrii.in/conferences/wp-content/uploads/elementor/thumbs/flower-55-r9r28yyz3uqgeml8d28whc5ox90txsrbil7f1hm8ne.png",
+    center: "https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png",
+};
+
 /* ─── Component ─────────────────────────────────────────────── */
 const Conference2025 = () => {
     const countdown = useCountdown(TARGET_DATE);
@@ -69,59 +81,92 @@ const Conference2025 = () => {
     return (
         <Layout>
             {/* ── HERO ───────────────────────────────────────────── */}
-            <section className="relative pt-12 pb-20 overflow-hidden text-center bg-[#FCF5F3]">
-                {/* Corner decorative elements (optional, based on screenshot if assets available. Here we use the existing background if needed, but the screenshot has a clean background with corner flowers) */}
-                <div className="absolute top-0 left-0 w-32 h-32 bg-[url('https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png')] bg-no-repeat bg-contain opacity-40 -scale-x-100" />
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[url('https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png')] bg-no-repeat bg-contain opacity-40" />
+            <section className="relative w-full -mt-24 lg:-mt-32 pt-24 lg:pt-32 overflow-hidden bg-gradient-to-b from-[#FCF5F3] via-[#FDF8F6] to-[#F3E8E5]">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="relative w-full"
+                >
+                    <img
+                        src={FLOWERS.topLeft}
+                        alt=""
+                        aria-hidden
+                        className="absolute top-0 left-0 w-20 sm:w-28 md:w-36 lg:w-44 h-auto pointer-events-none select-none"
+                    />
+                    <img
+                        src={FLOWERS.topRight}
+                        alt=""
+                        aria-hidden
+                        className="absolute top-0 right-0 w-20 sm:w-28 md:w-36 lg:w-44 h-auto pointer-events-none select-none"
+                    />
+                    <img
+                        src={FLOWERS.bottomLeft}
+                        alt=""
+                        aria-hidden
+                        className="absolute bottom-0 left-0 w-16 sm:w-24 md:w-32 lg:w-40 h-auto pointer-events-none select-none"
+                    />
+                    <img
+                        src={FLOWERS.bottomRight}
+                        alt=""
+                        aria-hidden
+                        className="absolute bottom-0 right-0 w-16 sm:w-24 md:w-32 lg:w-40 h-auto pointer-events-none select-none"
+                    />
 
-                <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
-                    <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="w-full flex flex-col items-center">
+                    <div className="relative z-10 w-full px-4 sm:px-8 md:px-12 pt-4 sm:pt-6 pb-8 sm:pb-10 md:pb-14 text-center flex flex-col items-center">
                         <img
                             src="https://lvrii.in/conferences/wp-content/uploads/2025/08/lvrii-logo.png"
                             alt="LVRII Logo"
-                            className="mx-auto mb-10 h-20 sm:h-24 md:h-28 w-auto object-contain"
+                            className="h-16 sm:h-20 md:h-24 w-auto object-contain mb-5 sm:mb-6"
                         />
 
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-sans font-bold mb-6 text-[#EA7B74] tracking-wide">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-sans font-bold text-[#EA7B74] tracking-wide leading-none">
                             CGCON 2025
                         </h1>
-                        
-                        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-8">
+
+                        <h2 className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900">
                             2nd Cosmetic Gynecology World Congress 2025
                         </h2>
 
-                        <div className="flex flex-row justify-center items-center gap-4 md:gap-8 mt-4 font-bold text-gray-900">
-                            <div className="text-right leading-relaxed text-[#EA7B74] text-lg md:text-xl">
+                        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-8 md:gap-12 font-bold text-gray-900 w-full">
+                            <div className="text-center sm:text-right leading-relaxed text-[#EA7B74] text-base sm:text-lg md:text-xl">
                                 <div>13th and 14th</div>
                                 <div>December</div>
                             </div>
-                            
-                            <div className="flex justify-center items-center">
-                                <MapPin className="w-8 h-8 md:w-10 md:h-10 text-[#EA7B74]" fill="currentColor" strokeWidth={0} />
-                            </div>
-                            
-                            <div className="text-left leading-relaxed text-sm md:text-base">
-                                <div>The Grand Chennai</div>
-                                <div>by GRT Hotels,</div>
-                                <div>T-Nagar , Chennai</div>
-                            </div>
-                        </div>
 
-                        <div className="mt-10 text-lg md:text-xl font-bold text-gray-900">
-                            12th December Pre-Congress Workshop
-                        </div>
+                            <div className="hidden sm:block w-px h-12 bg-gray-300 shrink-0" />
 
-                        {/* Large flower graphic placeholder for the center bottom */}
-                        <div className="mt-16 relative">
-                            <img 
-                                src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png" 
-                                alt="Flower Graphic" 
-                                className="w-64 md:w-96 object-contain mx-auto"
+                            <MapPin
+                                className="w-7 h-7 sm:w-8 sm:h-8 text-[#EA7B74] shrink-0 sm:hidden"
+                                fill="currentColor"
+                                strokeWidth={0}
                             />
+
+                            <div className="flex items-center gap-3 sm:gap-4">
+                                <MapPin
+                                    className="hidden sm:block w-8 h-8 md:w-9 md:h-9 text-[#EA7B74] shrink-0"
+                                    fill="currentColor"
+                                    strokeWidth={0}
+                                />
+                                <div className="text-center sm:text-left leading-relaxed text-sm sm:text-base md:text-lg">
+                                    <div>The Grand Chennai</div>
+                                    <div>by GRT Hotels,</div>
+                                    <div>T-Nagar , Chennai</div>
+                                </div>
+                            </div>
                         </div>
 
-                    </motion.div>
-                </div>
+                        <p className="mt-5 sm:mt-6 text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-900">
+                            12th December Pre-Congress Workshop
+                        </p>
+
+                        <img
+                            src={FLOWERS.center}
+                            alt="Flower Graphic"
+                            className="mt-5 sm:mt-6 w-32 sm:w-40 md:w-48 lg:w-56 h-auto object-contain mx-auto"
+                        />
+                    </div>
+                </motion.div>
             </section>
 
             {/* ── COUNTDOWN ──────────────────────────────────────── */}

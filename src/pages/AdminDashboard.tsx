@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { collection, getDocs, query, doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import { X, Edit2, Trash2 } from "lucide-react";
+import { X, Edit2, Trash2, ChevronLeft, ChevronRight } from "lucide-react";
 
-const ADMIN_NUMBER = "9999999999";
-const ADMIN_PASS = "admin123";
+const ADMIN_NUMBER = "9841257779";
+const ADMIN_PASS = "1234";
+const LOGO =
+    "https://res.cloudinary.com/ddibq0tya/image/upload/v1771404636/ChatGPT_Image_Feb_18_2026_02_20_16_PM_dtmwyu.png";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -98,11 +100,21 @@ const AdminDashboard = () => {
         }
     };
 
-    const totalPages = Math.ceil(registrations.length / ITEMS_PER_PAGE);
+    const totalPages = Math.max(1, Math.ceil(registrations.length / ITEMS_PER_PAGE));
     const paginatedRegistrations = useMemo(() => {
         const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
         return registrations.slice(startIndex, startIndex + ITEMS_PER_PAGE);
     }, [registrations, currentPage]);
+
+    const pageNumbers = useMemo(() => {
+        return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }, [totalPages]);
+
+    useEffect(() => {
+        if (currentPage > totalPages) {
+            setCurrentPage(totalPages);
+        }
+    }, [currentPage, totalPages]);
 
     const val = (v: any) => v || "-";
 
@@ -111,7 +123,8 @@ const AdminDashboard = () => {
         return (
             <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center py-12 px-4">
                 <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
-                    <div>
+                    <div className="flex flex-col items-center">
+                        <img src={LOGO} alt="CGSI Logo" className="h-24 w-auto object-contain mb-4" />
                         <h2 className="text-center text-3xl font-extrabold text-gray-900">Admin Portal</h2>
                         <p className="mt-2 text-center text-sm text-gray-500">Log in to view CGCON 2026 registrations</p>
                     </div>
@@ -142,9 +155,12 @@ const AdminDashboard = () => {
                 
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-6 rounded-2xl shadow-sm border border-gray-200 gap-4">
-                    <div>
-                        <h1 className="text-2xl font-bold text-gray-900">Registration Dashboard</h1>
-                        <p className="text-sm text-gray-500 mt-1">Manage all CGCON 2026 signups securely.</p>
+                    <div className="flex items-center gap-4">
+                        <img src={LOGO} alt="CGSI Logo" className="h-16 sm:h-20 w-auto object-contain shrink-0" />
+                        <div>
+                            <h1 className="text-2xl font-bold text-gray-900">Registration Dashboard</h1>
+                            <p className="text-sm text-gray-500 mt-1">Manage all CGCON 2026 signups securely.</p>
+                        </div>
                     </div>
                     <div className="flex items-center gap-3">
                         <div className="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-bold border border-blue-100">
@@ -170,6 +186,7 @@ const AdminDashboard = () => {
                             <table className="min-w-max w-full text-left text-sm text-gray-600">
                                 <thead className="bg-gray-50 text-gray-500 text-[10px] sm:text-xs uppercase font-bold border-b border-gray-200">
                                     <tr>
+                                        <th className="px-4 py-3 whitespace-nowrap sticky left-0 bg-gray-50 border-r border-gray-200 text-center w-14">Sl. No.</th>
                                         <th className="px-4 py-3 whitespace-nowrap">Date</th>
                                         <th className="px-4 py-3 whitespace-nowrap">Category</th>
                                         <th className="px-4 py-3 whitespace-nowrap">Title</th>
@@ -196,13 +213,16 @@ const AdminDashboard = () => {
                                 <tbody className="divide-y divide-gray-100">
                                     {paginatedRegistrations.length === 0 ? (
                                         <tr>
-                                            <td colSpan={20} className="px-6 py-16 text-center text-gray-400">
+                                            <td colSpan={21} className="px-6 py-16 text-center text-gray-400">
                                                 No registrations found yet.
                                             </td>
                                         </tr>
                                     ) : (
-                                        paginatedRegistrations.map((reg) => (
-                                            <tr key={reg.id} className="hover:bg-gray-50/80 transition">
+                                        paginatedRegistrations.map((reg, index) => (
+                                            <tr key={reg.id} className="hover:bg-gray-50/80 transition group">
+                                                <td className="px-4 py-3 whitespace-nowrap sticky left-0 bg-white border-r border-gray-100 text-center font-semibold text-gray-700 group-hover:bg-gray-50/80">
+                                                    {(currentPage - 1) * ITEMS_PER_PAGE + index + 1}
+                                                </td>
                                                 <td className="px-4 py-3 whitespace-nowrap">{reg.timestamp ? new Date(reg.timestamp.toDate()).toLocaleDateString('en-GB') : '-'}</td>
                                                 <td className="px-4 py-3 whitespace-nowrap">{val(reg.category)}</td>
                                                 <td className="px-4 py-3 whitespace-nowrap">{val(reg.title)}</td>
@@ -252,14 +272,44 @@ const AdminDashboard = () => {
                 </div>
 
                 {/* Pagination */}
-                {!loading && totalPages > 1 && (
-                    <div className="flex items-center justify-between px-2">
+                {!loading && registrations.length > 0 && (
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white px-6 py-4 rounded-2xl shadow-sm border border-gray-200">
                         <p className="text-sm text-gray-500 font-medium">
-                            Showing {(currentPage - 1) * ITEMS_PER_PAGE + 1} to {Math.min(currentPage * ITEMS_PER_PAGE, registrations.length)} of {registrations.length}
+                            Showing {(currentPage - 1) * ITEMS_PER_PAGE + 1}–{Math.min(currentPage * ITEMS_PER_PAGE, registrations.length)} of {registrations.length} registrations
                         </p>
-                        <div className="flex gap-2">
-                            <button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1} className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-semibold disabled:opacity-50 hover:bg-gray-50 transition">Prev</button>
-                            <button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages} className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-semibold disabled:opacity-50 hover:bg-gray-50 transition">Next</button>
+                        <div className="flex items-center gap-2 flex-wrap justify-center">
+                            <button
+                                type="button"
+                                onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                                disabled={currentPage === 1}
+                                className="inline-flex items-center gap-1 px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm font-semibold disabled:opacity-40 hover:bg-gray-50 transition"
+                            >
+                                <ChevronLeft size={16} />
+                                Prev
+                            </button>
+                            {pageNumbers.map((page) => (
+                                <button
+                                    key={page}
+                                    type="button"
+                                    onClick={() => setCurrentPage(page)}
+                                    className={`min-w-[2.25rem] px-3 py-2 rounded-lg text-sm font-semibold border transition ${
+                                        currentPage === page
+                                            ? "bg-[#d87a76] text-white border-[#d87a76]"
+                                            : "bg-white text-gray-700 border-gray-200 hover:bg-gray-50"
+                                    }`}
+                                >
+                                    {page}
+                                </button>
+                            ))}
+                            <button
+                                type="button"
+                                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                                disabled={currentPage === totalPages}
+                                className="inline-flex items-center gap-1 px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm font-semibold disabled:opacity-40 hover:bg-gray-50 transition"
+                            >
+                                Next
+                                <ChevronRight size={16} />
+                            </button>
                         </div>
                     </div>
                 )}
