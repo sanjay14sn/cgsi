@@ -69,34 +69,57 @@ const Conference2025 = () => {
     return (
         <Layout>
             {/* ── HERO ───────────────────────────────────────────── */}
-            <section className="relative pt-32 pb-20 overflow-hidden text-center bg-gradient-to-br from-primary/5 via-primary/10 to-primary/5">
-                <div className="absolute inset-0 opacity-10 bg-[url('https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png')] bg-no-repeat bg-right bg-contain pointer-events-none" />
-                <div className="container mx-auto px-6 relative z-10">
-                    <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <section className="relative pt-12 pb-20 overflow-hidden text-center bg-[#FCF5F3]">
+                {/* Corner decorative elements (optional, based on screenshot if assets available. Here we use the existing background if needed, but the screenshot has a clean background with corner flowers) */}
+                <div className="absolute top-0 left-0 w-32 h-32 bg-[url('https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png')] bg-no-repeat bg-contain opacity-40 -scale-x-100" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[url('https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png')] bg-no-repeat bg-contain opacity-40" />
+
+                <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
+                    <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="w-full flex flex-col items-center">
                         <img
                             src="https://lvrii.in/conferences/wp-content/uploads/2025/08/lvrii-logo.png"
                             alt="LVRII Logo"
-                            className="mx-auto mb-16 h-28 sm:h-32 md:h-40 w-auto max-w-[min(90vw,320px)] object-contain"
+                            className="mx-auto mb-10 h-20 sm:h-24 md:h-28 w-auto object-contain"
                         />
 
-                        <h1 className="text-4xl md:text-6xl font-serif font-bold text-black mb-4">
-                            2nd Cosmetic Gynecology<br />
-                            <span className="text-primary italic">World Congress 2025</span>
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-sans font-bold mb-6 text-[#EA7B74] tracking-wide">
+                            CGCON 2025
                         </h1>
-                        <div className="flex flex-wrap justify-center gap-6 mt-6 text-base font-semibold text-gray-700">
-                            <div className="flex items-center gap-2">
-                                <Calendar className="w-5 h-5 text-primary" />
-                                13th &amp; 14th December 2025
+                        
+                        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-8">
+                            2nd Cosmetic Gynecology World Congress 2025
+                        </h2>
+
+                        <div className="flex flex-row justify-center items-center gap-4 md:gap-8 mt-4 font-bold text-gray-900">
+                            <div className="text-right leading-relaxed text-[#EA7B74] text-lg md:text-xl">
+                                <div>13th and 14th</div>
+                                <div>December</div>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Clock className="w-5 h-5 text-primary" />
-                                Pre-Congress Workshop: 12th December
+                            
+                            <div className="flex justify-center items-center">
+                                <MapPin className="w-8 h-8 md:w-10 md:h-10 text-[#EA7B74]" fill="currentColor" strokeWidth={0} />
                             </div>
-                            <div className="flex items-center gap-2">
-                                <MapPin className="w-5 h-5 text-primary" />
-                                The Grand Chennai by GRT Hotels, T-Nagar
+                            
+                            <div className="text-left leading-relaxed text-sm md:text-base">
+                                <div>The Grand Chennai</div>
+                                <div>by GRT Hotels,</div>
+                                <div>T-Nagar , Chennai</div>
                             </div>
                         </div>
+
+                        <div className="mt-10 text-lg md:text-xl font-bold text-gray-900">
+                            12th December Pre-Congress Workshop
+                        </div>
+
+                        {/* Large flower graphic placeholder for the center bottom */}
+                        <div className="mt-16 relative">
+                            <img 
+                                src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png" 
+                                alt="Flower Graphic" 
+                                className="w-64 md:w-96 object-contain mx-auto"
+                            />
+                        </div>
+
                     </motion.div>
                 </div>
             </section>
@@ -120,14 +143,9 @@ const Conference2025 = () => {
                             </div>
                         ))}
                     </div>
-                    <a
-                        href="https://lvrii.in/conferences/conference-registration/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block px-8 py-3 bg-white text-primary font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all text-sm uppercase tracking-widest"
-                    >
-                        Online Registration is Open
-                    </a>
+                    <span className="inline-block px-8 py-3 bg-white/30 text-white/60 font-bold rounded-full text-sm uppercase tracking-widest cursor-not-allowed border border-white/20">
+                        Registration Closed
+                    </span>
                 </div>
             </section>
 
@@ -297,14 +315,9 @@ const Conference2025 = () => {
                         <p className="text-base text-gray-600 italic text-center">
                             Conference Registration is Mandatory.
                         </p>
-                        <a
-                            href="https://lvrii.in/conferences/conference-registration/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-4 inline-block px-10 py-3 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-primary/80 transition-all text-sm uppercase tracking-widest"
-                        >
-                            Register Now
-                        </a>
+                        <span className="mt-4 inline-block px-10 py-3 bg-slate-300 text-slate-500 font-bold rounded-full text-sm uppercase tracking-widest cursor-not-allowed">
+                            Registration Closed
+                        </span>
                     </div>
                 </div>
             </section>
@@ -501,14 +514,9 @@ const Conference2025 = () => {
                     <p className="text-gray-600 mb-8 max-w-xl mx-auto">
                         Join us in Chennai this December and be part of the change that shapes the future of Cosmetic Gynecology in India.
                     </p>
-                    <a
-                        href="https://lvrii.in/conferences/conference-registration/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block px-10 py-3 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-primary/80 transition-all text-sm uppercase tracking-widest"
-                    >
-                        Register Now
-                    </a>
+                    <span className="inline-block px-10 py-3 bg-slate-300 text-slate-500 font-bold rounded-full text-sm uppercase tracking-widest cursor-not-allowed">
+                        Registration Closed
+                    </span>
                 </div>
             </section>
         </Layout>

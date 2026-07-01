@@ -96,20 +96,7 @@ const Footer = () => {
             rights reserved.
           </p>
 
-          <div className="flex gap-6 text-sm">
-            <a
-              href="#"
-              className="text-primary-foreground/60 hover:text-primary transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-primary-foreground/60 hover:text-primary transition-colors"
-            >
-              Terms of Service
-            </a>
-          </div>
+
         </div>
       </div>
     </footer>

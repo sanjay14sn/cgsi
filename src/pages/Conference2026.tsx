@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Calendar, MapPin, Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
@@ -42,6 +43,16 @@ const organizingTeam = [
         role: "Treasurer",
         img: "https://res.cloudinary.com/ddibq0tya/image/upload/v1771399674/WhatsApp_Image_2026-02-10_at_12.54.13_PM_wlraqx.jpg",
     },
+];
+
+const organizingCommittee = [
+    { name: "Dr. Alpa Khakhar", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782794582/WhatsApp_Image_2026-06-29_at_3.14.55_PM_tiqoyd.jpg" },
+    { name: "Dr. Chitra Jeyaraj", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Chitra-Jeyaraj.png" },
+    { name: "Dr. Shobha Giresh", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Shobha-Giresh.png" },
+    { name: "Dr. Sri Sudha", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Sri-Sudha.png" },
+    { name: "Dr Ashwin Rao", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Ashwin-Rao.png" },
+    { name: "Dr Vijaya Lakshmi M", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Vijaya-Lakshmi-M.png" },
+    { name: "Dr Pavithra R", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Pavithra-R.png" },
 ];
 
 // Add faculty when confirmed: { name: "Dr ...", country: "..." }
@@ -234,9 +245,9 @@ const Conference2026 = () => {
                     <p className="text-sm sm:text-base opacity-90 mb-6">
                         20<sup>th</sup> – 22<sup>nd</sup> November 2026 · Grand Chennai by GRT Hotels, Chennai
                     </p>
-                    <span className="inline-block px-6 sm:px-8 py-3 bg-white/90 text-primary font-bold rounded-full shadow-lg text-sm uppercase tracking-widest">
-                        Online Registration Opens Soon
-                    </span>
+                    <Link to="/CGCON2026-registration" className="inline-block px-6 sm:px-8 py-3 bg-white/90 hover:bg-white text-primary font-bold rounded-full shadow-lg text-sm uppercase tracking-widest transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+                        Register Now
+                    </Link>
                 </div>
             </section>
 
@@ -248,10 +259,10 @@ const Conference2026 = () => {
                         <div className="mt-4 mx-auto h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 max-w-4xl mx-auto">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-16">
                         {organizingTeam.map((doc) => (
-                            <div key={doc.name} className="text-center">
-                                <div className="mx-auto mb-4 aspect-square max-w-[160px] overflow-hidden rounded-2xl border-4 border-white shadow-lg">
+                            <div key={doc.name} className="text-center flex flex-col items-center">
+                                <div className="mx-auto mb-5 w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden ring-4 ring-primary/30 ring-offset-4 ring-offset-white shadow-xl">
                                     <img
                                         src={doc.img}
                                         alt={doc.name}
@@ -263,8 +274,46 @@ const Conference2026 = () => {
                             </div>
                         ))}
                     </div>
+
+                    {/* Organizing Committee */}
+                    <div className="mt-14 pt-12 border-t border-slate-200/70">
+                        <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-10">Organizing Committee</p>
+                        {/* Row 1 — 4 members */}
+                        <div className="grid grid-cols-4 gap-8 sm:gap-10 max-w-4xl mx-auto justify-items-center">
+                            {organizingCommittee.slice(0, 4).map((doc) => (
+                                <div key={doc.name} className="text-center flex flex-col items-center w-36 sm:w-40">
+                                    <div className="mb-4 w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden ring-4 ring-primary/25 ring-offset-4 ring-offset-white shadow-lg">
+                                        <img
+                                            src={doc.img}
+                                            alt={doc.name}
+                                            className="h-full w-full object-cover object-top"
+                                        />
+                                    </div>
+                                    <h3 className="text-base font-bold text-slate-900 leading-snug">{doc.name}</h3>
+                                    <p className="text-xs text-slate-500 mt-1">Organizing Committee</p>
+                                </div>
+                            ))}
+                        </div>
+                        {/* Row 2 — 3 members centered */}
+                        <div className="flex justify-center gap-8 sm:gap-10 mt-8">
+                            {organizingCommittee.slice(4).map((doc) => (
+                                <div key={doc.name} className="text-center flex flex-col items-center w-36 sm:w-40">
+                                    <div className="mb-4 w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden ring-4 ring-primary/25 ring-offset-4 ring-offset-white shadow-lg">
+                                        <img
+                                            src={doc.img}
+                                            alt={doc.name}
+                                            className="h-full w-full object-cover object-top"
+                                        />
+                                    </div>
+                                    <h3 className="text-base font-bold text-slate-900 leading-snug">{doc.name}</h3>
+                                    <p className="text-xs text-slate-500 mt-1">Organizing Committee</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </section>
+
 
             {/* Welcome Message */}
             <section className="relative py-14 sm:py-16 md:py-20 overflow-hidden bg-gradient-to-br from-[#fdf8f6] via-white to-[#f0f8f8]">
@@ -466,6 +515,80 @@ const Conference2026 = () => {
                 </div>
             </section>
 
+            {/* Registration Details Table */}
+            <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-br from-[#fdf8f6] via-white to-[#fbf1f1] border-t border-slate-100">
+                <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+                    <div className="text-center mb-10 sm:mb-14">
+                        <h2 className="text-3xl md:text-4xl font-serif font-extrabold text-slate-900 uppercase tracking-wide">
+                            Registration Details
+                        </h2>
+                        <div className="mt-4 mx-auto h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
+                    </div>
+
+                    {/* Delegate Fee Table */}
+                    <div className="overflow-x-auto mb-3">
+                        <table className="w-full border-collapse rounded-2xl overflow-hidden shadow-md">
+                            <thead>
+                                <tr className="bg-[#e8a598] text-slate-900">
+                                    <th className="px-6 py-4 text-left font-bold text-base">Category</th>
+                                    <th className="px-6 py-4 text-center font-bold text-base">Up to Nov 15</th>
+                                    <th className="px-6 py-4 text-center font-bold text-base">After</th>
+                                    <th className="px-6 py-4 text-center font-bold text-base">On Spot</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {[
+                                    { cat: "CGSI Members", a: "₹15,000", b: "₹18,000", c: "₹20,000" },
+                                    { cat: "Non-CGSI Members", a: "₹16,000", b: "₹19,000", c: "₹21,000" },
+                                    { cat: "Post Graduates", a: "₹10,000", b: "₹10,000", c: "₹10,000" },
+                                ].map((row, i) => (
+                                    <tr key={row.cat} className={i % 2 === 0 ? "bg-[#fbeae7] text-slate-900" : "bg-[#f7dbd7] text-slate-900"}>
+                                        <td className="px-6 py-4 font-semibold text-base">{row.cat}</td>
+                                        <td className="px-6 py-4 text-center font-semibold text-base">{row.a}</td>
+                                        <td className="px-6 py-4 text-center font-semibold text-base">{row.b}</td>
+                                        <td className="px-6 py-4 text-center font-semibold text-base">{row.c}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {/* Pre-Conference Workshop Table */}
+                    <div className="overflow-x-auto mb-3 mt-10">
+                        <p className="font-bold text-slate-800 text-base mb-3">Pre-Conference Workshop – November 20<sup>th</sup>, 2026</p>
+                        <table className="w-full border-collapse rounded-2xl overflow-hidden shadow-md">
+                            <thead>
+                                <tr className="bg-[#e8a598] text-slate-900">
+                                    <th className="px-6 py-4 text-left font-bold text-base">Category</th>
+                                    <th className="px-6 py-4 text-center font-bold text-base">Fee</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr className="bg-[#fbeae7] text-slate-900">
+                                    <td className="px-6 py-4 font-semibold text-base">CASI Members</td>
+                                    <td className="px-6 py-4 text-center font-semibold text-base">₹5,500</td>
+                                </tr>
+                                <tr className="bg-[#f7dbd7] text-slate-900">
+                                    <td className="px-6 py-4 font-semibold text-base">Non-CASI Members</td>
+                                    <td className="px-6 py-4 text-center font-semibold text-base">₹6,400</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p className="text-center text-sm text-slate-500 italic mb-10">
+                        Note: Conference registration is mandatory for workshop participation.
+                    </p>
+
+                    <div className="text-center">
+                        <Link
+                            to="/CGCON2026-registration"
+                            className="inline-block px-10 py-3.5 bg-[#d87a76] hover:bg-[#c46a66] text-white font-bold uppercase tracking-widest text-sm rounded-full shadow-lg transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
+                        >
+                            Register Now
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
             {/* Registration Fee & Cancellation Policy */}
             <section className="py-14 sm:py-16 md:py-20 bg-white border-t border-slate-100">

@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import { UserPlus, CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-const membershipFormPath = "/CGSI membership form.pdf (1).pdf";
+const membershipFormPath = "/CGSI membership form.pdf (4).pdf";
 const membershipFormDownloadName = "CGSI-membership-form.pdf";
 
 const BecomeMember = () => {

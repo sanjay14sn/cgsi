@@ -23,6 +23,8 @@ import Conference2024 from "./pages/Conference2024";
 import EventDetail from "./pages/EventDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "@/components/theme-provider";
+import CGCON2026Registration from "./pages/CGCON2026Registration";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +54,8 @@ const App = () => (
             <Route path="/conference-2025" element={<Conference2025 />} />
             <Route path="/conference-2024" element={<Conference2024 />} />
             <Route path="/events/:id" element={<EventDetail />} />
+            <Route path="/CGCON2026-registration" element={<CGCON2026Registration />} />
+            <Route path="/admin" element={<AdminDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
