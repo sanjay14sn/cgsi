@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 const TARGET_DATE = new Date("2026-11-20T09:00:00+05:30");
@@ -510,7 +510,7 @@ const Conference2026 = () => {
                                     </th>
                                     <th className="px-4 sm:px-6 py-4 text-center font-bold text-sm sm:text-base leading-snug">
                                         Spot
-                                        <span className="block font-semibold text-xs sm:text-sm mt-0.5">Registration</span>
+                                        <span className="block mt-0.5">Registration</span>
                                     </th>
                                 </tr>
                             </thead>
@@ -677,13 +677,6 @@ const Conference2026 = () => {
                                     alt="Hotel GRT Grand"
                                     className="w-full h-auto object-cover"
                                 />
-                            </div>
-                            <div className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm">
-                                <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
-                                <div>
-                                    <p className="font-bold text-black">Hotel GRT Grand</p>
-                                    <p className="text-base text-gray-600">T-Nagar, Chennai</p>
-                                </div>
                             </div>
                         </div>
                         <div className="rounded-3xl overflow-hidden shadow-xl min-h-[320px] sm:min-h-[400px] md:min-h-0 md:h-full">

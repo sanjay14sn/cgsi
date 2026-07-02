@@ -226,27 +226,7 @@ const Conference2024 = () => {
                 </SponsorSection>
             </div>
 
-            {/* Congress Secretariat */}
-            <section className="py-12 lg:py-16 bg-white">
-                <div className="container mx-auto px-6 max-w-4xl">
-                    <div className="max-w-xl">
-                        <h3 className="font-bold text-[#f08683] text-lg">Congress Secretariat</h3>
-                        <div className="mt-4 space-y-1 text-gray-900">
-                            <p className="font-bold">Dr Deepa Ganesh</p>
-                            <p>Organizing Chairperson</p>
-                            <p>Founder President LVRII</p>
-                            <p>+91 99401 17779</p>
-                            <p>Ground Floor, No.8, Rams Flat,</p>
-                            <p>Gajapathy Street, Barnaby Rd, Kilpauk,</p>
-                            <p>Chennai, Tamil Nadu - 600010.</p>
-                            <p>
-                                <span className="font-bold">Email -</span> info.lvrii@gmail.com
-                            </p>
-                            <p>CGCON 2024</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+          
 
             {/* Congress Footer Banner */}
             <div className="w-full">
