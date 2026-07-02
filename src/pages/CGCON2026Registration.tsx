@@ -18,11 +18,11 @@ const FLOWERS = {
 };
 
 const PACKAGES = [
-    { id: "cgsi-conf",     description: "CGSI members – Conference only", price: "Rs 15,000", amount: "15000" },
-    { id: "cgsi-both",     description: "CGSI members – Conference + Workshop", price: "Rs 20,900", amount: "20900" },
-    { id: "noncgsi-conf",  description: "Non-CGSI members – Conference only", price: "Rs 16,000", amount: "16000" },
-    { id: "noncgsi-both",  description: "Non-CGSI members – Conference + Workshop", price: "Rs 22,900", amount: "22900" },
-    { id: "pg-conf",       description: "Post Graduate – Conference only", price: "Rs 10,000", amount: "10000" },
+    { id: "cgsi-conf",     label: "CGSI members – Conference only – Rs 15,000", amount: "15000" },
+    { id: "cgsi-both",     label: "CGSI members – Conference + Workshop – Rs 20,900", amount: "20900" },
+    { id: "noncgsi-conf",  label: "Non-CGSI members – Conference only – Rs 16,000", amount: "16000" },
+    { id: "noncgsi-both",  label: "Non-CGSI members – Conference + Workshop – Rs 22,900", amount: "22900" },
+    { id: "pg-conf",       label: "Post Graduate – Conference only – Rs 10,000", amount: "10000" },
 ];
 
 const INDIAN_STATES = [
@@ -266,10 +266,7 @@ const CGCON2026Registration = () => {
             });
 
             // 3. Save to Google Sheets (when VITE_GOOGLE_SHEETS_URL is configured)
-            const selectedPackage = PACKAGES.find((pkg) => pkg.id === selectedPkg);
-            const pkgLabel = selectedPackage
-                ? `${selectedPackage.description} – ${selectedPackage.price}`
-                : selectedPkg;
+            const pkgLabel = PACKAGES.find((pkg) => pkg.id === selectedPkg)?.label || selectedPkg;
             console.log("[CGCON2026Registration] calling submitToGoogleSheets for", form.name, form.email);
             try {
                 await submitToGoogleSheets({
@@ -543,7 +540,7 @@ const CGCON2026Registration = () => {
                                     Early Bird up to August 15<sup>th</sup>, 2026 <span className="text-red-500">*</span>
                                 </p>
                             </div>
-                            <div className="max-w-2xl mx-auto space-y-2">
+                            <div className="max-w-2xl mx-auto space-y-2 overflow-x-auto">
                                 {PACKAGES.map(pkg => (
                                     <label key={pkg.id} className="flex items-center gap-3 text-sm font-semibold text-gray-800 cursor-pointer p-2 hover:bg-gray-50 rounded transition">
                                         <input type="radio"
@@ -557,10 +554,7 @@ const CGCON2026Registration = () => {
                                                 if (errors.totalAmount) setErrors(prev => ({ ...prev, totalAmount: "" }));
                                             }}
                                             className="accent-[#d87a76] w-4 h-4 shrink-0" />
-                                        <span className="flex flex-1 min-w-0 items-center justify-between gap-4 sm:gap-6">
-                                            <span className="text-left">{pkg.description}</span>
-                                            <span className="shrink-0 w-24 sm:w-28 text-right whitespace-nowrap tabular-nums">{pkg.price}</span>
-                                        </span>
+                                        <span className="whitespace-nowrap">{pkg.label}</span>
                                     </label>
                                 ))}
                             </div>

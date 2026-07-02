@@ -79,13 +79,13 @@ const topicHighlights = [
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/3.png", label: "Mommy Makeover" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/4.png", label: "Vulvar Cosmesis" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/5.png", label: "Lasers, Radiofrequency, HIFU, Carboxytherapy" },
-    { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/6.png", label: "Vulval Fillers & Threads" },
-    { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/7.png", label: "G-Shot, PRP, Exosomes" },
+    { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/6.png", label: "Vulval Filler, Botex & Threads" },
+    { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/7.png", label: "G-Shot, O-Shot, PRP, Exosomes" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/8.png", label: "Clitogram" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/9.png", label: "BHRT and Anti-Aging" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/10.png", label: "Panel Discussions" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/11.png", label: "Nutrigenomics, Epigenetics" },
-    { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/12.png", label: "Kegels Chair" },
+    { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/12.png", label: "HIFEM Chair" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/13.png", label: "Debates" },
 ];
 
@@ -176,11 +176,11 @@ const Conference2026 = () => {
                                     <p className="text-lg sm:text-xl font-bold text-slate-900 leading-none mt-0.5">November 2026</p>
                                 </div>
                                 <div className="w-px bg-slate-900/30 shrink-0" />
-                                <div className="flex-1 bg-[#e8957a] px-4 py-3 sm:py-3.5 flex flex-col items-center justify-center text-center">
-                                    <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
+                                <div className="flex-1 bg-[#e8957a] px-4 py-3 sm:py-3.5 flex flex-col items-center justify-center text-center sm:items-start sm:justify-center sm:text-left">
+                                    <p className="text-lg sm:text-xl font-bold text-slate-900 leading-none">
                                         Hotel GRT Grand
                                     </p>
-                                    <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug mt-0.5">
+                                    <p className="text-lg sm:text-xl font-bold text-slate-900 leading-none mt-0.5">
                                         T-Nagar, Chennai.
                                     </p>
                                 </div>
@@ -495,7 +495,7 @@ const Conference2026 = () => {
                     {/* Delegate Fee Table */}
                     <div className="overflow-x-auto mb-3">
                         <p className="font-bold text-slate-800 text-base sm:text-lg mb-3">
-                            Conference November 21<sup>st</sup> & 22<sup>nd</sup>, 2026
+                            Conference November - 21<sup>st</sup> & 22<sup>nd</sup>, 2026
                         </p>
                         <table className="w-full border-collapse rounded-2xl overflow-hidden shadow-md">
                             <thead>
@@ -503,10 +503,10 @@ const Conference2026 = () => {
                                     <th className="px-4 sm:px-6 py-4 text-left font-bold text-sm sm:text-base">Category</th>
                                     <th className="px-4 sm:px-6 py-4 text-center font-bold text-sm sm:text-base leading-snug">
                                         Early Bird
-                                        <span className="block font-semibold text-xs sm:text-sm mt-0.5">Up to August 15<sup>th</sup></span>
+                                        <span className="block font-semibold text-xs sm:text-sm mt-0.5">Upto August 15<sup>th</sup></span>
                                     </th>
                                     <th className="px-4 sm:px-6 py-4 text-center font-bold text-sm sm:text-base leading-snug">
-                                        Up to November 19
+                                        Upto November 19th
                                     </th>
                                     <th className="px-4 sm:px-6 py-4 text-center font-bold text-sm sm:text-base leading-snug">
                                         Spot
@@ -733,7 +733,7 @@ const Conference2026 = () => {
                         </h2>
                         <div className="mt-4 mx-auto h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
                     </div>
-                    <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+                    <div className="max-w-xl mx-auto">
                         <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-md space-y-4">
                             <h3 className="font-bold text-primary text-lg uppercase tracking-wide">
                                 Congress Secretariat
@@ -758,19 +758,6 @@ const Conference2026 = () => {
                                 <Mail className="w-4 h-4 shrink-0" />
                                 info.thecgsi@gmail.com
                             </a>
-                        </div>
-                        <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-md space-y-3">
-                            <h3 className="font-bold text-primary text-lg uppercase tracking-wide">
-                                Conference Venue
-                            </h3>
-                            <div className="flex items-start gap-3 text-slate-700 leading-relaxed">
-                                <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
-                                <address className="not-italic">
-                                    Hotel GRT Grand,
-                                    <br />
-                                    T-Nagar, Chennai
-                                </address>
-                            </div>
                         </div>
                     </div>
                 </div>
