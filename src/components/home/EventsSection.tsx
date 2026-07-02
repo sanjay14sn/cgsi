@@ -40,7 +40,7 @@ const events = [
     description: "Monthly CME focused on the latest modalities in menopause care and aesthetic gynecology.",
     date: "18th April, 2026",
     location: "Marriott, Madurai",
-    image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781676699/71787968-1405-4b80-ac38-1ffa0d1e81ec_zktrd1.jpg",
+    image: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778479920/WhatsApp_Image_2026-05-11_at_10.43.29_AM_smmqh4.jpg",
     category: "CME",
     isUpcoming: false,
   },
@@ -86,7 +86,7 @@ const EventsSection = () => {
             className="rounded-2xl sm:rounded-[3rem] overflow-hidden border border-slate-200 shadow-2xl bg-white"
           >
             <img
-              src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782729399/ChatGPT_Image_Jun_29_2026_03_13_35_PM_1_wvemju.png"
+              src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782977863/ChatGPT_Image_Jul_2_2026_01_06_53_PM_u0kkjf.png"
               alt="Upcoming Conference"
               className="w-full h-auto object-cover"
             />

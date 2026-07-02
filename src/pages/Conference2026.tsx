@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
-import { Calendar, MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 const TARGET_DATE = new Date("2026-11-20T09:00:00+05:30");
@@ -25,7 +25,19 @@ function useCountdown(target: Date) {
 }
 
 const LOGO =
-    "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778057479/6b3a6033-b4e8-44a9-aa71-98bea42dc8b2_zjpno8.jpg";
+    "https://res.cloudinary.com/ddibq0tya/image/upload/v1771404636/ChatGPT_Image_Feb_18_2026_02_20_16_PM_dtmwyu.png";
+
+const FLOWERS = {
+    topLeft:
+        "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782978267/ChatGPT_Image_Jul_2_2026_01_13_46_PM_avouff.png",
+    topRight:
+        "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782978267/ChatGPT_Image_Jul_2_2026_01_13_46_PM_avouff.png",
+    bottomLeft:
+        "https://lvrii.in/conferences/wp-content/uploads/elementor/thumbs/flower-44-r9r291shocubdgh4wlgs6tg2pemxkw2iiz5vhbi24q.png",
+    bottomRight:
+        "https://lvrii.in/conferences/wp-content/uploads/elementor/thumbs/flower-55-r9r28yyz3uqgeml8d28whc5ox90txsrbil7f1hm8ne.png",
+    center: "https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png",
+};
 
 const organizingTeam = [
     {
@@ -93,130 +105,85 @@ const Conference2026 = () => {
 
     return (
         <Layout>
-            {/* Banner Section - Coded Flyer Design */}
-            <section className="relative w-full py-16 sm:py-20 md:py-24 bg-gradient-to-br from-[#fef7f7] via-[#fffcfc] to-[#fbf1f1] overflow-hidden border-b border-rose-100/50">
-                {/* Thin Rose Gold Inner Border */}
-                <div className="absolute inset-4 sm:inset-6 md:inset-8 border border-[#e8c3b9]/40 rounded-[2rem] pointer-events-none z-10" />
-
-                {/* Corner Floral Elements */}
-                <div className="absolute top-0 left-0 w-36 sm:w-56 md:w-72 aspect-square pointer-events-none z-0 opacity-40">
+            {/* Hero */}
+            <section className="relative w-full -mt-24 lg:-mt-32 pt-24 lg:pt-32 overflow-hidden bg-gradient-to-b from-[#FCF5F3] via-[#FDF8F6] to-[#F3E8E5]">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="relative w-full"
+                >
                     <img
-                        src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
-                        className="w-full h-full object-contain -translate-x-6 -translate-y-6 rotate-90 scale-x-[-1]"
+                        src={FLOWERS.topLeft}
                         alt=""
+                        aria-hidden
+                        className="absolute top-0 left-0 w-36 sm:w-44 md:w-56 lg:w-72 xl:w-80 h-auto pointer-events-none select-none"
                     />
-                </div>
-                <div className="absolute bottom-0 right-0 w-40 sm:w-60 md:w-80 aspect-square pointer-events-none z-0 opacity-40">
                     <img
-                        src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
-                        className="w-full h-full object-contain translate-x-8 translate-y-8"
+                        src={FLOWERS.topRight}
                         alt=""
+                        aria-hidden
+                        className="absolute top-0 right-0 w-36 sm:w-44 md:w-56 lg:w-72 xl:w-80 h-auto scale-x-[-1] pointer-events-none select-none"
                     />
-                </div>
-                <div className="absolute bottom-0 left-0 w-32 sm:w-48 md:w-64 aspect-square pointer-events-none z-0 opacity-30">
-                    <img
-                        src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
-                        className="w-full h-full object-contain -translate-x-6 translate-y-6 -rotate-90"
-                        alt=""
-                    />
-                </div>
-                <div className="absolute top-0 right-0 w-32 sm:w-48 md:w-64 aspect-square pointer-events-none z-0 opacity-30">
-                    <img
-                        src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
-                        className="w-full h-full object-contain translate-x-6 -translate-y-6 rotate-180"
-                        alt=""
-                    />
-                </div>
 
-                {/* Right Side Center Floral Element (Large) */}
-                <div className="hidden lg:block absolute right-16 top-1/2 -translate-y-1/2 w-72 aspect-square opacity-70 pointer-events-none z-0">
-                    <img
-                        src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
-                        className="w-full h-full object-contain rotate-[35deg]"
-                        alt=""
-                    />
-                </div>
+                    <div className="relative z-10 w-full px-4 sm:px-8 md:px-12 pt-4 sm:pt-6 pb-8 sm:pb-10 md:pb-14 text-center flex flex-col items-center">
+                        <img
+                            src={LOGO}
+                            alt="CGSI Logo"
+                            className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain mb-5 sm:mb-6"
+                        />
 
-                {/* Main Content Container */}
-                <div className="container mx-auto px-8 sm:px-12 relative z-20 max-w-5xl text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="space-y-6"
-                    >
-                        {/* CGSI Logo */}
-                        <div className="flex justify-center mb-6">
-                            <img
-                                src={LOGO}
-                                alt="CGSI Logo"
-                                className="h-20 sm:h-24 md:h-28 w-auto object-contain mix-blend-multiply"
-                            />
-                        </div>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-sans font-bold text-[#EA7B74] tracking-wide leading-none">
+                            CGCON 2026
+                        </h1>
 
-                        {/* Congress Main Title */}
-                        <div className="space-y-2">
-                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-extrabold text-[#3a2f2c] tracking-wide uppercase">
-                                CGCON 2026
-                            </h1>
+                        <h2 className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900">
+                            3<sup>rd</sup> Cosmetic Gynecology World Congress 2026
+                        </h2>
 
-                            {/* 3rd Cosmetic Gynecology World Congress */}
-                            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-center mt-4 leading-tight">
-                                <span className="text-4xl sm:text-5xl md:text-6xl font-serif font-extrabold text-[#d87a76] mr-1 sm:mr-2 inline-block align-middle">
-                                    3<sup className="text-xl sm:text-2xl md:text-3xl lowercase">rd</sup>
-                                </span>
-                                <span className="text-[#d87a76] align-middle inline-block">Cosmetic Gynecology </span>{" "}
-                                <span className="text-[#3a2f2c] align-middle inline-block">World Congress</span>
-                            </h2>
-                        </div>
+                        <p className="mt-4 sm:mt-5 text-[#a46864] font-serif text-base sm:text-lg md:text-xl italic font-medium leading-relaxed max-w-xl mx-auto">
+                            Redefining Intimate Wellness
+                            <span className="block text-xl sm:text-2xl md:text-3xl font-serif mt-1 font-bold text-[#8a4e4a] not-italic tracking-wide">
+                                Beyond Beauty
+                            </span>
+                        </p>
 
-                        {/* Tagline / Theme */}
-                        <div className="pt-4 max-w-md sm:max-w-xl mx-auto">
-                            <p className="text-[#a46864] font-serif text-lg sm:text-xl italic font-medium leading-relaxed">
-                                Redefining Intimate Wellness
-                                <span className="block text-2xl sm:text-3xl font-serif mt-2 font-bold text-[#8a4e4a] not-italic tracking-wide">
-                                    Beyond Beauty
-                                </span>
-                            </p>
-                        </div>
+                        <img
+                            src={FLOWERS.center}
+                            alt="Flower Graphic"
+                            className="mt-5 sm:mt-6 w-40 sm:w-52 md:w-64 lg:w-72 h-auto object-contain mx-auto"
+                        />
 
-                        {/* Bottom Grid: Dates, City, Save the Dates, Venue */}
-                        <div className="grid md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto mt-12 pt-8 border-t border-[#e8c3b9]/30">
-                            {/* Dates & Location */}
-                            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6">
-                                <div className="flex items-center gap-3 bg-white/70 backdrop-blur-sm px-5 py-3.5 rounded-2xl border border-[#e8c3b9]/25 shadow-sm">
-                                    <Calendar className="w-5 h-5 text-[#d87a76] shrink-0" />
-                                    <span className="text-[#3a2f2c] text-sm sm:text-base font-semibold">
-                                        20<sup>th</sup> – 22<sup>nd</sup> Nov 2026
-                                    </span>
+                        <div className="mt-5 sm:mt-6 w-full max-w-lg mx-auto space-y-2 relative z-20">
+                            <div className="flex overflow-hidden rounded-sm shadow-sm">
+                                <div className="flex-1 bg-[#e8957a] px-4 py-3 sm:py-3.5 text-center sm:text-left">
+                                    <p className="text-lg sm:text-xl font-bold text-slate-900 leading-none">
+                                        20<sup className="text-xs sm:text-sm">th</sup>–22<sup className="text-xs sm:text-sm">nd</sup>
+                                    </p>
+                                    <p className="text-xs sm:text-sm font-semibold text-slate-900 mt-0.5">November 2026</p>
                                 </div>
-                                <div className="flex items-center gap-3 bg-white/70 backdrop-blur-sm px-5 py-3.5 rounded-2xl border border-[#e8c3b9]/25 shadow-sm">
-                                    <MapPin className="w-5 h-5 text-[#d87a76] shrink-0" />
-                                    <span className="text-[#3a2f2c] text-sm sm:text-base font-extrabold tracking-wider">
-                                        CHENNAI
-                                    </span>
+                                <div className="w-px bg-slate-900/30 shrink-0" />
+                                <div className="flex-1 bg-[#e8957a] px-4 py-3 sm:py-3.5 flex items-center justify-center text-center">
+                                    <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
+                                        Hotel GRT Grand, T-Nagar, Chennai.
+                                    </p>
                                 </div>
                             </div>
 
-                            {/* Save the Dates & Venue Info */}
-                            <div className="flex flex-col items-center md:items-end gap-3">
-                                <div className="inline-block bg-[#d87a76] text-white px-8 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest shadow-md border border-[#d87a76]/10">
-                                    Save the Dates
-                                </div>
+                            <div className="bg-[#a8d4d4] px-4 py-2 sm:py-2.5 text-center shadow-sm rounded-sm">
+                                <p className="text-xs sm:text-sm font-semibold text-slate-900">
+                                    20<sup>th</sup> November 2026 – Workshop
+                                </p>
+                            </div>
 
-                                <div className="flex items-center gap-2 text-slate-400 text-xs">
-                                    <div className="h-px w-6 bg-[#e8c3b9]/50" />
-                                    <span className="font-serif italic text-[#a46864]">Venue</span>
-                                    <div className="h-px w-6 bg-[#e8c3b9]/50" />
-                                </div>
-
-                                <p className="text-[#3a2f2c] font-bold text-base sm:text-lg tracking-wide">
-                                    Hotel GRT Grand
+                            <div className="bg-[#a8d4d4] px-4 py-2 sm:py-2.5 text-center shadow-sm rounded-sm">
+                                <p className="text-xs sm:text-sm font-semibold text-slate-900">
+                                    21<sup>st</sup> &amp; 22<sup>nd</sup> November 2026 – Conference
                                 </p>
                             </div>
                         </div>
-                    </motion.div>
-                </div>
+                    </div>
+                </motion.div>
             </section>
 
             {/* Countdown */}
@@ -278,27 +245,10 @@ const Conference2026 = () => {
                     {/* Organizing Committee */}
                     <div className="mt-14 pt-12 border-t border-slate-200/70">
                         <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-10">Organizing Committee</p>
-                        {/* Row 1 — 4 members */}
-                        <div className="grid grid-cols-4 gap-8 sm:gap-10 max-w-4xl mx-auto justify-items-center">
-                            {organizingCommittee.slice(0, 4).map((doc) => (
+                        <div className="flex flex-wrap justify-center gap-8 sm:gap-10 max-w-5xl mx-auto">
+                            {organizingCommittee.map((doc) => (
                                 <div key={doc.name} className="text-center flex flex-col items-center w-36 sm:w-40">
-                                    <div className="mb-4 w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden ring-4 ring-primary/25 ring-offset-4 ring-offset-white shadow-lg">
-                                        <img
-                                            src={doc.img}
-                                            alt={doc.name}
-                                            className="h-full w-full object-cover object-top"
-                                        />
-                                    </div>
-                                    <h3 className="text-base font-bold text-slate-900 leading-snug">{doc.name}</h3>
-                                    <p className="text-xs text-slate-500 mt-1">Organizing Committee</p>
-                                </div>
-                            ))}
-                        </div>
-                        {/* Row 2 — 3 members centered */}
-                        <div className="flex justify-center gap-8 sm:gap-10 mt-8">
-                            {organizingCommittee.slice(4).map((doc) => (
-                                <div key={doc.name} className="text-center flex flex-col items-center w-36 sm:w-40">
-                                    <div className="mb-4 w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden ring-4 ring-primary/25 ring-offset-4 ring-offset-white shadow-lg">
+                                    <div className="mb-4 w-32 h-32 sm:w-36 sm:h-36 rounded-lg overflow-hidden border-4 border-primary/25 shadow-lg bg-white">
                                         <img
                                             src={doc.img}
                                             alt={doc.name}
@@ -527,13 +477,25 @@ const Conference2026 = () => {
 
                     {/* Delegate Fee Table */}
                     <div className="overflow-x-auto mb-3">
+                        <p className="font-bold text-slate-800 text-base sm:text-lg mb-3">
+                            Conference November 21<sup>st</sup>, 22<sup>nd</sup> 2026
+                        </p>
                         <table className="w-full border-collapse rounded-2xl overflow-hidden shadow-md">
                             <thead>
                                 <tr className="bg-[#e8a598] text-slate-900">
-                                    <th className="px-6 py-4 text-left font-bold text-base">Category</th>
-                                    <th className="px-6 py-4 text-center font-bold text-base">Up to Nov 15</th>
-                                    <th className="px-6 py-4 text-center font-bold text-base">After</th>
-                                    <th className="px-6 py-4 text-center font-bold text-base">On Spot</th>
+                                    <th className="px-4 sm:px-6 py-4 text-left font-bold text-sm sm:text-base">Category</th>
+                                    <th className="px-4 sm:px-6 py-4 text-center font-bold text-sm sm:text-base leading-snug">
+                                        Early Bird
+                                        <span className="block font-semibold text-xs sm:text-sm mt-0.5">Up to Aug 15</span>
+                                    </th>
+                                    <th className="px-4 sm:px-6 py-4 text-center font-bold text-sm sm:text-base leading-snug">
+                                        After
+                                        <span className="block font-semibold text-xs sm:text-sm mt-0.5">Aug 15</span>
+                                    </th>
+                                    <th className="px-4 sm:px-6 py-4 text-center font-bold text-sm sm:text-base leading-snug">
+                                        on spot
+                                        <span className="block font-semibold text-xs sm:text-sm mt-0.5">Registration</span>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -565,17 +527,20 @@ const Conference2026 = () => {
                             </thead>
                             <tbody>
                                 <tr className="bg-[#fbeae7] text-slate-900">
-                                    <td className="px-6 py-4 font-semibold text-base">CASI Members</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-base">₹5,500</td>
+                                    <td className="px-6 py-4 font-semibold text-base">CGSI Members</td>
+                                    <td className="px-6 py-4 text-center font-semibold text-base">₹5,900</td>
                                 </tr>
                                 <tr className="bg-[#f7dbd7] text-slate-900">
-                                    <td className="px-6 py-4 font-semibold text-base">Non-CASI Members</td>
-                                    <td className="px-6 py-4 text-center font-semibold text-base">₹6,400</td>
+                                    <td className="px-6 py-4 font-semibold text-base">Non-CGSI Members</td>
+                                    <td className="px-6 py-4 text-center font-semibold text-base">₹6,900</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <p className="text-center text-sm text-slate-500 italic mb-10">
+                    <p className="text-center text-sm text-slate-800 font-bold mb-3">
+                        The registration fee includes GST @ 18% and Banquet
+                    </p>
+                    <p className="text-center text-sm text-slate-800 font-bold mb-10">
                         Note: Conference registration is mandatory for workshop participation.
                     </p>
 
@@ -644,7 +609,7 @@ const Conference2026 = () => {
                             <ul className="space-y-3 text-sm sm:text-base text-slate-700 leading-relaxed">
                                 <li className="flex items-start gap-3">
                                     <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-rose-400" />
-                                    <span><strong className="text-slate-900">No Refund</strong> will be given for cancellation requests received after <strong>25/11/2025</strong>.</span>
+                                    <span><strong className="text-slate-900">No Refund</strong> will be given for cancellation requests received after <strong>20/10/2026</strong>.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-rose-400" />
@@ -671,6 +636,49 @@ const Conference2026 = () => {
                                     <span>A similar mode of transfer will be adopted for refund as the fund was received. <strong>NO CASH refund policy.</strong></span>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Conference Venue */}
+            <section className="py-14 sm:py-16 md:py-20 bg-gradient-to-br from-primary/5 to-primary/10 border-t border-slate-100">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-black text-center uppercase tracking-wide mb-10 sm:mb-12">
+                        Conference Venue
+                    </h2>
+                    <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto items-stretch">
+                        <div className="flex flex-col gap-4">
+                            <div className="rounded-3xl overflow-hidden shadow-xl bg-white">
+                                <div className="bg-[#e8957a] px-6 py-8 text-center">
+                                    <p className="text-sm sm:text-base font-bold tracking-[0.2em] text-black uppercase">Conference</p>
+                                    <p className="text-3xl sm:text-4xl font-extrabold text-black leading-none mt-1">Venue</p>
+                                    <hr className="my-4 border-black/25 max-w-xs mx-auto" />
+                                    <p className="text-lg sm:text-xl font-extrabold text-black uppercase">The Grand Chennai</p>
+                                    <p className="text-lg sm:text-xl font-extrabold text-black uppercase">T-Nagar, Chennai</p>
+                                </div>
+                                <img
+                                    src="https://lvrii.in/conferences/wp-content/uploads/2025/09/THE-GRAND-CHENNAI.jpg"
+                                    alt="The Grand Chennai by GRT Hotels"
+                                    className="w-full h-auto object-cover"
+                                />
+                            </div>
+                            <div className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm">
+                                <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
+                                <div>
+                                    <p className="font-bold text-black">The Grand Chennai by GRT Hotels</p>
+                                    <p className="text-base text-gray-600">T-Nagar, Chennai, Tamil Nadu</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="rounded-3xl overflow-hidden shadow-xl min-h-[320px] sm:min-h-[400px] md:min-h-0 md:h-full">
+                            <iframe
+                                src="https://maps.google.com/maps?q=Grand%20Chennai%20by%20GRT%20Hotels%20T-Nagar%20Chennai&t=m&z=15&output=embed&iwloc=near"
+                                title="Grand Chennai by GRT Hotels T-Nagar Chennai"
+                                aria-label="Grand Chennai by GRT Hotels T-Nagar Chennai"
+                                className="w-full h-full min-h-[320px] sm:min-h-[400px] border-0"
+                                loading="lazy"
+                            />
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
-import { Folder, Image as ImageIcon } from "lucide-react";
+import { Folder, Image as ImageIcon, Camera } from "lucide-react";
 import { images2024, images2025, imagesModernAestheticGynecology, allPhotos } from "./GalleryAlbum";
+
+// Set to true to restore the album grid
+const SHOW_ALBUMS = false;
 
 const albums = [
   {
@@ -43,6 +46,17 @@ const GalleryPage = () => {
             <p className="text-lg text-muted-foreground">Relive the moments from our historic events</p>
           </div>
 
+          {!SHOW_ALBUMS ? (
+            <div className="max-w-2xl mx-auto bg-white p-10 md:p-16 rounded-[2.5rem] border border-border/50 shadow-xl text-center">
+              <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                <Camera className="w-12 h-12 text-primary" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">Coming Soon</h2>
+              <p className="text-black text-lg leading-relaxed font-semibold">
+                We are curating photo albums from our historic CGSI events. Check back soon to relive the moments from CGCON and other society gatherings.
+              </p>
+            </div>
+          ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
             {albums.map((album) => (
               <Link
@@ -85,6 +99,7 @@ const GalleryPage = () => {
               </Link>
             ))}
           </div>
+          )}
         </section>
       </div>
     </Layout>

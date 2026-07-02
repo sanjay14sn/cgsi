@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Eye, Heart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const AboutSection = () => {
@@ -28,14 +28,6 @@ const AboutSection = () => {
                   alt="Cosmetic Gynecology Society of India Medical Team"
                   className="w-full h-[260px] sm:h-[380px] md:h-[480px] lg:h-[550px] object-cover filter grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
                 />
-              </div>
-
-              {/* Decorative Pulse */}
-              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-16 h-16 sm:w-24 sm:h-24 rounded-full flex items-center justify-center shadow-lg bg-background/50 backdrop-blur-sm border border-primary/20">
-                <div className="relative flex items-center justify-center">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-20"></span>
-                  <Heart className="w-8 h-8 text-primary fill-primary/20 relative z-10" />
-                </div>
               </div>
             </div>
 

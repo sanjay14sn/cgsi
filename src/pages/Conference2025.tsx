@@ -128,6 +128,13 @@ const Conference2025 = () => {
                             2nd Cosmetic Gynecology World Congress 2025
                         </h2>
 
+                        <p className="mt-4 sm:mt-5 text-[#a46864] font-serif text-base sm:text-lg md:text-xl italic font-medium leading-relaxed max-w-xl mx-auto">
+                            Redefining Intimate Wellness
+                            <span className="block text-xl sm:text-2xl md:text-3xl font-serif mt-1 font-bold text-[#8a4e4a] not-italic tracking-wide">
+                                Beyond Beauty
+                            </span>
+                        </p>
+
                         <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-8 md:gap-12 font-bold text-gray-900 w-full">
                             <div className="text-center sm:text-right leading-relaxed text-[#EA7B74] text-base sm:text-lg md:text-xl">
                                 <div>13th and 14th</div>

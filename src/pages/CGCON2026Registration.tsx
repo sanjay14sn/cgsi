@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { submitToGoogleSheets } from "@/lib/submitToGoogleSheets";
@@ -6,11 +8,20 @@ import { submitToGoogleSheets } from "@/lib/submitToGoogleSheets";
 const LOGO =
     "https://res.cloudinary.com/ddibq0tya/image/upload/v1771404636/ChatGPT_Image_Feb_18_2026_02_20_16_PM_dtmwyu.png";
 
+const FLOWERS = {
+    topLeft:
+        "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782978267/ChatGPT_Image_Jul_2_2026_01_13_46_PM_avouff.png",
+    topRight:
+        "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782978267/ChatGPT_Image_Jul_2_2026_01_13_46_PM_avouff.png",
+    bottomRight:
+        "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782978522/ChatGPT_Image_Jul_2_2026_01_18_03_PM_pmvchx.png",
+};
+
 const PACKAGES = [
     { id: "cgsi-conf",     label: "CGSI members – Conference only – Rs 15,000", amount: "15000" },
-    { id: "cgsi-both",     label: "CGSI members – Conference + Workshop – Rs 20,800", amount: "20800" },
+    { id: "cgsi-both",     label: "CGSI members – Conference + Workshop – Rs 20,900", amount: "20900" },
     { id: "noncgsi-conf",  label: "Non-CGSI members – Conference only – Rs 16,000", amount: "16000" },
-    { id: "noncgsi-both",  label: "Non-CGSI members – Conference + Workshop – Rs 21,800", amount: "21800" },
+    { id: "noncgsi-both",  label: "Non-CGSI members – Conference + Workshop – Rs 22,900", amount: "22900" },
     { id: "pg-conf",       label: "Post Graduate – Conference only – Rs 10,000", amount: "10000" },
 ];
 
@@ -23,8 +34,8 @@ const ErrorMsg = ({ msg }: { msg?: string }) => {
 
 const CGCON2026Registration = () => {
     const [form, setForm] = useState({
-        category: "Delegate", title: "Dr", name: "", mobile: "",
-        email: "", institution: "", designation: "",
+        category: "Delegate", name: "", mobile: "",
+        email: "", institution: "",
         city: "", state: "", mciNumber: "",
         cgsiMember: "", cgsiMemberNo: "",
         specialty: "", stateMedicalCouncil: "",
@@ -35,6 +46,7 @@ const CGCON2026Registration = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [paymentImageFile, setPaymentImageFile] = useState<File | null>(null);
     const [errors, setErrors] = useState<Record<string, string>>({});
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setForm(p => ({ ...p, [e.target.name]: e.target.value }));
@@ -59,8 +71,11 @@ const CGCON2026Registration = () => {
         else if (!emailRegex.test(form.email)) newErrors.email = "Enter a valid email address.";
 
         if (!form.institution.trim()) newErrors.institution = "Institution is required.";
+        if (!form.specialty.trim()) newErrors.specialty = "Specialty is required.";
         if (!form.city.trim()) newErrors.city = "City is required.";
         if (!form.state.trim()) newErrors.state = "State is required.";
+        if (!form.mciNumber.trim()) newErrors.mciNumber = "MCI Number is required.";
+        if (!form.stateMedicalCouncil.trim()) newErrors.stateMedicalCouncil = "State Medical Council is required.";
 
         if (!form.cgsiMember) newErrors.cgsiMember = "Please select Yes or No.";
         if (form.cgsiMember === "Yes" && !form.cgsiMemberNo.trim()) {
@@ -148,12 +163,12 @@ const CGCON2026Registration = () => {
                 await submitToGoogleSheets({
                     timestamp: new Date().toISOString(),
                     category: form.category,
-                    title: form.title,
+                    title: "",
                     name: form.name,
                     mobile: form.mobile,
                     email: form.email,
                     institution: form.institution,
-                    designation: form.designation,
+                    designation: "",
                     city: form.city,
                     state: form.state,
                     mciNumber: form.mciNumber,
@@ -204,7 +219,30 @@ const CGCON2026Registration = () => {
     }
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white pt-14">
+            <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+                <div className="relative flex items-center h-14 px-4 sm:px-6">
+                    <button
+                        type="button"
+                        onClick={() => setMenuOpen((open) => !open)}
+                        className="flex items-center justify-center w-11 h-11 rounded-full bg-[#E1C7C4] border border-[#e8c3b9]/60 text-black shadow-sm hover:bg-[#d9bab6] transition-colors"
+                        aria-label="Open menu"
+                    >
+                        {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
+                    {menuOpen && (
+                        <div className="absolute left-4 sm:left-6 top-full mt-2 w-52 bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden">
+                            <Link
+                                to="/conference-2026"
+                                onClick={() => setMenuOpen(false)}
+                                className="block px-4 py-3 text-sm font-bold text-gray-900 hover:bg-[#d87a76]/10 transition-colors"
+                            >
+                                CGCON 2026
+                            </Link>
+                        </div>
+                    )}
+                </div>
+            </header>
             
             {/* Full-page Loader Overlay */}
             {isSubmitting && (
@@ -221,18 +259,37 @@ const CGCON2026Registration = () => {
             {/* Banner */}
             <section className="relative py-12 sm:py-16 bg-gradient-to-br from-[#fef7f7] via-white to-[#fbf1f1] border-b border-rose-100/50 overflow-hidden">
                 <div className="absolute inset-3 sm:inset-5 border border-[#e8c3b9]/35 rounded-[1.75rem] pointer-events-none" />
-                <div className="absolute top-0 left-0 w-40 sm:w-56 aspect-square opacity-20 pointer-events-none">
-                    <img src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
-                        className="w-full h-full object-contain -translate-x-5 -translate-y-5 rotate-90 scale-x-[-1]" alt="" />
-                </div>
-                <div className="absolute bottom-0 right-0 w-40 sm:w-56 aspect-square opacity-20 pointer-events-none">
-                    <img src="https://lvrii.in/conferences/wp-content/uploads/2025/08/flower-33-2.png"
-                        className="w-full h-full object-contain translate-x-5 translate-y-5" alt="" />
-                </div>
+                <img
+                    src={FLOWERS.topLeft}
+                    alt=""
+                    aria-hidden
+                    className="absolute top-0 left-0 w-36 sm:w-44 md:w-56 lg:w-72 xl:w-80 h-auto pointer-events-none select-none"
+                />
+                <img
+                    src={FLOWERS.topRight}
+                    alt=""
+                    aria-hidden
+                    className="absolute top-0 right-0 w-36 sm:w-44 md:w-56 lg:w-72 xl:w-80 h-auto scale-x-[-1] pointer-events-none select-none"
+                />
+                <img
+                    src={FLOWERS.bottomRight}
+                    alt=""
+                    aria-hidden
+                    className="absolute bottom-0 right-0 w-36 sm:w-44 md:w-56 lg:w-72 xl:w-80 h-auto pointer-events-none select-none"
+                />
                 <div className="container mx-auto px-5 text-center relative z-10">
                     <img src={LOGO} alt="CGSI" className="h-40 sm:h-52 w-auto mx-auto mb-4 mix-blend-multiply" />
                     <h1 className="text-2xl sm:text-4xl md:text-5xl font-serif font-extrabold text-[#3a2f2c] uppercase tracking-wide">CGCON 2026</h1>
                     <p className="mt-1.5 text-[#d87a76] font-serif text-base sm:text-lg font-semibold italic">3<sup>rd</sup> Cosmetic Gynecology World Congress</p>
+
+                    <div className="mt-5 sm:mt-6 space-y-1.5 text-sm sm:text-base text-[#3a2f2c] font-semibold">
+                        <p>
+                            20<sup>th</sup>–22<sup>nd</sup> November 2026
+                        </p>
+                        <p>Hotel GRT Grand, T-Nagar, Chennai.</p>
+                        <p className="text-[#d87a76]">20<sup>th</sup> November 2026 – Workshop</p>
+                        <p className="text-[#d87a76]">21<sup>st</sup> &amp; 22<sup>nd</sup> November 2026 – Conference</p>
+                    </div>
                 </div>
             </section>
 
@@ -242,29 +299,20 @@ const CGCON2026Registration = () => {
                     <form onSubmit={handleSubmit} className="space-y-8" noValidate>
 
                         {/* ── REGISTRATION heading ── */}
-                        <div>
-                            <h2 className="text-lg font-extrabold text-gray-900 uppercase tracking-wide mb-1">Registration</h2>
-                            <hr className="border-gray-300" />
+                        <div className="text-center mb-6 sm:mb-8">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-extrabold text-gray-900 uppercase tracking-wide">
+                                Registration Form
+                            </h2>
+                            <div className="mt-3 mx-auto h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
                         </div>
 
-                        {/* Row 1: Category · Title · Name · Mobile */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Category <span className="text-red-500">*</span></label>
                                 <select name="category" value={form.category} onChange={handleChange} className={getInputClass('category')}>
                                     <option>Delegate</option>
                                     <option>Faculty</option>
                                     <option>Post Graduate</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-1">Title <span className="text-red-500">*</span></label>
-                                <select name="title" value={form.title} onChange={handleChange} className={getInputClass('title')}>
-                                    <option>Dr</option>
-                                    <option>Prof</option>
-                                    <option>Mr</option>
-                                    <option>Ms</option>
-                                    <option>Mrs</option>
                                 </select>
                             </div>
                             <div>
@@ -277,28 +325,60 @@ const CGCON2026Registration = () => {
                                 <input name="mobile" value={form.mobile} onChange={handleChange} placeholder="10-digit mobile" className={getInputClass('mobile')} />
                                 <ErrorMsg msg={errors.mobile} />
                             </div>
-                        </div>
-
-                        {/* Row 2: Email · Institution · Designation */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-5">
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Email <span className="text-red-500">*</span></label>
                                 <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="your@email.com" className={getInputClass('email')} />
                                 <ErrorMsg msg={errors.email} />
                             </div>
+                        </div>
+
+                        {/* CGSI Member */}
+                        <div className="p-4 bg-gray-50 border border-gray-100 rounded-lg space-y-4">
+                            <div className="flex flex-wrap items-center gap-6">
+                                <span className="text-sm font-bold text-gray-900">Are you a CGSI Member? <span className="text-red-500">*</span></span>
+                                <div className="flex gap-4">
+                                    {["Yes", "No"].map(opt => (
+                                        <label key={opt} className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer font-medium">
+                                            <input type="radio" name="cgsiMember" value={opt}
+                                                checked={form.cgsiMember === opt}
+                                                onChange={(e) => {
+                                                    handleChange(e);
+                                                    if (e.target.value === "No") {
+                                                        setForm(p => ({ ...p, cgsiMemberNo: "" }));
+                                                    }
+                                                    if (errors.cgsiMember) setErrors(prev => ({ ...prev, cgsiMember: "" }));
+                                                    if (errors.cgsiMemberNo) setErrors(prev => ({ ...prev, cgsiMemberNo: "" }));
+                                                }}
+                                                className="accent-[#d87a76] w-4 h-4" />
+                                            {opt}
+                                        </label>
+                                    ))}
+                                </div>
+                                <ErrorMsg msg={errors.cgsiMember} />
+                            </div>
+
+                            {form.cgsiMember === "Yes" && (
+                                <div>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1">Membership No. <span className="text-red-500">*</span></label>
+                                    <input name="cgsiMemberNo" value={form.cgsiMemberNo} onChange={handleChange}
+                                        placeholder="Enter membership number"
+                                        className={getInputClass('cgsiMemberNo')} />
+                                    <ErrorMsg msg={errors.cgsiMemberNo} />
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">Institution Name <span className="text-red-500">*</span></label>
                                 <input name="institution" value={form.institution} onChange={handleChange} className={getInputClass('institution')} />
                                 <ErrorMsg msg={errors.institution} />
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-1">Designation</label>
-                                <input name="designation" value={form.designation} onChange={handleChange} className={getInputClass('designation')} />
+                                <label className="block text-sm font-semibold text-gray-700 mb-1">Specialty <span className="text-red-500">*</span></label>
+                                <input name="specialty" value={form.specialty} onChange={handleChange} className={getInputClass('specialty')} />
+                                <ErrorMsg msg={errors.specialty} />
                             </div>
-                        </div>
-
-                        {/* Row 3: City · State · MCI Number */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-5">
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">City <span className="text-red-500">*</span></label>
                                 <input name="city" value={form.city} onChange={handleChange} className={getInputClass('city')} />
@@ -310,57 +390,20 @@ const CGCON2026Registration = () => {
                                 <ErrorMsg msg={errors.state} />
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-1">MCI Number</label>
+                                <label className="block text-sm font-semibold text-gray-700 mb-1">MCI Number <span className="text-red-500">*</span></label>
                                 <input name="mciNumber" value={form.mciNumber} onChange={handleChange} className={getInputClass('mciNumber')} />
-                            </div>
-                        </div>
-
-                        {/* Row 4: Specialty · State Medical Council */}
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-5">
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-1">Specialty</label>
-                                <input name="specialty" value={form.specialty} onChange={handleChange} className={getInputClass('specialty')} />
+                                <ErrorMsg msg={errors.mciNumber} />
                             </div>
                             <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-1">State Medical Council</label>
+                                <label className="block text-sm font-semibold text-gray-700 mb-1">State Medical Council <span className="text-red-500">*</span></label>
                                 <input name="stateMedicalCouncil" value={form.stateMedicalCouncil} onChange={handleChange} className={getInputClass('stateMedicalCouncil')} />
-                            </div>
-                        </div>
-
-                        {/* CGSI Member */}
-                        <div className="flex flex-wrap items-center gap-6 p-4 bg-gray-50 border border-gray-100 rounded-lg">
-                            <span className="text-sm font-bold text-gray-900">Are you a CGSI Member? <span className="text-red-500">*</span></span>
-                            <div className="flex gap-4">
-                                {["Yes", "No"].map(opt => (
-                                    <label key={opt} className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer font-medium">
-                                        <input type="radio" name="cgsiMember" value={opt}
-                                            checked={form.cgsiMember === opt} 
-                                            onChange={(e) => {
-                                                handleChange(e);
-                                                if (errors.cgsiMember) setErrors(prev => ({ ...prev, cgsiMember: "" }));
-                                            }}
-                                            className="accent-[#d87a76] w-4 h-4" />
-                                        {opt}
-                                    </label>
-                                ))}
-                            </div>
-                            <ErrorMsg msg={errors.cgsiMember} />
-
-                            <div className="flex items-center gap-3 flex-1 min-w-[200px] border-l border-gray-200 pl-6">
-                                <label className="text-sm font-semibold text-gray-700 whitespace-nowrap">Membership No.</label>
-                                <div className="flex-1">
-                                    <input name="cgsiMemberNo" value={form.cgsiMemberNo} onChange={handleChange}
-                                        disabled={form.cgsiMember === "No"}
-                                        placeholder="If yes, enter number"
-                                        className={getInputClass('cgsiMemberNo')} />
-                                    <ErrorMsg msg={errors.cgsiMemberNo} />
-                                </div>
+                                <ErrorMsg msg={errors.stateMedicalCouncil} />
                             </div>
                         </div>
 
                         {/* ── Packages ── */}
                         <div className={`pt-4 p-5 rounded-lg ${errors.selectedPkg ? 'bg-red-50 border border-red-200' : 'bg-transparent'}`}>
-                            <h3 className="text-base font-extrabold text-gray-900 underline mb-3">Conference Package <span className="text-red-500">*</span></h3>
+                            <h3 className="text-base font-extrabold text-gray-900 underline mb-3">Conference Package - early bird upto aug 15 2026 <span className="text-red-500">*</span></h3>
                             <div className="space-y-2">
                                 {PACKAGES.map(pkg => (
                                     <label key={pkg.id} className="flex items-center gap-3 text-sm font-semibold text-gray-800 cursor-pointer p-2 hover:bg-gray-50 rounded transition">
@@ -379,12 +422,18 @@ const CGCON2026Registration = () => {
                                     </label>
                                 ))}
                             </div>
+                            <p className="mt-4 text-sm font-bold text-gray-900 leading-relaxed">
+                                Note: The registration fee includes GST @ 18% and Banquet
+                                <br />
+                                Conference Registration is Mandatory. For workshop participation
+                            </p>
                             <ErrorMsg msg={errors.selectedPkg} />
                         </div>
 
                         {/* ── Attach Payment Screenshot ── */}
                         <div className="pt-4 border-t border-gray-200">
-                            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-10 max-w-4xl mx-auto mt-6">
+                            <h3 className="text-base font-extrabold text-gray-900 underline mb-3">Payment</h3>
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-10 max-w-4xl mx-auto">
                                 <img src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782807227/WhatsApp_Image_2026-06-30_at_10.53.53_AM_ae7fyw.jpg" alt="Payment details" className="w-full max-w-xs h-auto rounded-xl shadow-sm border border-gray-200" />
                                 
                                 <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm w-full max-w-sm">
