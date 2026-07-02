@@ -124,13 +124,15 @@ const Conference2025 = () => {
                             CGCON 2025
                         </h1>
 
-                        <h2 className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900">
-                            2nd Cosmetic Gynecology World Congress 2025
+                        <h2 className="mt-3 sm:mt-4 text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
+                            2<sup>nd</sup> Cosmetic Gynecology World Congress
                         </h2>
 
-                        <p className="mt-4 sm:mt-5 text-[#a46864] font-serif text-base sm:text-lg md:text-xl italic font-medium leading-relaxed max-w-xl mx-auto">
-                            Redefining Intimate Wellness
-                            <span className="block text-xl sm:text-2xl md:text-3xl font-serif mt-1 font-bold text-[#8a4e4a] not-italic tracking-wide">
+                        <p className="mt-4 sm:mt-5 max-w-xl mx-auto leading-relaxed">
+                            <span className="block text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#8a4e4a] tracking-wide">
+                                Redefining Intimate Wellness
+                            </span>
+                            <span className="block text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#8a4e4a] tracking-wide mt-1">
                                 Beyond Beauty
                             </span>
                         </p>

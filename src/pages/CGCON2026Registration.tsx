@@ -25,6 +25,100 @@ const PACKAGES = [
     { id: "pg-conf",       label: "Post Graduate – Conference only – Rs 10,000", amount: "10000" },
 ];
 
+const INDIAN_STATES = [
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
+];
+
+const STATE_MEDICAL_COUNCILS = [
+    "Andhra Pradesh Medical Council",
+    "Arunachal Pradesh Medical Council",
+    "Assam Medical Council",
+    "Bihar Medical Council",
+    "Chhattisgarh Medical Council",
+    "Delhi Medical Council",
+    "Goa Medical Council",
+    "Gujarat Medical Council",
+    "Haryana Medical Council",
+    "Himachal Pradesh Medical Council",
+    "Jammu & Kashmir Medical Council",
+    "Jharkhand Medical Council",
+    "Karnataka Medical Council",
+    "Kerala State Medical Council",
+    "Madhya Pradesh Medical Council",
+    "Maharashtra Medical Council",
+    "Manipur Medical Council",
+    "Medical Council of Odisha",
+    "Mizoram Medical Council",
+    "Nagaland Medical Council",
+    "Punjab Medical Council",
+    "Rajasthan Medical Council",
+    "Sikkim Medical Council",
+    "Tamil Nadu Medical Council",
+    "Telangana State Medical Council",
+    "Tripura State Medical Council",
+    "Uttar Pradesh Medical Council",
+    "Uttarakhand Medical Council",
+    "West Bengal Medical Council",
+    "National Medical Commission (NMC)",
+];
+
+const STATE_TO_MEDICAL_COUNCIL: Record<string, string> = {
+    "Andhra Pradesh": "Andhra Pradesh Medical Council",
+    "Arunachal Pradesh": "Arunachal Pradesh Medical Council",
+    "Assam": "Assam Medical Council",
+    "Bihar": "Bihar Medical Council",
+    "Chhattisgarh": "Chhattisgarh Medical Council",
+    "Goa": "Goa Medical Council",
+    "Gujarat": "Gujarat Medical Council",
+    "Haryana": "Haryana Medical Council",
+    "Himachal Pradesh": "Himachal Pradesh Medical Council",
+    "Jharkhand": "Jharkhand Medical Council",
+    "Karnataka": "Karnataka Medical Council",
+    "Kerala": "Kerala State Medical Council",
+    "Madhya Pradesh": "Madhya Pradesh Medical Council",
+    "Maharashtra": "Maharashtra Medical Council",
+    "Manipur": "Manipur Medical Council",
+    "Mizoram": "Mizoram Medical Council",
+    "Nagaland": "Nagaland Medical Council",
+    "Odisha": "Medical Council of Odisha",
+    "Punjab": "Punjab Medical Council",
+    "Rajasthan": "Rajasthan Medical Council",
+    "Sikkim": "Sikkim Medical Council",
+    "Tamil Nadu": "Tamil Nadu Medical Council",
+    "Telangana": "Telangana State Medical Council",
+    "Tripura": "Tripura State Medical Council",
+    "Uttar Pradesh": "Uttar Pradesh Medical Council",
+    "Uttarakhand": "Uttarakhand Medical Council",
+    "West Bengal": "West Bengal Medical Council",
+};
+
 const inp = "w-full border rounded px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:outline-none bg-white transition-colors";
 
 const ErrorMsg = ({ msg }: { msg?: string }) => {
@@ -50,9 +144,24 @@ const CGCON2026Registration = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setForm(p => ({ ...p, [e.target.name]: e.target.value }));
-        // Clear error when user types
         if (errors[e.target.name]) {
             setErrors(prev => ({ ...prev, [e.target.name]: "" }));
+        }
+    };
+
+    const handleStateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const state = e.target.value;
+        const mappedCouncil = STATE_TO_MEDICAL_COUNCIL[state] ?? "";
+
+        setForm(p => ({
+            ...p,
+            state,
+            stateMedicalCouncil: mappedCouncil,
+        }));
+
+        if (errors.state) setErrors(prev => ({ ...prev, state: "" }));
+        if (mappedCouncil && errors.stateMedicalCouncil) {
+            setErrors(prev => ({ ...prev, stateMedicalCouncil: "" }));
         }
     };
 
@@ -287,8 +396,8 @@ const CGCON2026Registration = () => {
                             20<sup>th</sup>–22<sup>nd</sup> November 2026
                         </p>
                         <p>Hotel GRT Grand, T-Nagar, Chennai.</p>
-                        <p className="text-[#d87a76]">20<sup>th</sup> November 2026 – Workshop</p>
-                        <p className="text-[#d87a76]">21<sup>st</sup> &amp; 22<sup>nd</sup> November 2026 – Conference</p>
+                        <p className="text-[#d87a76]">Workshop - 20<sup>th</sup> November 2026</p>
+                        <p className="text-[#d87a76]">Conference - 21<sup>st</sup> &amp; 22<sup>nd</sup> November 2026</p>
                     </div>
                 </div>
             </section>
@@ -386,7 +495,17 @@ const CGCON2026Registration = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">State <span className="text-red-500">*</span></label>
-                                <input name="state" value={form.state} onChange={handleChange} className={getInputClass('state')} />
+                                <select
+                                    name="state"
+                                    value={form.state}
+                                    onChange={handleStateChange}
+                                    className={getInputClass("state")}
+                                >
+                                    <option value="">Select State</option>
+                                    {INDIAN_STATES.map((state) => (
+                                        <option key={state} value={state}>{state}</option>
+                                    ))}
+                                </select>
                                 <ErrorMsg msg={errors.state} />
                             </div>
                             <div>
@@ -396,17 +515,34 @@ const CGCON2026Registration = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-1">State Medical Council <span className="text-red-500">*</span></label>
-                                <input name="stateMedicalCouncil" value={form.stateMedicalCouncil} onChange={handleChange} className={getInputClass('stateMedicalCouncil')} />
+                                <select
+                                    name="stateMedicalCouncil"
+                                    value={form.stateMedicalCouncil}
+                                    onChange={handleChange}
+                                    className={getInputClass("stateMedicalCouncil")}
+                                >
+                                    <option value="">Select State Medical Council</option>
+                                    {STATE_MEDICAL_COUNCILS.map((council) => (
+                                        <option key={council} value={council}>{council}</option>
+                                    ))}
+                                </select>
                                 <ErrorMsg msg={errors.stateMedicalCouncil} />
                             </div>
                         </div>
 
                         {/* ── Packages ── */}
                         <div className={`pt-4 p-5 rounded-lg ${errors.selectedPkg ? 'bg-red-50 border border-red-200' : 'bg-transparent'}`}>
-                            <h3 className="text-base font-extrabold text-gray-900 underline mb-3">Conference Package - early bird upto aug 15 2026 <span className="text-red-500">*</span></h3>
-                            <div className="space-y-2">
+                            <div className="text-center mb-4">
+                                <h3 className="text-base sm:text-lg font-extrabold text-gray-900 underline">
+                                    Conference Package
+                                </h3>
+                                <p className="mt-1 text-sm sm:text-base font-semibold text-gray-800">
+                                    Early Bird up to August 15<sup>th</sup>, 2026 <span className="text-red-500">*</span>
+                                </p>
+                            </div>
+                            <div className="max-w-2xl mx-auto space-y-2">
                                 {PACKAGES.map(pkg => (
-                                    <label key={pkg.id} className="flex items-center gap-3 text-sm font-semibold text-gray-800 cursor-pointer p-2 hover:bg-gray-50 rounded transition">
+                                    <label key={pkg.id} className="flex items-start gap-3 text-sm font-semibold text-gray-800 cursor-pointer p-2 hover:bg-gray-50 rounded transition">
                                         <input type="radio"
                                             name="conferencePackage"
                                             value={pkg.id}
@@ -417,15 +553,15 @@ const CGCON2026Registration = () => {
                                                 if (errors.selectedPkg) setErrors(prev => ({ ...prev, selectedPkg: "" }));
                                                 if (errors.totalAmount) setErrors(prev => ({ ...prev, totalAmount: "" }));
                                             }}
-                                            className="accent-[#d87a76] w-4 h-4 shrink-0" />
-                                        {pkg.label}
+                                            className="accent-[#d87a76] w-4 h-4 shrink-0 mt-0.5" />
+                                        <span className="leading-snug">{pkg.label}</span>
                                     </label>
                                 ))}
                             </div>
                             <p className="mt-4 text-sm font-bold text-gray-900 leading-relaxed">
                                 Note: The registration fee includes GST @ 18% and Banquet
                                 <br />
-                                Conference Registration is Mandatory. For workshop participation
+                                Conference Registration is Mandatory For workshop participation
                             </p>
                             <ErrorMsg msg={errors.selectedPkg} />
                         </div>

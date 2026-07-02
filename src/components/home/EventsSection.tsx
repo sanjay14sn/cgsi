@@ -86,7 +86,7 @@ const EventsSection = () => {
             className="rounded-2xl sm:rounded-[3rem] overflow-hidden border border-slate-200 shadow-2xl bg-white"
           >
             <img
-              src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782977863/ChatGPT_Image_Jul_2_2026_01_06_53_PM_u0kkjf.png"
+              src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991086/ChatGPT_Image_Jul_2_2026_04_46_36_PM_ukva1y.png"
               alt="Upcoming Conference"
               className="w-full h-auto object-cover"
             />

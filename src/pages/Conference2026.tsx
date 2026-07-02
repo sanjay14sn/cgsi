@@ -137,13 +137,15 @@ const Conference2026 = () => {
                             CGCON 2026
                         </h1>
 
-                        <h2 className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900">
-                            3<sup>rd</sup> Cosmetic Gynecology World Congress 2026
+                        <h2 className="mt-3 sm:mt-4 text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
+                            3<sup>rd</sup> Cosmetic Gynecology World Congress
                         </h2>
 
-                        <p className="mt-4 sm:mt-5 text-[#a46864] font-serif text-base sm:text-lg md:text-xl italic font-medium leading-relaxed max-w-xl mx-auto">
-                            Redefining Intimate Wellness
-                            <span className="block text-xl sm:text-2xl md:text-3xl font-serif mt-1 font-bold text-[#8a4e4a] not-italic tracking-wide">
+                        <p className="mt-4 sm:mt-5 max-w-xl mx-auto leading-relaxed">
+                            <span className="block text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#8a4e4a] tracking-wide">
+                                Redefining Intimate Wellness
+                            </span>
+                            <span className="block text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#8a4e4a] tracking-wide mt-1">
                                 Beyond Beauty
                             </span>
                         </p>
@@ -160,25 +162,28 @@ const Conference2026 = () => {
                                     <p className="text-lg sm:text-xl font-bold text-slate-900 leading-none">
                                         20<sup className="text-xs sm:text-sm">th</sup>–22<sup className="text-xs sm:text-sm">nd</sup>
                                     </p>
-                                    <p className="text-xs sm:text-sm font-semibold text-slate-900 mt-0.5">November 2026</p>
+                                    <p className="text-lg sm:text-xl font-bold text-slate-900 leading-none mt-0.5">November 2026</p>
                                 </div>
                                 <div className="w-px bg-slate-900/30 shrink-0" />
-                                <div className="flex-1 bg-[#e8957a] px-4 py-3 sm:py-3.5 flex items-center justify-center text-center">
+                                <div className="flex-1 bg-[#e8957a] px-4 py-3 sm:py-3.5 flex flex-col items-center justify-center text-center">
                                     <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug">
-                                        Hotel GRT Grand, T-Nagar, Chennai.
+                                        Hotel GRT Grand
+                                    </p>
+                                    <p className="text-xs sm:text-sm font-semibold text-slate-900 leading-snug mt-0.5">
+                                        T-Nagar, Chennai.
                                     </p>
                                 </div>
                             </div>
 
                             <div className="bg-[#a8d4d4] px-4 py-2 sm:py-2.5 text-center shadow-sm rounded-sm">
                                 <p className="text-xs sm:text-sm font-semibold text-slate-900">
-                                    20<sup>th</sup> November 2026 – Workshop
+                                    Workshop - 20<sup>th</sup> November 2026
                                 </p>
                             </div>
 
                             <div className="bg-[#a8d4d4] px-4 py-2 sm:py-2.5 text-center shadow-sm rounded-sm">
                                 <p className="text-xs sm:text-sm font-semibold text-slate-900">
-                                    21<sup>st</sup> &amp; 22<sup>nd</sup> November 2026 – Conference
+                                    Conference - 21<sup>st</sup> &amp; 22<sup>nd</sup> November 2026
                                 </p>
                             </div>
                         </div>
@@ -210,7 +215,7 @@ const Conference2026 = () => {
                         ))}
                     </div>
                     <p className="text-sm sm:text-base opacity-90 mb-6">
-                        20<sup>th</sup> – 22<sup>nd</sup> November 2026 · Grand Chennai by GRT Hotels, Chennai
+                        20<sup>th</sup> – 22<sup>nd</sup> November 2026 · Hotel GRT Grand, T-Nagar, Chennai.
                     </p>
                     <Link to="/CGCON2026-registration" className="inline-block px-6 sm:px-8 py-3 bg-white/90 hover:bg-white text-primary font-bold rounded-full shadow-lg text-sm uppercase tracking-widest transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                         Register Now
@@ -321,8 +326,8 @@ const Conference2026 = () => {
 
                             <p>
                                 This will be followed by the Main Scientific Conference on{" "}
-                                <strong className="text-slate-900">21st and 22nd November 2026</strong> at Grand
-                                Chennai by GRT Hotels, Chennai. The scientific program has been thoughtfully
+                                <strong className="text-slate-900">21st and 22nd November 2026</strong> at Hotel
+                                GRT Grand, T-Nagar, Chennai. The scientific program has been thoughtfully
                                 curated to showcase cutting-edge innovations, surgical advancements, regenerative
                                 therapies, aesthetic and functional procedures, and the latest evidence-based
                                 research in women&apos;s intimate health and wellness.
@@ -353,7 +358,7 @@ const Conference2026 = () => {
 
                             <p>
                                 Join us on <strong className="text-slate-900">20th–22nd November 2026</strong> at
-                                Grand Chennai by GRT Hotels, Chennai, and be part of a transformative journey that
+                                Hotel GRT Grand, T-Nagar, Chennai, and be part of a transformative journey that
                                 is shaping the future of Cosmetic Gynecology.
                             </p>
                         </div>
@@ -372,9 +377,8 @@ const Conference2026 = () => {
                                 <p className="text-slate-600 italic mb-1">Warm Regards,</p>
                                 <p className="font-bold text-primary text-lg">Dr. Deepa Ganesh</p>
                                 <div className="mt-2 mx-auto w-16 h-px bg-slate-300" />
-                                <p className="text-sm text-slate-600 mt-2">
-                                    Founder President, Cosmetic Gynecology Society of India (CGSI)
-                                </p>
+                                <p className="text-sm text-slate-600 mt-2">Founder President,</p>
+                                <p className="text-sm text-slate-600">Cosmetic Gynecology Society of India (CGSI)</p>
                                 <p className="text-sm text-slate-600">Organizing Chairperson, CGCON 2026</p>
                             </div>
                         </div>
@@ -478,7 +482,7 @@ const Conference2026 = () => {
                     {/* Delegate Fee Table */}
                     <div className="overflow-x-auto mb-3">
                         <p className="font-bold text-slate-800 text-base sm:text-lg mb-3">
-                            Conference November 21<sup>st</sup>, 22<sup>nd</sup> 2026
+                            Conference November 21<sup>st</sup> & 22<sup>nd</sup>, 2026
                         </p>
                         <table className="w-full border-collapse rounded-2xl overflow-hidden shadow-md">
                             <thead>
@@ -486,14 +490,13 @@ const Conference2026 = () => {
                                     <th className="px-4 sm:px-6 py-4 text-left font-bold text-sm sm:text-base">Category</th>
                                     <th className="px-4 sm:px-6 py-4 text-center font-bold text-sm sm:text-base leading-snug">
                                         Early Bird
-                                        <span className="block font-semibold text-xs sm:text-sm mt-0.5">Up to Aug 15</span>
+                                        <span className="block font-semibold text-xs sm:text-sm mt-0.5">Up to August 15<sup>th</sup></span>
                                     </th>
                                     <th className="px-4 sm:px-6 py-4 text-center font-bold text-sm sm:text-base leading-snug">
-                                        After
-                                        <span className="block font-semibold text-xs sm:text-sm mt-0.5">Aug 15</span>
+                                        Up to November 19
                                     </th>
                                     <th className="px-4 sm:px-6 py-4 text-center font-bold text-sm sm:text-base leading-snug">
-                                        on spot
+                                        Spot
                                         <span className="block font-semibold text-xs sm:text-sm mt-0.5">Registration</span>
                                     </th>
                                 </tr>
@@ -537,11 +540,10 @@ const Conference2026 = () => {
                             </tbody>
                         </table>
                     </div>
-                    <p className="text-center text-sm text-slate-800 font-bold mb-3">
-                        The registration fee includes GST @ 18% and Banquet
-                    </p>
-                    <p className="text-center text-sm text-slate-800 font-bold mb-10">
-                        Note: Conference registration is mandatory for workshop participation.
+                    <p className="text-center text-sm text-slate-800 font-bold mb-10 leading-relaxed">
+                        Note: The registration fee includes GST @ 18% and Banquet
+                        <br />
+                        Conference registration is mandatory for workshop participation.
                     </p>
 
                     <div className="text-center">
@@ -583,7 +585,7 @@ const Conference2026 = () => {
                                 {[
                                     "Admission to Scientific Sessions and Exhibition",
                                     "Refreshments During Breaks",
-                                    "Lunches",
+                                    "Lunches, Banquet",
                                     "Registration Materials and Kit",
                                 ].map((item) => (
                                     <li key={item} className="flex items-start gap-3 text-slate-700 text-sm sm:text-base">
@@ -654,28 +656,28 @@ const Conference2026 = () => {
                                     <p className="text-sm sm:text-base font-bold tracking-[0.2em] text-black uppercase">Conference</p>
                                     <p className="text-3xl sm:text-4xl font-extrabold text-black leading-none mt-1">Venue</p>
                                     <hr className="my-4 border-black/25 max-w-xs mx-auto" />
-                                    <p className="text-lg sm:text-xl font-extrabold text-black uppercase">The Grand Chennai</p>
+                                    <p className="text-lg sm:text-xl font-extrabold text-black uppercase">Hotel GRT Grand</p>
                                     <p className="text-lg sm:text-xl font-extrabold text-black uppercase">T-Nagar, Chennai</p>
                                 </div>
                                 <img
                                     src="https://lvrii.in/conferences/wp-content/uploads/2025/09/THE-GRAND-CHENNAI.jpg"
-                                    alt="The Grand Chennai by GRT Hotels"
+                                    alt="Hotel GRT Grand"
                                     className="w-full h-auto object-cover"
                                 />
                             </div>
                             <div className="flex items-start gap-3 p-4 bg-white rounded-2xl shadow-sm">
                                 <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
                                 <div>
-                                    <p className="font-bold text-black">The Grand Chennai by GRT Hotels</p>
-                                    <p className="text-base text-gray-600">T-Nagar, Chennai, Tamil Nadu</p>
+                                    <p className="font-bold text-black">Hotel GRT Grand</p>
+                                    <p className="text-base text-gray-600">T-Nagar, Chennai</p>
                                 </div>
                             </div>
                         </div>
                         <div className="rounded-3xl overflow-hidden shadow-xl min-h-[320px] sm:min-h-[400px] md:min-h-0 md:h-full">
                             <iframe
-                                src="https://maps.google.com/maps?q=Grand%20Chennai%20by%20GRT%20Hotels%20T-Nagar%20Chennai&t=m&z=15&output=embed&iwloc=near"
-                                title="Grand Chennai by GRT Hotels T-Nagar Chennai"
-                                aria-label="Grand Chennai by GRT Hotels T-Nagar Chennai"
+                                src="https://maps.google.com/maps?q=Hotel%20GRT%20Grand%20T-Nagar%20Chennai&t=m&z=15&output=embed&iwloc=near"
+                                title="Hotel GRT Grand T-Nagar Chennai"
+                                aria-label="Hotel GRT Grand T-Nagar Chennai"
                                 className="w-full h-full min-h-[320px] sm:min-h-[400px] border-0"
                                 loading="lazy"
                             />
@@ -725,10 +727,9 @@ const Conference2026 = () => {
                             </h3>
                             <div className="space-y-1">
                                 <p className="font-bold text-slate-900 text-lg">Dr. Deepa Ganesh</p>
-                                <p className="text-base text-slate-600">Organizing Chairperson</p>
-                                <p className="text-base text-slate-600">
-                                    Founder President, Cosmetic Gynecology Society of India (CGSI)
-                                </p>
+                                <p className="text-base text-slate-600">Founder President,</p>
+                                <p className="text-base text-slate-600">Cosmetic Gynecology Society of India (CGSI)</p>
+                                <p className="text-base text-slate-600">Organizing Chairperson, CGCON 2026</p>
                             </div>
                             <a
                                 href="tel:+919940117779"
@@ -752,11 +753,9 @@ const Conference2026 = () => {
                             <div className="flex items-start gap-3 text-slate-700 leading-relaxed">
                                 <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
                                 <address className="not-italic">
-                                    Grand Chennai by GRT Hotels,
+                                    Hotel GRT Grand,
                                     <br />
-                                    T-Nagar,
-                                    <br />
-                                    Chennai, Tamil Nadu, India
+                                    T-Nagar, Chennai
                                 </address>
                             </div>
                         </div>
