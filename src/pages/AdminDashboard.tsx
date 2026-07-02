@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { collection, getDocs, query, doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import { X, Edit2, Trash2, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, Edit2, Trash2, ChevronLeft, ChevronRight, Download } from "lucide-react";
 
 const ADMIN_NUMBER = "9841257779";
 const ADMIN_PASS = "1234";
@@ -9,6 +9,38 @@ const LOGO =
     "https://res.cloudinary.com/ddibq0tya/image/upload/v1771404636/ChatGPT_Image_Feb_18_2026_02_20_16_PM_dtmwyu.png";
 
 const ITEMS_PER_PAGE = 10;
+
+const escapeCsv = (value: unknown) => {
+    const str = value == null || value === "" ? "" : String(value);
+    if (/[",\n\r]/.test(str)) {
+        return `"${str.replace(/"/g, '""')}"`;
+    }
+    return str;
+};
+
+const CSV_HEADERS = [
+    "Sl. No.",
+    "Date",
+    "Category",
+    "Title",
+    "Name",
+    "Mobile",
+    "Email",
+    "Institution",
+    "Designation",
+    "City",
+    "State",
+    "MCI Number",
+    "Specialty",
+    "Medical Council",
+    "CGSI Member",
+    "Member No.",
+    "Package",
+    "Amount (INR)",
+    "UTR",
+    "Screenshot URL",
+    "Message",
+];
 
 const AdminDashboard = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -118,6 +150,50 @@ const AdminDashboard = () => {
 
     const val = (v: any) => v || "-";
 
+    const exportToCsv = () => {
+        if (registrations.length === 0) {
+            alert("No registrations to export.");
+            return;
+        }
+
+        const rows = registrations.map((reg, index) =>
+            [
+                index + 1,
+                reg.timestamp ? new Date(reg.timestamp.toDate()).toLocaleDateString("en-GB") : "",
+                reg.category,
+                reg.title,
+                reg.name,
+                reg.mobile,
+                reg.email,
+                reg.institution,
+                reg.designation,
+                reg.city,
+                reg.state,
+                reg.mciNumber,
+                reg.specialty,
+                reg.stateMedicalCouncil,
+                reg.cgsiMember,
+                reg.cgsiMemberNo,
+                reg.conferencePackage,
+                reg.totalAmount,
+                reg.utr,
+                reg.paymentScreenshotUrl,
+                reg.message,
+            ]
+                .map(escapeCsv)
+                .join(",")
+        );
+
+        const csv = [CSV_HEADERS.map(escapeCsv).join(","), ...rows].join("\n");
+        const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `CGCON2026-registrations-${new Date().toISOString().slice(0, 10)}.csv`;
+        link.click();
+        URL.revokeObjectURL(url);
+    };
+
     // ----- Login View -----
     if (!isLoggedIn) {
         return (
@@ -168,6 +244,14 @@ const AdminDashboard = () => {
                         </div>
                         <button onClick={fetchData} className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-bold hover:bg-gray-200 transition">
                             Refresh Data
+                        </button>
+                        <button
+                            onClick={exportToCsv}
+                            disabled={loading || registrations.length === 0}
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-bold hover:bg-green-700 transition shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            <Download size={16} />
+                            Export CSV
                         </button>
                         <button onClick={handleLogout} className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm font-bold hover:bg-red-700 transition shadow-sm">
                             Log Out
