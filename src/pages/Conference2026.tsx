@@ -59,12 +59,15 @@ const organizingTeam = [
 
 const organizingCommittee = [
     { name: "Dr. Alpa Khakhar", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782794582/WhatsApp_Image_2026-06-29_at_3.14.55_PM_tiqoyd.jpg" },
-    { name: "Dr. Chitra Jeyaraj", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Chitra-Jeyaraj.png" },
-    { name: "Dr. Shobha Giresh", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Shobha-Giresh.png" },
-    { name: "Dr. Sri Sudha", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Sri-Sudha.png" },
-    { name: "Dr Ashwin Rao", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Ashwin-Rao.png" },
-    { name: "Dr Vijaya Lakshmi M", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Vijaya-Lakshmi-M.png" },
-    { name: "Dr Pavithra R", img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/Dr-Pavithra-R.png" },
+    { name: "Dr. Chitra Jeyaraj", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991163/WhatsApp_Image_2026-07-02_at_4.18.45_PM_eh8iku.jpg" },
+    { name: "Dr. Shobha Giresh", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991242/Screenshot_2026-07-02_at_4.50.12_PM_tnvxnu.png" },
+    { name: "Dr. Sri Sudha", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991177/WhatsApp_Image_2026-07-02_at_4.19.19_PM_fupsxm.jpg" },
+    { name: "Dr. Ashwin Rao", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991255/WhatsApp_Image_2026-07-02_at_4.20.29_PM_rvcutf.jpg" },
+    { name: "Dr Vijaya Lakshmi M", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991151/WhatsApp_Image_2026-07-02_at_4.17.48_PM_eixbls.jpg" },
+    { name: "Dr. Shoba vijayakumar", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991300/Screenshot_2026-07-02_at_4.51.26_PM_htaque.png" },
+    { name: "Dr. S. Chitralakshmi", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991331/WhatsApp_Image_2026-07-02_at_4.21.45_PM_fv9nks.jpg" },
+    { name: "Dr.Priyadharshini Manoharan", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991345/WhatsApp_Image_2026-07-02_at_4.21.59_PM_wndjal.jpg" },
+    { name: "Dr Pavithra R", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991352/WhatsApp_Image_2026-07-02_at_4.23.46_PM_t5ibgc.jpg" },
 ];
 
 // Add faculty when confirmed: { name: "Dr ...", country: "..." }
