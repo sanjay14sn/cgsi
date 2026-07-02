@@ -95,7 +95,7 @@ const Conference2024 = () => {
                                 <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-[#f08683]/80" />
                                 <div className="absolute -bottom-2 -left-2 w-5 h-5 rounded-full bg-[#6da7ab]/80" />
                                 <img
-                                    src="https://lvrii.in/conferences/wp-content/uploads/2025/08/dr-deepa-ganesh.png"
+                                    src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782993972/Screenshot_2026-07-02_at_5.35.07_PM_zgnfcp.png"
                                     alt="Dr. Deepa Ganesh"
                                     className="relative w-40 h-40 rounded-full object-cover shadow-xl border-4 border-[#f08683]/30"
                                 />
