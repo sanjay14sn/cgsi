@@ -79,7 +79,7 @@ const topicHighlights = [
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/3.png", label: "Mommy Makeover" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/4.png", label: "Vulvar Cosmesis" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/5.png", label: "Lasers, Radiofrequency, HIFU, Carboxytherapy" },
-    { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/6.png", label: "Vulval Filler, Botex & Threads" },
+    { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/6.png", label: "Vulval Filler, Botox & Threads" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/7.png", label: "G-Shot, O-Shot, PRP, Exosomes" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/8.png", label: "Clitogram" },
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/9.png", label: "BHRT and Anti-Aging" },
@@ -446,7 +446,7 @@ const Conference2026 = () => {
                         </h2>
                         <div className="mt-4 mx-auto h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
                         <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
-                            Scientific sessions covering the full spectrum of cosmetic and functional gynecology
+                            Scientific sessions covering the full spectrum of cosmetic, functional and regenerative gynecology
                         </p>
                     </div>
 
@@ -495,7 +495,7 @@ const Conference2026 = () => {
                     {/* Delegate Fee Table */}
                     <div className="overflow-x-auto mb-3">
                         <p className="font-bold text-slate-800 text-base sm:text-lg mb-3">
-                            Conference November - 21<sup>st</sup> & 22<sup>nd</sup>, 2026
+                            Conference - November 21<sup>st</sup> & 22<sup>nd</sup>, 2026
                         </p>
                         <table className="w-full border-collapse rounded-2xl overflow-hidden shadow-md">
                             <thead>
