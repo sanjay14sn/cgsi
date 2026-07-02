@@ -527,7 +527,7 @@ const Conference2025 = () => {
             <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5">
                 <div className="container mx-auto px-6 max-w-4xl">
                     <h2 className="text-3xl font-serif font-bold text-black text-center uppercase tracking-wide mb-12">Contact Us</h2>
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="max-w-xl mx-auto">
                         <div className="bg-white rounded-3xl shadow-md p-8 space-y-4">
                             <h3 className="font-bold text-primary text-lg uppercase tracking-wide">Congress Secretariat</h3>
                             <div className="space-y-1">
@@ -543,18 +543,6 @@ const Conference2025 = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
                                 info.lvrii@gmail.com
                             </a>
-                        </div>
-                        <div className="bg-white rounded-3xl shadow-md p-8 space-y-3">
-                            <h3 className="font-bold text-primary text-lg uppercase tracking-wide">Address</h3>
-                            <div className="flex items-start gap-3 text-gray-700 leading-relaxed">
-                                <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
-                                <address className="not-italic">
-                                    Ground Floor, No. 8, Rams Flat,<br />
-                                    Gajapathy Street, Barnaby Rd,<br />
-                                    Kilpauk,<br />
-                                    Chennai, Tamil Nadu – 600 010.
-                                </address>
-                            </div>
                         </div>
                     </div>
                 </div>

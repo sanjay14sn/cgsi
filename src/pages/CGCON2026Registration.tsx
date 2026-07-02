@@ -540,9 +540,9 @@ const CGCON2026Registration = () => {
                                     Early Bird up to August 15<sup>th</sup>, 2026 <span className="text-red-500">*</span>
                                 </p>
                             </div>
-                            <div className="max-w-2xl mx-auto space-y-2">
+                            <div className="max-w-2xl mx-auto space-y-2 overflow-x-auto">
                                 {PACKAGES.map(pkg => (
-                                    <label key={pkg.id} className="flex items-start gap-3 text-sm font-semibold text-gray-800 cursor-pointer p-2 hover:bg-gray-50 rounded transition">
+                                    <label key={pkg.id} className="flex items-center gap-3 text-sm font-semibold text-gray-800 cursor-pointer p-2 hover:bg-gray-50 rounded transition">
                                         <input type="radio"
                                             name="conferencePackage"
                                             value={pkg.id}
@@ -553,8 +553,8 @@ const CGCON2026Registration = () => {
                                                 if (errors.selectedPkg) setErrors(prev => ({ ...prev, selectedPkg: "" }));
                                                 if (errors.totalAmount) setErrors(prev => ({ ...prev, totalAmount: "" }));
                                             }}
-                                            className="accent-[#d87a76] w-4 h-4 shrink-0 mt-0.5" />
-                                        <span className="leading-snug">{pkg.label}</span>
+                                            className="accent-[#d87a76] w-4 h-4 shrink-0" />
+                                        <span className="whitespace-nowrap">{pkg.label}</span>
                                     </label>
                                 ))}
                             </div>

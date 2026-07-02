@@ -226,6 +226,8 @@ const Conference2024 = () => {
                 </SponsorSection>
             </div>
 
+        
+
             {/* Congress Footer Banner */}
             <div className="w-full">
                 <img

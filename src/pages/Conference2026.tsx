@@ -140,8 +140,16 @@ const Conference2026 = () => {
                             CGCON 2026
                         </h1>
 
-                        <h2 className="mt-3 sm:mt-4 text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
-                            3<sup>rd</sup> Cosmetic Gynecology World Congress
+                        <h2 className="mt-3 sm:mt-4 flex flex-wrap items-baseline justify-center font-serif font-normal tracking-wide leading-none">
+                            <span className="text-[#E8877F] inline-flex items-baseline">
+                                <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none">3</span>
+                                <sup className="text-sm sm:text-base md:text-lg font-normal leading-none ml-0.5 -top-2 sm:-top-3 md:-top-4 relative">rd</sup>
+                            </span>
+                            <span className="text-xl sm:text-2xl md:text-3xl lg:text-[2.1rem] ml-1 sm:ml-2">
+                                <span className="text-[#3a2f2c]">Cosmetic </span>
+                                <span className="text-[#E8877F]">Gynecology </span>
+                                <span className="text-[#3a2f2c]">World Congress</span>
+                            </span>
                         </h2>
 
                         <p className="mt-4 sm:mt-5 max-w-xl mx-auto leading-relaxed">
@@ -223,52 +231,6 @@ const Conference2026 = () => {
                     <Link to="/CGCON2026-registration" className="inline-block px-6 sm:px-8 py-3 bg-white/90 hover:bg-white text-primary font-bold rounded-full shadow-lg text-sm uppercase tracking-widest transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                         Register Now
                     </Link>
-                </div>
-            </section>
-
-            {/* Team CGCON */}
-            <section className="py-14 sm:py-16 md:py-20 bg-slate-50/50">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <div className="text-center mb-10 sm:mb-14">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">Team CGCON</h2>
-                        <div className="mt-4 mx-auto h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-16">
-                        {organizingTeam.map((doc) => (
-                            <div key={doc.name} className="text-center flex flex-col items-center">
-                                <div className="mx-auto mb-5 w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden ring-4 ring-primary/30 ring-offset-4 ring-offset-white shadow-xl">
-                                    <img
-                                        src={doc.img}
-                                        alt={doc.name}
-                                        className="h-full w-full object-cover object-top"
-                                    />
-                                </div>
-                                <h3 className="text-base sm:text-lg font-bold text-slate-900">{doc.name}</h3>
-                                <p className="text-sm text-primary font-semibold mt-1">{doc.role}</p>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Organizing Committee */}
-                    <div className="mt-14 pt-12 border-t border-slate-200/70">
-                        <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-10">Organizing Committee</p>
-                        <div className="flex flex-wrap justify-center gap-8 sm:gap-10 max-w-5xl mx-auto">
-                            {organizingCommittee.map((doc) => (
-                                <div key={doc.name} className="text-center flex flex-col items-center w-36 sm:w-40">
-                                    <div className="mb-4 w-32 h-32 sm:w-36 sm:h-36 rounded-lg overflow-hidden border-4 border-primary/25 shadow-lg bg-white">
-                                        <img
-                                            src={doc.img}
-                                            alt={doc.name}
-                                            className="h-full w-full object-cover object-top"
-                                        />
-                                    </div>
-                                    <h3 className="text-base font-bold text-slate-900 leading-snug">{doc.name}</h3>
-                                    <p className="text-xs text-slate-500 mt-1">Organizing Committee</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -388,6 +350,54 @@ const Conference2026 = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Team CGCON */}
+            <section className="py-14 sm:py-16 md:py-20 bg-slate-50/50">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <div className="text-center mb-10 sm:mb-14">
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">Team CGCON</h2>
+                        <div className="mt-4 mx-auto h-0.5 w-24 bg-gradient-to-r from-transparent via-primary to-transparent" />
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-16">
+                        {organizingTeam.map((doc) => (
+                            <div key={doc.name} className="text-center flex flex-col items-center">
+                                <div className="mx-auto mb-5 w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden ring-4 ring-primary/30 ring-offset-4 ring-offset-white shadow-xl">
+                                    <img
+                                        src={doc.img}
+                                        alt={doc.name}
+                                        className="h-full w-full object-cover object-top"
+                                    />
+                                </div>
+                                <h3 className="text-base sm:text-lg font-bold text-slate-900">{doc.name}</h3>
+                                <p className="text-sm text-primary font-semibold mt-1">{doc.role}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Organizing Committee */}
+                    <div className="mt-14 pt-12 border-t border-slate-200/70">
+                        <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-10">Organizing Committee</p>
+                        <div className="flex flex-wrap justify-center gap-8 sm:gap-10 max-w-5xl mx-auto">
+                            {organizingCommittee.map((doc) => (
+                                <div key={doc.name} className="text-center flex flex-col items-center w-36 sm:w-40">
+                                    <div className="mb-4 w-32 h-32 sm:w-36 sm:h-36 rounded-lg overflow-hidden border-4 border-primary/25 shadow-lg bg-white">
+                                        <img
+                                            src={doc.img}
+                                            alt={doc.name}
+                                            className="h-full w-full object-cover object-top"
+                                        />
+                                    </div>
+                                    <h3 className="text-base font-bold text-slate-900 leading-snug">{doc.name}</h3>
+                                    <p className="text-xs text-slate-500 mt-1">Organizing Committee</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
 
             {/* International Faculty */}
             <section className="py-14 sm:py-16 md:py-20 bg-white border-t border-slate-100">
