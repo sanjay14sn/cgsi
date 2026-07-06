@@ -54,14 +54,13 @@ const VideoSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1, duration: 0.5 }}
-                            className="relative overflow-hidden rounded-2xl group shadow-lg"
+                            className="relative overflow-hidden rounded-2xl shadow-lg"
                         >
                             <img
                                 src={imgUrl}
                                 alt={`CGCON 2025 Highlight ${idx + 1}`}
-                                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                                className="w-full h-auto object-cover"
                             />
-                            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
                         </motion.div>
                     ))}
                 </div>

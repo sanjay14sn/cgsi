@@ -738,11 +738,11 @@ const Conference2026 = () => {
                                 <p className="text-base text-slate-600">Organizing Chairperson, CGCON 2026</p>
                             </div>
                             <a
-                                href="tel:+919940117779"
+                                href="tel:+918015531261"
                                 className="flex items-center gap-2 text-primary font-semibold hover:underline"
                             >
                                 <Phone className="w-4 h-4 shrink-0" />
-                                +91 99401 17779
+                                8015531261
                             </a>
                             <a
                                 href="mailto:info.thecgsi@gmail.com"

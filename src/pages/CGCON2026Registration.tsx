@@ -196,6 +196,9 @@ const CGCON2026Registration = () => {
         if (!form.totalAmount.trim()) newErrors.totalAmount = "Amount paid is required.";
         else if (isNaN(Number(form.totalAmount))) newErrors.totalAmount = "Amount must be a valid number.";
 
+        if (!paymentImageFile) newErrors.paymentImageFile = "Payment screenshot is required.";
+        if (!form.utr.trim()) newErrors.utr = "UTR / UPI Transaction ID is required.";
+
         setErrors(newErrors);
         
         if (Object.keys(newErrors).length > 0) {
@@ -246,7 +249,7 @@ const CGCON2026Registration = () => {
         setIsSubmitting(true);
         
         try {
-            // 1. Upload Image (only if attached)
+            // 1. Upload Image
             let imageUrl = "";
             if (paymentImageFile) {
                 imageUrl = await uploadToCloudinary(paymentImageFile);
@@ -319,10 +322,12 @@ const CGCON2026Registration = () => {
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Registration Submitted!</h2>
                 <p className="text-gray-600 max-w-md mx-auto text-sm">
-                    Thank you for registering for CGCON 2026. We will contact you shortly with payment details and confirmation.
+                    Thank you for registering for CGCON 2026.
                 </p>
                 <p className="mt-4 text-sm text-gray-500">
-                    Queries: <a href="mailto:info.thecgsi@gmail.com" className="text-[#d87a76] font-semibold hover:underline">info.thecgsi@gmail.com</a>
+                    Queries: <a href="tel:+918015531261" className="text-[#d87a76] font-semibold hover:underline">8015531261</a>
+                    {" · "}
+                    <a href="mailto:info.thecgsi@gmail.com" className="text-[#d87a76] font-semibold hover:underline">info.thecgsi@gmail.com</a>
                 </p>
             </div>
         );
@@ -390,7 +395,9 @@ const CGCON2026Registration = () => {
                 <div className="container mx-auto px-5 text-center relative z-10">
                     <img src={LOGO} alt="CGSI" className="h-40 sm:h-52 w-auto mx-auto mb-4 mix-blend-multiply" />
                     <h1 className="text-2xl sm:text-4xl md:text-5xl font-serif font-extrabold text-[#3a2f2c] uppercase tracking-wide">CGCON 2026</h1>
-                    <p className="mt-1.5 text-[#d87a76] font-serif text-base sm:text-lg font-semibold italic">3<sup>rd</sup> Cosmetic Gynecology World Congress</p>
+                    <p className="mt-1.5 text-[#d87a76] font-serif text-xs sm:text-lg font-semibold italic leading-tight whitespace-nowrap">
+                        3<sup>rd</sup> Cosmetic Gynecology World Congress
+                    </p>
 
                     <div className="mt-5 sm:mt-6 space-y-1.5 text-sm sm:text-base text-[#3a2f2c] font-semibold">
                         <p>
@@ -606,7 +613,7 @@ const CGCON2026Registration = () => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-1">
-                                        IMAGE UPLOAD (Payment Screenshot)
+                                        IMAGE UPLOAD (Payment Screenshot) <span className="text-red-500">*</span>
                                     </label>
                                     <input
                                         type="file"
@@ -621,20 +628,20 @@ const CGCON2026Registration = () => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-1">
-                                        Total Amount Paid <span className="text-[#d87a76]">*</span>
+                                        Total Amount Paid <span className="text-red-500">*</span>
                                     </label>
                                     <input name="totalAmount" value={form.totalAmount} readOnly placeholder="Select a package..." className={`${getInputClass('totalAmount')} bg-gray-100 cursor-not-allowed font-bold text-gray-600`} />
                                     <ErrorMsg msg={errors.totalAmount} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-1">
-                                        UTR / UPI Transaction ID
+                                        UTR / UPI Transaction ID <span className="text-red-500">*</span>
                                     </label>
                                     <input name="utr" value={form.utr} onChange={handleChange} placeholder="" className={getInputClass('utr')} />
                                     <ErrorMsg msg={errors.utr} />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-1">Message if any</label>
+                                    <label className="block text-sm font-semibold text-gray-700 mb-1">Message (if any)</label>
                                     <input name="message" value={form.message} onChange={handleChange} placeholder="" className={getInputClass('message')} />
                                 </div>
                             </div>
