@@ -64,6 +64,16 @@ const events = [
     category: "Workshop",
     isUpcoming: true,
   },
+  {
+    id: 7,
+    title: "Cosmetic Gynecology Masterclass",
+    description: "Scientific Partner for the Global Aesthetics Summit 2026 in collaboration with MEGO – Middle East OBGYN, Dubai.",
+    date: "Sunday 19th July 2026 | 2:00 PM – 7:00 PM",
+    location: "Taj Horizon, Goa",
+    image: "/masterclass-goa-2026.jpg",
+    category: "Masterclass",
+    isUpcoming: true,
+  },
 ];
 
 const EventsSection = () => {

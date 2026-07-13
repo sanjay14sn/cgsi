@@ -70,8 +70,20 @@ const organizingCommittee = [
     { name: "Dr Pavithra R", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991352/WhatsApp_Image_2026-07-02_at_4.23.46_PM_t5ibgc.jpg" },
 ];
 
-// Add faculty when confirmed: { name: "Dr ...", country: "..." }
-const internationalFaculty: { name: string; country: string }[] = [];
+const internationalFaculty = [
+    { name: "Dr Charles Runels", country: "USA", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Charles-Runels.png" },
+    { name: "Dr Red Alinsod", country: "USA", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Red-Alinsod.png" },
+    { name: "Dr Ariel Luksenburg", country: "Uruguay", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Ariel-Luksenburg.png" },
+    { name: "Dr Tina Batalha", country: "Brazil", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Tina-Batalha.png" },
+    { name: "Dr. Adrian Gaspar", country: "Argentina", img: "/adrian-gaspar.png" },
+];
+
+const countryFlags: Record<string, string> = {
+    USA: "🇺🇸",
+    Uruguay: "🇺🇾",
+    Brazil: "🇧🇷",
+    Argentina: "🇦🇷",
+};
 
 const topicHighlights = [
     { img: "https://lvrii.in/conferences/wp-content/uploads/2025/08/1.png", label: "Surgical Cosmetic Gynecology — Labiaplasty, Hoodoplasty, Vaginoplasty, Colpoperineoplasty, Hymenoplasty, Monsplasty" },
@@ -409,31 +421,31 @@ const Conference2026 = () => {
                         <div className="mt-4 mx-auto h-0.5 w-24 bg-gradient-to-r from-transparent via-accent to-transparent" />
                     </div>
 
-                    {internationalFaculty.length > 0 ? (
-                        <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-4 max-w-3xl mx-auto">
-                            {internationalFaculty.map((faculty) => (
-                                <li
-                                    key={faculty.name}
-                                    className="flex items-start gap-3 text-base text-slate-700"
-                                >
-                                    <span
-                                        className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-primary"
-                                        aria-hidden="true"
-                                    />
-                                    <span>
-                                        <span className="font-semibold text-slate-900">{faculty.name}</span>
-                                        <span className="text-slate-500"> · {faculty.country}</span>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 md:gap-16 max-w-5xl mx-auto">
+                        {internationalFaculty.map((faculty, i) => (
+                            <motion.div
+                                key={faculty.name}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.08 }}
+                                className="flex flex-col items-center text-center gap-4"
+                            >
+                                <img
+                                    src={faculty.img}
+                                    alt={faculty.name}
+                                    className="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-primary/20"
+                                />
+                                <p className="font-bold text-lg md:text-xl text-slate-900">{faculty.name}</p>
+                                <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                                    <span className="text-base leading-none" aria-hidden="true">
+                                        {countryFlags[faculty.country]}
                                     </span>
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <div className="max-w-2xl mx-auto rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-primary/5 px-6 py-10 sm:px-10 sm:py-12 text-center shadow-md">
-                            <p className="text-base sm:text-lg text-slate-600 italic">
-                                International faculty list will be updated soon.
-                            </p>
-                        </div>
-                    )}
+                                    {faculty.country}
+                                </span>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
