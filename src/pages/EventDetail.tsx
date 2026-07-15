@@ -105,7 +105,7 @@ const eventDetails: Record<
         subtitle: "Scientific Partner for the Global Aesthetics Summit 2026 in collaboration with MEGO – Middle East OBGYN, Dubai.",
         date: "Sunday 19th July 2026 | 2:00 PM – 7:00 PM",
         location: "Taj Horizon, Goa",
-        category: "Masterclass",
+        category: "Seminar",
         isUpcoming: true,
         poster: "/masterclass-goa-2026.jpg",
         images: [],
@@ -185,12 +185,6 @@ const EventDetail = () => {
                             transition={{ duration: 0.5 }}
                             className="flex flex-col items-center gap-8"
                         >
-                            {/* Glowing upcoming badge */}
-                            <div className="flex items-center gap-3 px-6 py-2 rounded-full bg-primary text-white font-bold text-sm uppercase tracking-widest shadow-lg shadow-primary/30 animate-pulse">
-                                <span className="w-2 h-2 rounded-full bg-white inline-block" />
-                                Upcoming Event — Stay Tuned!
-                            </div>
-                            {/* Poster image */}
                             {event.poster && (
                                 <div className="w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20">
                                     <img
@@ -200,9 +194,6 @@ const EventDetail = () => {
                                     />
                                 </div>
                             )}
-                            <p className="text-gray-500 text-base italic text-center max-w-lg">
-                                Details and registration will be available soon. Check back here for updates!
-                            </p>
                         </motion.div>
                     ) : (
                         /* Past event — photo gallery */

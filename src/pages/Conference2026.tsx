@@ -78,11 +78,11 @@ const internationalFaculty = [
     { name: "Dr. Adrian Gaspar", country: "Argentina", img: "/adrian-gaspar.png" },
 ];
 
-const countryFlags: Record<string, string> = {
-    USA: "🇺🇸",
-    Uruguay: "🇺🇾",
-    Brazil: "🇧🇷",
-    Argentina: "🇦🇷",
+const countryFlags: Record<string, { code: string; label: string }> = {
+    USA: { code: "us", label: "USA" },
+    Uruguay: { code: "uy", label: "Uruguay" },
+    Brazil: { code: "br", label: "Brazil" },
+    Argentina: { code: "ar", label: "Argentina" },
 };
 
 const topicHighlights = [
@@ -152,12 +152,12 @@ const Conference2026 = () => {
                             CGCON 2026
                         </h1>
 
-                        <h2 className="mt-3 sm:mt-4 flex flex-wrap items-baseline justify-center font-serif font-normal tracking-wide leading-none">
+                        <h2 className="mt-3 sm:mt-4 flex flex-nowrap items-baseline justify-center font-serif font-normal tracking-wide leading-tight whitespace-nowrap">
                             <span className="text-[#E8877F] inline-flex items-baseline">
-                                <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none">3</span>
-                                <sup className="text-sm sm:text-base md:text-lg font-normal leading-none ml-0.5 -top-2 sm:-top-3 md:-top-4 relative">rd</sup>
+                                <span className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none">3</span>
+                                <sup className="text-[0.65rem] sm:text-sm md:text-base lg:text-lg font-normal leading-none ml-0.5 top-0 relative align-super">rd</sup>
                             </span>
-                            <span className="text-xl sm:text-2xl md:text-3xl lg:text-[2.1rem] ml-1 sm:ml-2">
+                            <span className="text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[2.1rem] ml-1 sm:ml-2">
                                 <span className="text-[#3a2f2c]">Cosmetic </span>
                                 <span className="text-[#E8877F]">Gynecology </span>
                                 <span className="text-[#3a2f2c]">World Congress</span>
@@ -438,9 +438,17 @@ const Conference2026 = () => {
                                 />
                                 <p className="font-bold text-lg md:text-xl text-slate-900">{faculty.name}</p>
                                 <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-                                    <span className="text-base leading-none" aria-hidden="true">
-                                        {countryFlags[faculty.country]}
-                                    </span>
+                                    {countryFlags[faculty.country] && (
+                                        <img
+                                            src={`https://flagcdn.com/w40/${countryFlags[faculty.country].code}.png`}
+                                            srcSet={`https://flagcdn.com/w80/${countryFlags[faculty.country].code}.png 2x`}
+                                            alt={`${countryFlags[faculty.country].label} flag`}
+                                            width={20}
+                                            height={15}
+                                            className="w-5 h-auto rounded-sm shadow-sm object-cover"
+                                            loading="lazy"
+                                        />
+                                    )}
                                     {faculty.country}
                                 </span>
                             </motion.div>

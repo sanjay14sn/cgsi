@@ -77,7 +77,7 @@ const upcomingEvents = [
     date: "Sunday 19th July 2026 | 2:00 PM – 7:00 PM",
     location: "Taj Horizon, Goa",
     image: "/masterclass-goa-2026.jpg",
-    type: "Masterclass",
+    type: "Seminar",
     isUpcoming: true,
     hasGallery: false,
   },
