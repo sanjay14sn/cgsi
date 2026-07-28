@@ -75,7 +75,7 @@ const internationalFaculty = [
     { name: "Dr Red Alinsod", country: "USA", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Red-Alinsod.png" },
     { name: "Dr Ariel Luksenburg", country: "Uruguay", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Ariel-Luksenburg.png" },
     { name: "Dr Tina Batalha", country: "Brazil", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Tina-Batalha.png" },
-    { name: "Dr. Adrian Gaspar", country: "Argentina", img: "/adrian-gaspar.png" },
+    { name: "Dr. Adrian Gaspar", country: "Argentina", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1785217126/Screenshot_2026-07-28_at_11.05.07_AM_sqghgl.png" },
 ];
 
 const countryFlags: Record<string, { code: string; label: string }> = {
@@ -153,9 +153,9 @@ const Conference2026 = () => {
                         </h1>
 
                         <h2 className="mt-3 sm:mt-4 flex flex-nowrap items-baseline justify-center font-serif font-normal tracking-wide leading-tight whitespace-nowrap">
-                            <span className="text-[#E8877F] inline-flex items-baseline">
+                            <span className="text-[#E8877F]">
                                 <span className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none">3</span>
-                                <sup className="text-[0.65rem] sm:text-sm md:text-base lg:text-lg font-normal leading-none ml-0.5 top-0 relative align-super">rd</sup>
+                                <sup className="text-[0.65rem] sm:text-sm md:text-base lg:text-lg font-normal ml-0.5 align-super">rd</sup>
                             </span>
                             <span className="text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[2.1rem] ml-1 sm:ml-2">
                                 <span className="text-[#3a2f2c]">Cosmetic </span>
