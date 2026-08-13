@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Info, Menu, X } from "lucide-react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { submitToGoogleSheets } from "@/lib/submitToGoogleSheets";
@@ -19,9 +19,15 @@ const FLOWERS = {
 
 const PACKAGES = [
     { id: "cgsi-conf",     description: "CGSI members – Conference only –", price: "Rs 15,000", amount: "15000" },
-    { id: "cgsi-both",     description: "CGSI members – Conference + Workshop –", price: "Rs 20,900", amount: "20900" },
+    { id: "cgsi-both",     description: "CGSI members – Conference + Workshop –", price: "Rs 20,900", amount: "20900", breakdown: [
+        { label: "Conference", amount: "15000" },
+        { label: "Workshop", amount: "5900" },
+    ] },
     { id: "noncgsi-conf",  description: "Non-CGSI members – Conference only –", price: "Rs 16,000", amount: "16000" },
-    { id: "noncgsi-both",  description: "Non-CGSI members – Conference + Workshop –", price: "Rs 22,900", amount: "22900" },
+    { id: "noncgsi-both",  description: "Non-CGSI members – Conference + Workshop –", price: "Rs 22,900", amount: "22900", breakdown: [
+        { label: "Conference", amount: "16000" },
+        { label: "Workshop", amount: "6900" },
+    ] },
     { id: "pg-conf",       description: "Post Graduate – Conference only –", price: "Rs 10,000", amount: "10000" },
 ];
 
@@ -141,6 +147,7 @@ const CGCON2026Registration = () => {
     const [paymentImageFile, setPaymentImageFile] = useState<File | null>(null);
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [menuOpen, setMenuOpen] = useState(false);
+    const [pkgInfoOpen, setPkgInfoOpen] = useState<string | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setForm(p => ({ ...p, [e.target.name]: e.target.value }));
@@ -545,7 +552,7 @@ const CGCON2026Registration = () => {
                                     Conference Package
                                 </h3>
                                 <p className="mt-1 text-sm sm:text-base font-semibold text-gray-800">
-                                    Early Bird up to August 15<sup>th</sup>, 2026 <span className="text-red-500">*</span>
+                                    Early Bird up to August 31<sup>st</sup>, 2026 <span className="text-red-500">*</span>
                                 </p>
                             </div>
                             <div className="max-w-3xl mx-auto space-y-2">
@@ -562,7 +569,41 @@ const CGCON2026Registration = () => {
                                                 if (errors.totalAmount) setErrors(prev => ({ ...prev, totalAmount: "" }));
                                             }}
                                             className="accent-[#d87a76] w-4 h-4 shrink-0" />
-                                        <span>{pkg.description}</span>
+                                        <span className="inline-flex items-center gap-1.5 min-w-0">
+                                            <span>{pkg.description}</span>
+                                            {"breakdown" in pkg && pkg.breakdown && (
+                                                <span className="relative inline-flex shrink-0 group/info">
+                                                    <button
+                                                        type="button"
+                                                        aria-label="View fee breakdown"
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            e.stopPropagation();
+                                                            setPkgInfoOpen((open) => open === pkg.id ? null : pkg.id);
+                                                        }}
+                                                        onBlur={() => setPkgInfoOpen(null)}
+                                                        className="inline-flex items-center justify-center text-[#d87a76] hover:text-[#c46a66] transition-colors"
+                                                    >
+                                                        <Info className="w-4 h-4" />
+                                                    </button>
+                                                    <span
+                                                        className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-30 w-44 rounded-lg bg-gray-900 text-white text-xs font-medium px-3 py-2.5 shadow-lg pointer-events-none ${
+                                                            pkgInfoOpen === pkg.id ? "visible opacity-100" : "invisible opacity-0"
+                                                        } group-hover/info:visible group-hover/info:opacity-100`}
+                                                    >
+                                                        <span className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-0.5 text-left whitespace-nowrap">
+                                                            {pkg.breakdown.map((item) => (
+                                                                <React.Fragment key={item.label}>
+                                                                    <span>{item.label}</span>
+                                                                    <span>- {item.amount}</span>
+                                                                </React.Fragment>
+                                                            ))}
+                                                        </span>
+                                                        <span className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-[6px] border-x-transparent border-t-[6px] border-t-gray-900" />
+                                                    </span>
+                                                </span>
+                                            )}
+                                        </span>
                                         <span className="tabular-nums text-right whitespace-nowrap min-w-[5.5rem] sm:min-w-[6rem]">{pkg.price}</span>
                                     </label>
                                 ))}

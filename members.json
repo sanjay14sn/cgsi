@@ -964,5 +964,19 @@
     "memNo": "138",
     "city": "Visakhapatnam",
     "state": "Andhra Pradesh"
+  },
+  {
+    "sno": 139,
+    "name": "DR.RUTUJA RAUNDAL",
+    "memNo": "139",
+    "city": "Nashik",
+    "state": "Maharashtra"
+  },
+  {
+    "sno": 140,
+    "name": "DR.USHA MENON",
+    "memNo": "140",
+    "city": "Kasaragod",
+    "state": "Kerala"
   }
 ]

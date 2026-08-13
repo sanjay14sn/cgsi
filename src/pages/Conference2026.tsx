@@ -67,7 +67,6 @@ const organizingCommittee = [
     { name: "Dr. Shoba vijayakumar", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991300/Screenshot_2026-07-02_at_4.51.26_PM_htaque.png" },
     { name: "Dr. S. Chitralakshmi", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991331/WhatsApp_Image_2026-07-02_at_4.21.45_PM_fv9nks.jpg" },
     { name: "Dr.Priyadharshini Manoharan", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991345/WhatsApp_Image_2026-07-02_at_4.21.59_PM_wndjal.jpg" },
-    { name: "Dr Pavithra R", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782991352/WhatsApp_Image_2026-07-02_at_4.23.46_PM_t5ibgc.jpg" },
 ];
 
 const internationalFaculty = [
@@ -75,7 +74,8 @@ const internationalFaculty = [
     { name: "Dr Red Alinsod", country: "USA", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Red-Alinsod.png" },
     { name: "Dr Ariel Luksenburg", country: "Uruguay", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Ariel-Luksenburg.png" },
     { name: "Dr Tina Batalha", country: "Brazil", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Tina-Batalha.png" },
-    { name: "Dr. Adrian Gaspar", country: "Argentina", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1785217126/Screenshot_2026-07-28_at_11.05.07_AM_sqghgl.png" },
+    { name: "Dr. Adrian Gaspar", country: "Argentina", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1786612961/ChatGPT_Image_Aug_13_2026_02_52_14_PM_onvy5e.png" },
+    { name: "Dr. Mustafa Aldam", country: "UAE", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1786613774/ChatGPT_Image_Aug_13_2026_03_02_47_PM_b816bs.png" },
 ];
 
 const countryFlags: Record<string, { code: string; label: string }> = {
@@ -83,6 +83,7 @@ const countryFlags: Record<string, { code: string; label: string }> = {
     Uruguay: { code: "uy", label: "Uruguay" },
     Brazil: { code: "br", label: "Brazil" },
     Argentina: { code: "ar", label: "Argentina" },
+    UAE: { code: "ae", label: "UAE" },
 };
 
 const topicHighlights = [
@@ -152,12 +153,12 @@ const Conference2026 = () => {
                             CGCON 2026
                         </h1>
 
-                        <h2 className="mt-3 sm:mt-4 flex flex-nowrap items-baseline justify-center font-serif font-normal tracking-wide leading-tight whitespace-nowrap">
-                            <span className="text-[#E8877F]">
-                                <span className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none">3</span>
-                                <sup className="text-[0.65rem] sm:text-sm md:text-base lg:text-lg font-normal ml-0.5 align-super">rd</sup>
+                        <h2 className="mt-3 sm:mt-4 flex flex-wrap items-baseline justify-center font-serif font-normal tracking-wide leading-tight">
+                            <span className="text-[#E8877F] inline-flex items-baseline">
+                                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none">3</span>
+                                <sup className="text-sm sm:text-base md:text-lg lg:text-xl font-normal ml-0.5 align-super">rd</sup>
                             </span>
-                            <span className="text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-[2.1rem] ml-1 sm:ml-2">
+                            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl ml-1 sm:ml-2">
                                 <span className="text-[#3a2f2c]">Cosmetic </span>
                                 <span className="text-[#E8877F]">Gynecology </span>
                                 <span className="text-[#3a2f2c]">World Congress</span>
@@ -165,10 +166,10 @@ const Conference2026 = () => {
                         </h2>
 
                         <p className="mt-4 sm:mt-5 max-w-xl mx-auto leading-relaxed">
-                            <span className="block text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#8a4e4a] tracking-wide">
+                            <span className="block text-sm sm:text-base md:text-lg lg:text-xl font-serif font-bold text-[#8a4e4a] tracking-wide">
                                 Redefining Intimate Wellness
                             </span>
-                            <span className="block text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#8a4e4a] tracking-wide mt-1">
+                            <span className="block text-sm sm:text-base md:text-lg lg:text-xl font-serif font-bold text-[#8a4e4a] tracking-wide mt-1">
                                 Beyond Beauty
                             </span>
                         </p>
