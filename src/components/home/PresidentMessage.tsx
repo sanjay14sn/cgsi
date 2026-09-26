@@ -90,12 +90,9 @@ const PresidentMessage = () => {
             <div className="relative z-10">
               <div className="rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white bg-white">
                 <img
-                  src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778059451/deepa_wpn93d.png"
+                  src="/HomeDeepa.png"
                   alt="Presidential Portrait"
                   className="w-full h-[320px] sm:h-[420px] md:h-[500px] lg:h-[600px] object-cover object-top"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://placehold.co/600x800?text=President+Message";
-                  }}
                 />
               </div>
             </div>

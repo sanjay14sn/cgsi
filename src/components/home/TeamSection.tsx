@@ -9,7 +9,7 @@ const teamMembers = [
     id: 1,
     name: "Dr. Deepa Ganesh",
     role: "President",
-    image: "/deepa.png"
+    image: "/HomeDeepa.png"
   },
   {
     id: 2,

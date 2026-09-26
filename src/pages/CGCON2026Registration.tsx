@@ -18,17 +18,21 @@ const FLOWERS = {
 };
 
 const PACKAGES = [
-    { id: "cgsi-conf",     description: "CGSI members – Conference only –", price: "Rs 15,000", amount: "15000" },
-    { id: "cgsi-both",     description: "CGSI members – Conference + Workshop –", price: "Rs 20,900", amount: "20900", breakdown: [
-        { label: "Conference", amount: "15000" },
-        { label: "Workshop", amount: "5900" },
-    ] },
-    { id: "noncgsi-conf",  description: "Non-CGSI members – Conference only –", price: "Rs 16,000", amount: "16000" },
-    { id: "noncgsi-both",  description: "Non-CGSI members – Conference + Workshop –", price: "Rs 22,900", amount: "22900", breakdown: [
-        { label: "Conference", amount: "16000" },
-        { label: "Workshop", amount: "6900" },
-    ] },
-    { id: "pg-conf",       description: "Post Graduate – Conference only –", price: "Rs 10,000", amount: "10000" },
+    { id: "cgsi-conf", description: "CGSI members – Conference only –", price: "Rs 15,000", amount: "15000" },
+    {
+        id: "cgsi-both", description: "CGSI members – Conference + Workshop –", price: "Rs 20,900", amount: "20900", breakdown: [
+            { label: "Conference", amount: "15000" },
+            { label: "Workshop", amount: "5900" },
+        ]
+    },
+    { id: "noncgsi-conf", description: "Non-CGSI members – Conference only –", price: "Rs 16,000", amount: "16000" },
+    {
+        id: "noncgsi-both", description: "Non-CGSI members – Conference + Workshop –", price: "Rs 22,900", amount: "22900", breakdown: [
+            { label: "Conference", amount: "16000" },
+            { label: "Workshop", amount: "6900" },
+        ]
+    },
+    { id: "pg-conf", description: "Post Graduate – Conference only –", price: "Rs 10,000", amount: "10000" },
 ];
 
 const INDIAN_STATES = [
@@ -142,7 +146,7 @@ const CGCON2026Registration = () => {
         totalAmount: "", utr: "", message: "",
     });
     const [selectedPkg, setSelectedPkg] = useState("");
-    const [submitted, setSubmitted]      = useState(false);
+    const [submitted, setSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [paymentImageFile, setPaymentImageFile] = useState<File | null>(null);
     const [errors, setErrors] = useState<Record<string, string>>({});
@@ -174,9 +178,9 @@ const CGCON2026Registration = () => {
 
     const validateForm = () => {
         const newErrors: Record<string, string> = {};
-        
+
         if (!form.name.trim()) newErrors.name = "Name is required.";
-        
+
         const mobileRegex = /^[0-9]{10}$/;
         const cleanMobile = form.mobile.replace(/[\s-]/g, '');
         if (!form.mobile.trim()) newErrors.mobile = "Mobile number is required.";
@@ -199,7 +203,7 @@ const CGCON2026Registration = () => {
         }
 
         if (!selectedPkg) newErrors.selectedPkg = "Please select a conference package.";
-        
+
         if (!form.totalAmount.trim()) newErrors.totalAmount = "Amount paid is required.";
         else if (isNaN(Number(form.totalAmount))) newErrors.totalAmount = "Amount must be a valid number.";
 
@@ -207,7 +211,7 @@ const CGCON2026Registration = () => {
         if (!form.utr.trim()) newErrors.utr = "UTR / UPI Transaction ID is required.";
 
         setErrors(newErrors);
-        
+
         if (Object.keys(newErrors).length > 0) {
             // Check for specific error groups to alert appropriately
             alert("Please fill in all required fields correctly. Check the form for red error messages.");
@@ -220,10 +224,10 @@ const CGCON2026Registration = () => {
         const cloudName = "dbr2hadbm";
         const apiKey = "282644665192215";
         const apiSecret = "cuzzr6X7qZkchx9Nh61xt-JWxMI";
-        
+
         const timestamp = Math.round((new Date()).getTime() / 1000);
         const strToSign = `timestamp=${timestamp}${apiSecret}`;
-        
+
         const encoder = new TextEncoder();
         const data = encoder.encode(strToSign);
         const hashBuffer = await crypto.subtle.digest('SHA-1', data);
@@ -240,7 +244,7 @@ const CGCON2026Registration = () => {
             method: "POST",
             body: formData
         });
-        
+
         if (!res.ok) throw new Error("Cloudinary upload failed");
         const json = await res.json();
         return json.secure_url;
@@ -248,13 +252,13 @@ const CGCON2026Registration = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         if (!validateForm()) {
             return;
         }
 
         setIsSubmitting(true);
-        
+
         try {
             // 1. Upload Image
             let imageUrl = "";
@@ -365,7 +369,7 @@ const CGCON2026Registration = () => {
                     )}
                 </div>
             </header>
-            
+
             {/* Full-page Loader Overlay */}
             {isSubmitting && (
                 <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm transition-all duration-300">
@@ -552,7 +556,7 @@ const CGCON2026Registration = () => {
                                     Conference Package
                                 </h3>
                                 <p className="mt-1 text-sm sm:text-base font-semibold text-gray-800">
-                                    Early Bird up to September 15<sup>th</sup>, 2026 <span className="text-red-500">*</span>
+                                    Early Bird up to October 15<sup>th</sup>, 2026 <span className="text-red-500">*</span>
                                 </p>
                             </div>
                             <div className="max-w-3xl mx-auto space-y-2">
@@ -587,9 +591,8 @@ const CGCON2026Registration = () => {
                                                         <Info className="w-4 h-4" />
                                                     </button>
                                                     <span
-                                                        className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-30 w-44 rounded-lg bg-gray-900 text-white text-xs font-medium px-3 py-2.5 shadow-lg pointer-events-none ${
-                                                            pkgInfoOpen === pkg.id ? "visible opacity-100" : "invisible opacity-0"
-                                                        } group-hover/info:visible group-hover/info:opacity-100`}
+                                                        className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-30 w-44 rounded-lg bg-gray-900 text-white text-xs font-medium px-3 py-2.5 shadow-lg pointer-events-none ${pkgInfoOpen === pkg.id ? "visible opacity-100" : "invisible opacity-0"
+                                                            } group-hover/info:visible group-hover/info:opacity-100`}
                                                     >
                                                         <span className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-0.5 text-left whitespace-nowrap">
                                                             {pkg.breakdown.map((item) => (
@@ -621,7 +624,7 @@ const CGCON2026Registration = () => {
                             <h3 className="text-base font-extrabold text-gray-900 underline mb-3">Payment</h3>
                             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-10 max-w-4xl mx-auto">
                                 <img src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1782807227/WhatsApp_Image_2026-06-30_at_10.53.53_AM_ae7fyw.jpg" alt="Payment details" className="w-full max-w-xs h-auto rounded-xl shadow-sm border border-gray-200" />
-                                
+
                                 <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm w-full max-w-sm">
                                     <h4 className="text-lg font-bold text-gray-900 mb-4 border-b border-gray-200 pb-2">Bank Details</h4>
                                     <table className="w-full text-sm text-left text-gray-700 align-top">
@@ -640,7 +643,7 @@ const CGCON2026Registration = () => {
                                             </tr>
                                             <tr>
                                                 <td className="py-2 font-semibold pr-3 whitespace-nowrap align-top">AC. Name:</td>
-                                                <td className="py-2 text-gray-900 font-medium">Cosmetic Gynecology<br/>Society of India</td>
+                                                <td className="py-2 text-gray-900 font-medium">Cosmetic Gynecology<br />Society of India</td>
                                             </tr>
                                             <tr>
                                                 <td className="py-2 font-semibold pr-3 whitespace-nowrap">IFSC Code:</td>

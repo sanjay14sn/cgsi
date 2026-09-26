@@ -1006,5 +1006,19 @@
     "memNo": "144",
     "city": "Hyderbad",
     "state": "Telangana"
+  },
+  {
+    "sno": 145,
+    "name": "DR. KOVARTHINI RAVIKUMAR",
+    "memNo": "145",
+    "city": "Coimbatore",
+    "state": "Tamilnadu"
+  },
+  {
+    "sno": 146,
+    "name": "DR. SAVANA CHONGTHAM",
+    "memNo": "146",
+    "city": "Imphal",
+    "state": "Manipur"
   }
 ]

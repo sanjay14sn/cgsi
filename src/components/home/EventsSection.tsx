@@ -74,6 +74,17 @@ const events = [
     category: "Seminar",
     isUpcoming: true,
   },
+  {
+    id: 8,
+    title: "CGSI with Indian Medical Association ",
+    description:
+      "Beyond asthetics - 'Cosmetic Gynaecology in Modern Practice' ",
+    date: "6th September, 2026",
+    location: "Hotel Vijay Park",
+    image: "/september.jpeg",
+    category: "CME",
+    isUpcoming: false,
+  },
 ];
 
 const EventsSection = () => {

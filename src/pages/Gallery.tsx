@@ -1,106 +1,388 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
-import { Folder, Image as ImageIcon, Camera } from "lucide-react";
-import { images2024, images2025, imagesModernAestheticGynecology, allPhotos } from "./GalleryAlbum";
+import { Folder, Image as ImageIcon } from "lucide-react";
 
-// Set to true to restore the album grid
-const SHOW_ALBUMS = false;
+import {
+  images2024,
+  images2025,
+} from "./GalleryAlbum";
 
 const albums = [
   {
-    id: "all",
-    title: "All Photos",
-    count: allPhotos.length,
-    cover: "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408323/79ec1af2-98c1-4f41-97c1-1a9a0f5f54db_3_l2gld2.jpg"
-  },
-  {
-    id: "modern-aesthetic-gynecology",
-    title: "Modern Aesthetic Gynecology",
-    count: imagesModernAestheticGynecology.length,
-    cover: imagesModernAestheticGynecology[0],
-  },
-  {
     id: "2024",
     title: "CGCON 2024",
+    description: "1st Cosmetic Gynecology World Congress",
     count: images2024.length,
-    cover: "https://res.cloudinary.com/ddibq0tya/image/upload/v1771407195/IMG_2914_agmgkd.jpg"
+    cover: "/cg2024-13.jpeg",
+    available: true,
   },
-  {
-    id: "2025",
-    title: "CGCON 2025",
-    count: images2025.length,
-    cover: "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408327/DOT01099_vy0py7.jpg"
-  },
-
+  // {
+  //   id: "2025",
+  //   title: "CGCON 2025",
+  //   description: "2nd Cosmetic Gynecology World Congress",
+  //   count: images2025.length,
+  //   cover:
+  //     "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408327/DOT01099_vy0py7.jpg",
+  //   available: true,
+  // },
+  // {
+  //   id: "2026",
+  //   title: "CGCON 2026",
+  //   description: "3rd Cosmetic Gynecology World Congress",
+  //   count: 0,
+  //   cover: "",
+  //   available: false,
+  // },
 ];
 
 const GalleryPage = () => {
   return (
     <Layout>
-      <div className="bg-[#f8f8f8] min-h-screen">
-        <section className="pt-32 pb-20 px-4 md:px-8 container mx-auto">
+      <div className="min-h-screen w-full bg-[#f8f8f8]">
 
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-serif font-bold text-black mb-4">Photo Albums</h1>
-            <p className="text-lg text-muted-foreground">Relive the moments from our historic events</p>
-          </div>
+        {/* ================= HEADER ================= */}
 
-          {!SHOW_ALBUMS ? (
-            <div className="max-w-2xl mx-auto bg-white p-10 md:p-16 rounded-[2.5rem] border border-border/50 shadow-xl text-center">
-              <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                <Camera className="w-12 h-12 text-primary" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-6">Coming Soon</h2>
-              <p className="text-black text-lg leading-relaxed font-semibold">
-                We are curating photo albums from our historic CGSI events. Check back soon to relive the moments from CGCON and other society gatherings.
+        <section className="pt-12 pb-20 px-4 sm:px-6 lg:px-10 xl:px-12 w-full">
+
+          <div className="w-full max-w-[1700px] mx-auto">
+
+            {/* ================= PAGE TITLE ================= */}
+
+            <div className="text-center mb-14">
+
+              <h1 className="text-4xl md:text-6xl font-serif font-bold text-black mb-4">
+                Photo Albums
+              </h1>
+
+              <p className="text-lg text-muted-foreground">
+                Relive the moments from our memorable CGSI events
               </p>
+
             </div>
-          ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
-            {albums.map((album) => (
-              <Link
-                to={`/gallery/${album.id}`}
-                key={album.id}
-                className="group block relative"
-              >
-                {/* Folder background tab effect */}
-                <div className="absolute -top-3 left-4 w-1/3 h-6 bg-primary/20 rounded-t-xl transition-colors duration-300 group-hover:bg-primary/40"></div>
 
-                <div className="relative bg-white rounded-2xl rounded-tl-none shadow-md overflow-hidden border border-border group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
+            {/* ================= ALBUM CARDS ================= */}
 
-                  {/* Cover image area */}
-                  <div className="relative h-56 md:h-64 overflow-hidden bg-slate-100">
-                    <img
-                      src={album.cover.replace('/upload/', '/upload/q_auto,f_auto,w_800/')}
-                      alt={album.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            <div
+              className="
+                grid
+                grid-cols-1
+                md:grid-cols-2
+                lg:grid-cols-3
+                gap-8
+                w-full
+              "
+            >
+
+              {albums.map((album) => (
+
+                /* =====================================================
+                   AVAILABLE ALBUMS - CGCON 2024 & CGCON 2025
+                ====================================================== */
+
+                album.available ? (
+
+                  <Link
+                    to={`/gallery/${album.id}`}
+                    key={album.id}
+                    className="group block relative"
+                  >
+
+                    {/* ================= FOLDER TAB ================= */}
+
+                    <div
+                      className="
+                        absolute
+                        -top-3
+                        left-5
+                        w-1/3
+                        h-7
+                        bg-primary/20
+                        rounded-t-xl
+                        transition-all
+                        duration-300
+                        group-hover:bg-primary/40
+                      "
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                      <div className="text-white">
-                        <Folder className="w-8 h-8 mb-2 opacity-80" fill="currentColor" />
-                        <h2 className="text-2xl font-bold">{album.title}</h2>
+
+                    {/* ================= CARD ================= */}
+
+                    <div
+                      className="
+                        relative
+                        bg-white
+                        rounded-2xl
+                        rounded-tl-none
+                        overflow-hidden
+                        border
+                        border-border/60
+                        shadow-md
+                        transition-all
+                        duration-300
+                        group-hover:shadow-2xl
+                        group-hover:-translate-y-2
+                      "
+                    >
+
+                      {/* ================= COVER IMAGE ================= */}
+
+                      <div
+                        className="
+                          relative
+                          h-64
+                          overflow-hidden
+                          bg-slate-100
+                        "
+                      >
+
+                        <img
+                          src={album.cover.replace(
+                            "/upload/",
+                            "/upload/q_auto,f_auto,w_1200/"
+                          )}
+                          alt={album.title}
+                          loading="eager"
+                          decoding="async"
+                          className="
+                            w-full
+                            h-full
+                            object-cover
+                            transition-transform
+                            duration-700
+                            group-hover:scale-105
+                          "
+                        />
+
+                        {/* ================= DARK GRADIENT ================= */}
+
+                        <div
+                          className="
+                            absolute
+                            inset-0
+                            bg-gradient-to-t
+                            from-black/70
+                            via-black/10
+                            to-transparent
+                          "
+                        />
+
+                        {/* ================= TITLE ================= */}
+
+                        <div
+                          className="
+                            absolute
+                            bottom-0
+                            left-0
+                            right-0
+                            p-6
+                            text-white
+                          "
+                        >
+
+                          <Folder
+                            className="w-9 h-9 mb-3 opacity-90"
+                            fill="currentColor"
+                          />
+
+                          <h2 className="text-2xl md:text-3xl font-bold">
+                            {album.title}
+                          </h2>
+
+                        </div>
+
                       </div>
+
+                      {/* ================= CARD DETAILS ================= */}
+
+                      <div className="p-6">
+
+                        <p className="text-slate-600 text-base leading-relaxed mb-5">
+                          {album.description}
+                        </p>
+
+                        <div className="flex items-center justify-between">
+
+                          {/* PHOTO COUNT */}
+
+                          <div
+                            className="
+                              flex
+                              items-center
+                              text-slate-500
+                              font-medium
+                            "
+                          >
+
+                            <ImageIcon className="w-5 h-5 mr-2" />
+
+                            <span>
+                              {album.count} Photos
+                            </span>
+
+                          </div>
+
+                          {/* VIEW ALBUM */}
+
+                          <span
+                            className="
+                              text-primary
+                              font-bold
+                              transition-transform
+                              duration-300
+                              group-hover:translate-x-1
+                            "
+                          >
+                            View Album →
+                          </span>
+
+                        </div>
+
+                      </div>
+
                     </div>
+
+                  </Link>
+
+                ) : (
+
+                  /* =====================================================
+                     CGCON 2026 - COMING SOON
+                  ====================================================== */
+
+                  <div
+                    key={album.id}
+                    className="
+                      relative
+                      bg-white
+                      rounded-2xl
+                      rounded-tl-none
+                      overflow-hidden
+                      border
+                      border-border/60
+                      shadow-md
+                    "
+                  >
+
+                    {/* ================= FOLDER TAB ================= */}
+
+                    <div
+                      className="
+                        absolute
+                        -top-3
+                        left-5
+                        w-1/3
+                        h-7
+                        bg-primary/20
+                        rounded-t-xl
+                      "
+                    />
+
+                    {/* ================= EMPTY COVER ================= */}
+
+                    <div
+                      className="
+                        relative
+                        h-64
+                        bg-gradient-to-br
+                        from-primary/5
+                        via-white
+                        to-secondary/20
+                        flex
+                        items-center
+                        justify-center
+                      "
+                    >
+
+                      <div className="text-center">
+
+                        <Folder
+                          className="
+                            w-16
+                            h-16
+                            mx-auto
+                            mb-4
+                            text-primary/40
+                          "
+                          strokeWidth={1.5}
+                        />
+
+                        <span
+                          className="
+                            inline-block
+                            px-4
+                            py-2
+                            rounded-full
+                            bg-primary/10
+                            text-primary
+                            text-sm
+                            font-semibold
+                          "
+                        >
+                          Coming Soon
+                        </span>
+
+                      </div>
+
+                    </div>
+
+                    {/* ================= CARD DETAILS ================= */}
+
+                    <div className="p-6">
+
+                      <h2
+                        className="
+                          text-2xl
+                          md:text-3xl
+                          font-bold
+                          text-black
+                          mb-3
+                        "
+                      >
+                        {album.title}
+                      </h2>
+
+                      <p
+                        className="
+                          text-slate-600
+                          text-base
+                          leading-relaxed
+                          mb-5
+                        "
+                      >
+                        {album.description}
+                      </p>
+
+                      <div
+                        className="
+                          flex
+                          items-center
+                          text-slate-400
+                          font-medium
+                        "
+                      >
+
+                        <ImageIcon className="w-5 h-5 mr-2" />
+
+                        <span>
+                          Photos coming soon
+                        </span>
+
+                      </div>
+
+                    </div>
+
                   </div>
 
-                  {/* Album details */}
-                  <div className="p-5 flex items-center justify-between bg-white">
-                    <div className="flex items-center text-slate-500 font-medium">
-                      <ImageIcon className="w-5 h-5 mr-2" />
-                      <span>{album.count} Items</span>
-                    </div>
-                    <span className="text-primary font-bold group-hover:translate-x-1 transition-transform">
-                      View Album &rarr;
-                    </span>
-                  </div>
+                )
 
-                </div>
-              </Link>
-            ))}
+              ))}
+
+            </div>
+
           </div>
-          )}
+
         </section>
+
       </div>
     </Layout>
   );

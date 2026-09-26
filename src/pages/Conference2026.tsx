@@ -43,7 +43,7 @@ const organizingTeam = [
     {
         name: "Dr. Deepa Ganesh",
         role: "President",
-        img: "/deepa.png",
+        img: "/HomeDeepa.png",
     },
     {
         name: "Dr. Shamika Dechamma",
@@ -76,6 +76,16 @@ const internationalFaculty = [
     { name: "Dr Tina Batalha", country: "Brazil", img: "https://lvrii.in/conferences/wp-content/uploads/2025/09/Dr-Tina-Batalha.png" },
     { name: "Dr. Adrian Gaspar", country: "Argentina", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1786612961/ChatGPT_Image_Aug_13_2026_02_52_14_PM_onvy5e.png" },
     { name: "Dr. Mustafa Aldam", country: "UAE", img: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1786613774/ChatGPT_Image_Aug_13_2026_03_02_47_PM_b816bs.png" },
+    {
+        name: "Dr. Teguh Tanuwidjaja",
+        country: "Indonesia",
+        img: "/Teguh.png",
+    },
+    {
+        name: "Dr. Kristina Sule",
+        country: "Kenya",
+        img: "/kristina.png",
+    },
 ];
 
 const countryFlags: Record<string, { code: string; label: string }> = {
@@ -83,7 +93,9 @@ const countryFlags: Record<string, { code: string; label: string }> = {
     Uruguay: { code: "uy", label: "Uruguay" },
     Brazil: { code: "br", label: "Brazil" },
     Argentina: { code: "ar", label: "Argentina" },
+    Indonesia: { code: "id", label: "Indonesia" },
     UAE: { code: "ae", label: "UAE" },
+    Kenya: { code: "ke", label: "Kenya" },
 };
 
 const topicHighlights = [

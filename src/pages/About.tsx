@@ -51,51 +51,41 @@ const About = () => {
 
             <div className="flex flex-col lg:flex-row items-center gap-16">
 
+              {/* ================= IMAGE ================= */}
+
               <FadeIn className="lg:w-1/2 relative">
 
                 <div
                   className="
                     absolute
-
                     -top-4
-
                     -left-4
-
                     w-full
-
                     h-full
-
                     border-2
-
                     border-primary/20
-
                     rounded-3xl
-
                     translate-x-4
-
                     translate-y-4
-
                     -z-10
                   "
                 />
 
                 <img
-                  src="https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778319012/DSC07616_r6myso.jpg"
+                  src="/AboutUs.png"
                   alt="Cosmetic Gynecology Training"
                   className="
                     rounded-3xl
-
                     shadow-2xl
-
                     transition-transform
-
                     duration-700
-
                     hover:scale-[1.02]
                   "
                 />
 
               </FadeIn>
+
+              {/* ================= HISTORY CONTENT ================= */}
 
               <FadeIn
                 delay={0.2}
@@ -104,14 +94,11 @@ const About = () => {
 
                 <h2
                   className="
-                  text-4xl
-
-                  font-serif
-
-                  font-bold
-
-                  text-primary
-                "
+                    text-4xl
+                    font-serif
+                    font-bold
+                    text-primary
+                  "
                 >
                   Building India's Future in Cosmetic Gynecology
                 </h2>
@@ -164,7 +151,7 @@ const About = () => {
 
             <div className="grid md:grid-cols-2 gap-12">
 
-              {/* Vision */}
+              {/* ================= VISION ================= */}
 
               <FadeIn>
 
@@ -172,17 +159,11 @@ const About = () => {
                   whileHover={{ y: -10 }}
                   className="
                     h-full
-
                     p-10
-
                     rounded-[2rem]
-
                     bg-card
-
                     border
-
                     border-border
-
                     hover:shadow-xl
                   "
                 >
@@ -190,19 +171,12 @@ const About = () => {
                   <div
                     className="
                       w-16
-
                       h-16
-
                       rounded-2xl
-
                       bg-primary/10
-
                       flex
-
                       items-center
-
                       justify-center
-
                       mb-8
                     "
                   >
@@ -213,35 +187,29 @@ const About = () => {
 
                   <h3
                     className="
-                    text-3xl
-
-                    font-serif
-
-                    font-bold
-
-                    mb-6
-
-                    text-primary
-                  "
+                      text-3xl
+                      font-serif
+                      font-bold
+                      mb-6
+                      text-primary
+                    "
                   >
                     Our Vision
                   </h3>
 
                   <p className="text-lg text-black font-semibold leading-relaxed">
-
                     To be the leading professional society
                     advancing cosmetic, functional and
                     regenerative gynecology in India through
                     excellence in education, innovation,
                     research and ethical clinical practice.
-
                   </p>
 
                 </motion.div>
 
               </FadeIn>
 
-              {/* Mission */}
+              {/* ================= MISSION ================= */}
 
               <FadeIn delay={0.2}>
 
@@ -249,15 +217,10 @@ const About = () => {
                   whileHover={{ y: -10 }}
                   className="
                     h-full
-
                     p-10
-
                     rounded-[2rem]
-
                     bg-primary
-
                     text-white
-
                     hover:shadow-xl
                   "
                 >
@@ -265,19 +228,12 @@ const About = () => {
                   <div
                     className="
                       w-16
-
                       h-16
-
                       rounded-2xl
-
                       bg-white/20
-
                       flex
-
                       items-center
-
                       justify-center
-
                       mb-8
                     "
                   >
@@ -288,26 +244,21 @@ const About = () => {
 
                   <h3
                     className="
-                    text-3xl
-
-                    font-serif
-
-                    font-bold
-
-                    mb-6
-                  "
+                      text-3xl
+                      font-serif
+                      font-bold
+                      mb-6
+                    "
                   >
                     Our Mission
                   </h3>
 
                   <p className="text-lg leading-relaxed">
-
                     To advance cosmetic, functional and
                     regenerative gynecology through
                     education, training, research,
                     academic exchange and evidence-based
                     guidelines.
-
                   </p>
 
                 </motion.div>

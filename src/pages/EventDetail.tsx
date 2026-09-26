@@ -86,9 +86,14 @@ const eventDetails: Record<
         date: "Saturday 23 May 2026",
         location: "Online / Virtual",
         category: "Webinar",
-        isUpcoming: true,
+        isUpcoming: false,
         poster: "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1778484394/Screenshot_2026-05-11_at_12.56.22_PM_xcec1v.png",
-        images: [],
+        images: [
+            "/Event-may-1.jpeg",
+            "/Event-may-2.jpeg",
+            "/Event-may-3.jpeg",
+            "/Event-may-4.jpeg",
+        ],
     },
     "6": {
         title: "Pre Conference Workshop on\nCosmetic Gynaecology",
@@ -110,6 +115,25 @@ const eventDetails: Record<
         poster: "/masterclass-goa-2026.jpg",
         images: [],
     },
+    "8": {
+        title: "CGSI with Indian Medical Association",
+        subtitle:
+            "Beyond asthetics - 'Cosmetic Gynaecology in Modern Practice'",
+        date: "6th September, 2026",
+        location: "Hotel Vijay Park",
+        category: "CME",
+        isUpcoming: false,
+
+        poster: "/september.jpeg",
+
+        images: [
+            "/Event-sept-1.jpeg",
+            "/Event-sept-2.jpeg",
+            "/Event-sept-3.jpeg",
+            "/Event-sept-4.jpeg",
+        ],
+    },
+
 };
 
 const EventDetail = () => {
