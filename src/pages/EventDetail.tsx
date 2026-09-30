@@ -115,7 +115,27 @@ const eventDetails: Record<
         poster: "/masterclass-goa-2026.jpg",
         images: [],
     },
+
     "8": {
+        title: "CGSI with IMA, Pondicherry",
+        subtitle:
+            "Introduction to Cosmetic Gynecology and setting up a basic cosmetology clinic",
+        date: "6th August, 2026",
+        location: "At Manakula Vinyagar Medical college & Hospital",
+        category: "CME",
+        isUpcoming: false,
+
+        poster: "/August.jpeg",
+
+        images: [
+            "/Event-Aug-1.jpeg",
+            "/Event-Aug-2.jpeg",
+            "/Event-Aug-3.jpeg",
+            "/Event-Aug-4.jpeg",
+            "/Event-Aug-5.jpeg",
+        ],
+    },
+    "9": {
         title: "CGSI with Indian Medical Association",
         subtitle:
             "Beyond asthetics - 'Cosmetic Gynaecology in Modern Practice'",

@@ -82,6 +82,18 @@ const upcomingEvents = [
   },
   {
     id: 8,
+    title: "CGSI with IMA, Pondicherry ",
+    description:
+      "Introduction to Cosmetic Gynecology and setting up a basic cosmetology clinic",
+    date: "Sunday 16th August 2026 | 2:00 PM – 4:30 PM",
+    location: "At Manakula Vinyagar Medical college & Hospital",
+    image: "/August.jpeg",
+    category: "CME",
+    isUpcoming: false,
+    hasGallery: true,
+  },
+  {
+    id: 9,
     title: "CGSI with Indian Medical Association ",
     description:
       "Beyond asthetics - 'Cosmetic Gynaecology in Modern Practice' ",
@@ -90,6 +102,7 @@ const upcomingEvents = [
     image: "/september.jpeg",
     category: "CME",
     isUpcoming: false,
+    hasGallery: true,
   },
 ];
 

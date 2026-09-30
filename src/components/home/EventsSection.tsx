@@ -78,6 +78,17 @@ const events = [
     id: 8,
     title: "CGSI with Indian Medical Association ",
     description:
+      "Introduction to Cosmetic Gynecology and setting up a basic cosmetology clinic",
+    date: "6th August, 2026",
+    location: "At Manakula Vinyagar Medical college & Hospital",
+    image: "/August.jpeg",
+    category: "CME",
+    isUpcoming: false,
+  },
+  {
+    id: 9,
+    title: "CGSI with Indian Medical Association ",
+    description:
       "Beyond asthetics - 'Cosmetic Gynaecology in Modern Practice' ",
     date: "6th September, 2026",
     location: "Hotel Vijay Park",
@@ -85,6 +96,7 @@ const events = [
     category: "CME",
     isUpcoming: false,
   },
+
 ];
 
 const EventsSection = () => {
