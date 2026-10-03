@@ -6,26 +6,36 @@ import { Folder, Image as ImageIcon } from "lucide-react";
 import {
   images2024,
   images2025,
+  images2025Workshop,
 } from "./GalleryAlbum";
 
 const albums = [
   {
     id: "2024",
     title: "CGCON 2024",
-    description: "1st Cosmetic Gynecology World Congress",
+    description: "CGCON 2024 - 1st Cosmetic Gynecology World Congress",
     count: images2024.length,
     cover: "/cg2024-13.jpeg",
     available: true,
   },
-  // {
-  //   id: "2025",
-  //   title: "CGCON 2025",
-  //   description: "2nd Cosmetic Gynecology World Congress",
-  //   count: images2025.length,
-  //   cover:
-  //     "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408327/DOT01099_vy0py7.jpg",
-  //   available: true,
-  // },
+  {
+    id: "2025-Workshop",
+    title: "CGCON 2025 - Precongress Workshop",
+    description: "Precongress Workshop",
+    count: images2025Workshop.length,
+    cover:
+      "/cgCon-workshop-22.jpeg",
+    available: true,
+  },
+  {
+    id: "2025",
+    title: "CGCON 2025",
+    description: "CGCON 2025 - 2nd Cosmetic Gynecology World Congress",
+    count: images2025.length,
+    cover:
+      "/cgCon-2025-day1-1.jpeg",
+    available: true,
+  },
   // {
   //   id: "2026",
   //   title: "CGCON 2026",
@@ -196,7 +206,7 @@ const GalleryPage = () => {
 
                       <div className="p-6">
 
-                        <p className="text-slate-600 text-base leading-relaxed mb-5">
+                        <p className="text-slate-800 font-bold text-base leading-relaxed mb-5">
                           {album.description}
                         </p>
 

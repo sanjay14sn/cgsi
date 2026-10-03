@@ -42,32 +42,94 @@ export const images2024 = [
   "/cg2024-25.jpeg",
 ];
 
+export const images2025Workshop = [
+  "/cgCon-workshop-22.jpeg",
+  "/cgCon-workshop-1.jpeg",
+  "/cgCon-workshop-2.jpeg",
+  "/cgCon-workshop-3.jpeg",
+  "/cgCon-workshop-4.jpeg",
+  "/cgCon-workshop-7.jpeg",
+  "/cgCon-workshop-16.jpeg",
+  "/cgCon-workshop-5.jpeg",
+  "/cgCon-workshop-6.jpeg",
+  "/cgCon-workshop-8.jpeg",
+  "/cgCon-workshop-9.jpeg",
+  "/cgCon-workshop-10.jpeg",
+  "/cgCon-workshop-11.jpeg",
+
+  "/cgCon-workshop-13.jpeg",
+  "/cgCon-workshop-14.jpeg",
+
+  "/cgCon-workshop-17.jpeg",
+  "/cgCon-workshop-18.jpeg",
+  "/cgCon-workshop-19.jpeg",
+  "/cgCon-workshop-20.jpeg",
+  "/cgCon-workshop-21.jpeg",
+  "/cgCon-workshop-15.jpeg",
+  "/cgCon-workshop-12.jpeg",
+
+
+]
+
 export const images2025 = [
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408324/83a943f7-cca7-48cd-8906-50ef77cc73b2_3_e8isky.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408323/79ec1af2-98c1-4f41-97c1-1a9a0f5f54db_3_l2gld2.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408322/73b294a4-3026-47f9-ba0f-0c0489a72de6_3_cairep.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408327/DOT01099_vy0py7.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408340/DOT09612_gb0s41.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408343/DSC00013_qhgfu6.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408343/DOT08396_wlbrvi.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408343/DOT01146_jumznb.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408346/DSC00156_clynjk.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408345/DSC00204_hssqvw.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408347/DSC00211_n37f7h.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408348/DSC08137_pehprk.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408354/DSC08580_isqbnj.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408356/DSC08546_mgcbiu.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408360/DSC00256_ri7bbi.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408362/DSC08658_qmqnav.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408369/DSC09006_bepop5.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408368/DSC08883_opfqhu.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408370/DSC08861_duszf9.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408371/DSC08569_koxmvs.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408376/DSC08636_zqzugz.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408381/DSC09829_dk5uk1.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408384/DSC09694_gx3swj.jpg",
-  "https://res.cloudinary.com/ddibq0tya/image/upload/v1771408400/DSC09904_lu7xvu.jpg",
-];
+  "/cgCon-2025-day1-1.jpeg",
+  "/cgCon-2025-day1-2.jpeg",
+  "/cgCon-2025-day1-3.jpeg",
+  "/cgCon-2025-day1-4.jpeg",
+  "/cgCon-2025-day1-5.jpeg",
+  "/cgCon-2025-day1-6.jpeg",
+  "/cgCon-2025-day1-7.jpeg",
+  "/cgCon-2025-day1-8.jpeg",
+  "/cgCon-2025-day1-9.jpeg",
+  "/cgCon-2025-day1-10.jpeg",
+  "/cgCon-2025-day1-11.jpeg",
+  "/cgCon-2025-day1-12.jpeg",
+  "/cgCon-2025-day1-13.jpeg",
+  "/cgCon-2025-day1-14.jpeg",
+  "/cgCon-2025-day1-15.jpeg",
+  "/cgCon-2025-day1-16.jpeg",
+  "/cgCon-2025-day1-17.jpeg",
+  "/cgCon-2025-day1-18.jpeg",
+  "/cgCon-2025-day1-19.jpeg",
+  "/cgCon-2025-day1-20.jpeg",
+  "/cgCon-2025-day1-22.jpeg",
+  "/cgCon-2025-day1-23.jpeg",
+  "/cgCon-2025-day1-24.jpeg",
+  "/cgCon-2025-day1-25.jpeg",
+  "/cgCon-2025-day1-26.jpeg",
+  "/cgCon-2025-day1-27.jpeg",
+  "/cgCon-2025-day1-28.jpeg",
+  "/cgCon-2025-day1-29.jpeg",
+  "/cgCon-2025-day1-30.jpeg",
+  "/cgCon-2025-day1-31.jpeg",
+  "/cgCon-2025-day1-32.jpeg",
+  "/cgCon-2025-day1-33.jpeg",
+  "/cgCon-2025-day1-34.jpeg",
+  "/cgCon-2025-day1-36.jpeg",
+  "/cgCon-2025-day1-37.jpeg",
+  "/cgCon-2025-day1-38.jpeg",
+  "/cgCon-2025-day1-35.jpeg",
+  "/cgCon-2025-day2-1.jpeg",
+  "/cgCon-2025-day2-2.jpeg",
+  "/cgCon-2025-day2-3.jpeg",
+  "/cgCon-2025-day2-4.jpeg",
+  "/cgCon-2025-day2-5.jpeg",
+  "/cgCon-2025-day2-6.jpeg",
+  "/cgCon-2025-day2-7.jpeg",
+  "/cgCon-2025-day2-8.jpeg",
+  "/cgCon-2025-day2-9.jpeg",
+  "/cgCon-2025-day2-10.jpeg",
+  "/cgCon-2025-day2-11.jpeg",
+  "/cgCon-2025-day2-12.jpeg",
+  "/cgCon-2025-day2-13.jpeg",
+  "/cgCon-2025-day2-14.jpeg",
+  "/cgCon-2025-day2-15.jpeg",
+  "/cgCon-2025-day2-16.jpeg",
+  "/cgCon-2025-day2-18.jpeg",
+  "/cgCon-2025-day2-17.jpeg",
+]
+
+
 
 export const imagesModernAestheticGynecology = [
   "https://res.cloudinary.com/dq6gr5zjc/image/upload/v1781694504/WhatsApp_Image_2026-06-17_at_4.36.08_PM_nyabqr.jpg",
@@ -81,6 +143,7 @@ export const imagesModernAestheticGynecology = [
 export const allPhotos = [
   ...images2025,
   ...images2024,
+  ...images2025Workshop,
   ...imagesModernAestheticGynecology,
 ];
 
@@ -93,12 +156,17 @@ const GalleryAlbum = () => {
   let title = "";
   let subtitle = "";
 
-  if (albumId === "2025") {
-    imagesToDisplay = images2025;
-    title = "CGCON 2025";
-  } else if (albumId === "2024") {
+  if (albumId === "2025-Workshop") {
+    imagesToDisplay = images2025Workshop;
+    title = "CGCON 2025 - Precongress Workshop";
+  }
+  else if (albumId === "2024") {
     imagesToDisplay = images2024;
-    title = "CGCON 2024";
+    title = "CGCON 2024 - 1st Cosmetic Gynecology World Congress";
+  }
+  else if (albumId === "2025") {
+    imagesToDisplay = images2025;
+    title = "CGCON 2025 - 2nd Cosmetic Gynecology World Congress";
   } else if (albumId === "modern-aesthetic-gynecology") {
     imagesToDisplay = imagesModernAestheticGynecology;
     title = "Modern Aesthetic Gynecology";

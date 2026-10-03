@@ -24,7 +24,7 @@ const AboutSection = () => {
               <div className="relative rounded-2xl sm:rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 group-hover:shadow-[0_0_50px_-12px_rgba(var(--primary),0.3)] border-2 border-white/10 group-hover:border-primary/50">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay z-10 pointer-events-none" />
                 <img
-                  src="https://res.cloudinary.com/ddibq0tya/image/upload/v1771400725/WhatsApp_Image_2026-02-10_at_12.42.33_PM_hpkzxg.jpg"
+                  src="/CGSI-logo.jpeg"
                   alt="Cosmetic Gynecology Society of India Medical Team"
                   className="w-full h-[260px] sm:h-[380px] md:h-[480px] lg:h-[550px] object-cover filter grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
                 />

@@ -117,10 +117,10 @@ const eventDetails: Record<
     },
 
     "8": {
-        title: "CGSI with IMA, Pondicherry",
+        title: "CGSI with Manakula Vinyagar Medical college & Hospital, Pondicherry",
         subtitle:
             "Introduction to Cosmetic Gynecology and setting up a basic cosmetology clinic",
-        date: "6th August, 2026",
+        date: "21st August 2026 ",
         location: "At Manakula Vinyagar Medical college & Hospital",
         category: "CME",
         isUpcoming: false,
