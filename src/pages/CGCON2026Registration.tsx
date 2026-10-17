@@ -556,7 +556,7 @@ const CGCON2026Registration = () => {
                                     Conference Package
                                 </h3>
                                 <p className="mt-1 text-sm sm:text-base font-semibold text-gray-800">
-                                    Early Bird up to October 15<sup>th</sup>, 2026 <span className="text-red-500">*</span>
+                                    Early Bird up to October 31<sup>st</sup>, 2026 <span className="text-red-500">*</span>
                                 </p>
                             </div>
                             <div className="max-w-3xl mx-auto space-y-2">
